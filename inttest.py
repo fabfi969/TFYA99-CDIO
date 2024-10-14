@@ -1,17 +1,10 @@
-# import main
+"""script for integration testing the code"""
+
 import toml
 import sys, unittest, os
 import os.path
 
 from create_input_file import create_input_file
-
-# stops all the prints in the program
-# old_stdout = sys.stdout
-# sys.stdout = open(os.devnull, "w")
-
-# main.main()
-
-# sys.stdout = old_stdout
 
 class InputFileTests(unittest.TestCase):
     def check_input_file_types(self, input_file_name):
