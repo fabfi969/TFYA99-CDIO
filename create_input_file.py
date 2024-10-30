@@ -2,7 +2,7 @@
 
 import toml
 from ase import units
-from ase.data import atomic_numbers, chemical_symbols
+from ase.data import chemical_symbols
 
 
 def create_input_file(file_name):

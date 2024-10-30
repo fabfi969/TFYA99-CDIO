@@ -1,10 +1,10 @@
 """Demonstrates molecular dynamics with constant energy."""
 
+from asap3 import Trajectory
 from ase import units
 from ase.lattice.cubic import FaceCenteredCubic
 from ase.md.velocitydistribution import MaxwellBoltzmannDistribution
 from ase.md.verlet import VelocityVerlet
-from asap3 import Trajectory
 
 
 def calcenergy(a):  # store a reference to atoms in the definition.
@@ -43,7 +43,7 @@ def run_md():
     # Set the momenta corresponding to T=300K
     MaxwellBoltzmannDistribution(atoms, temperature_K=40)
 
-    # We want to run MD with constant energy using the VelocityVerlet algorithm.
+    # We want to run MD with constant energy using the VelocityVerlet algorithm
     dyn = VelocityVerlet(atoms, 1 * units.fs)  # 5 fs time step.
     traj = Trajectory("Ar.traj", "w", atoms)
     dyn.attach(traj.write, interval=10)

@@ -1,4 +1,4 @@
-"""Demonstrates molecular dynamics with constant energy. Is called by main.py"""
+"""Demonstrates molecular dynamics with constant energy. Is called by main"""
 
 from asap3 import EMT, LennardJones, Trajectory
 from ase import units
@@ -42,12 +42,17 @@ def run_md(args, input_data):
         )
 
     # Set the momenta corresponding to T=300K
-    MaxwellBoltzmannDistribution(atoms, temperature_K=input_data["temperature_K"])
+    MaxwellBoltzmannDistribution(
+        atoms,
+        temperature_K=input_data["temperature_K"]
+    )
 
-    # We want to run MD with constant energy using the VelocityVerlet algorithm.
+    # We want to run MD with constant energy using the VelocityVerlet
+    # algorithm.
     dyn = VelocityVerlet(atoms, input_data["time_step"])
     traj = Trajectory(input_data["trajectory_file_name"], "w", atoms)
-    # dyn.attach(traj.write, interval=input_data["trajectory_interval"]) #TODO check what this line does
+    # TODO check what next line does
+    dyn.attach(traj.write, interval=input_data["trajectory_interval"])
 
     def printenergy(a=atoms):  # store a reference to atoms in the definition.
         """Function to print the potential, kinetic and total energy."""
