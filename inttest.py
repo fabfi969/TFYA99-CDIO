@@ -16,7 +16,7 @@ class InputFileTests(unittest.TestCase):
             input_data = toml.load(file)
 
         # TODO lägg till fler assertIsInstance
-        self.assertIsInstance(input_data["material"], str)
+        self.assertIsInstance(input_data["materials"][0], str)
 
     def test_create_input_test_file(self):
         input_file_name = "test_file.toml"
