@@ -16,11 +16,12 @@ Material simulation software description.
 
 ## Installation
 
-1. Create a virtual environment:
+1. Make sure that your Python version is at least Python 3.10.12
+2. Create a virtual environment:
     ```bash
     python -m venv venv  # only has to be run once
     source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-2. Install the required dependencies:
+3. Install the required dependencies:
     ```bash
     pip install -r requirements.txt  # run when requirements.txt has been updated
 
