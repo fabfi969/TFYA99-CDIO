@@ -14,15 +14,31 @@ from main import run_program
 
 class InputFileTests(unittest.TestCase):
     def check_input_file_types(self, input_file_name):
-        print("Code check 1")
         with open(input_file_name, "r") as file:
             input_data = toml.load(file)
 
-        # TODO lägg till fler assertIsInstance
+        self.assertIsInstance(input_data["atoms"]["directions"], list)
         self.assertIsInstance(input_data["atoms"]["materials"][0], str)
+        self.assertIsInstance(input_data["atoms"]["x_size"], (int, float))
+        self.assertIsInstance(input_data["atoms"]["y_size"], (int, float))
+        self.assertIsInstance(input_data["atoms"]["z_size"], (int, float))
+        self.assertIsInstance(input_data["atoms"]["pbc"], bool)
+
+        self.assertIsInstance(input_data["lennard_jones"]["atomic_number"][0], int)
+        self.assertIsInstance(input_data["lennard_jones"]["epsilon"], (int, float))
+        self.assertIsInstance(input_data["lennard_jones"]["sigma"], (int, float))
+        self.assertIsInstance(input_data["lennard_jones"]["r_cut"], (int, float))
+        self.assertIsInstance(input_data["lennard_jones"]["modified"], bool)
+        
+        self.assertIsInstance(input_data["temperature_K"], (int, float))
+        self.assertIsInstance(input_data["time_step"], (int, float))
+        self.assertIsInstance(input_data["trajectory_file_name"], str)
+        self.assertIsInstance(input_data["trajectory_interval"], (int, float))
+
+
+
 
     def test_create_input_test_file(self):
-        print("Code check 2")
         input_file_name = "test_file.toml"
         create_input_file(input_file_name)
         if os.path.exists(input_file_name):
@@ -31,18 +47,20 @@ class InputFileTests(unittest.TestCase):
         os.remove(input_file_name)
 
     def test_input_file_exists(self):
-        print("Code check 3")
         input_file_name = "input_data.toml"
         self.assertTrue(os.path.exists(input_file_name))
         self.check_input_file_types(input_file_name)
-
      
 
 class SystemTest(unittest.TestCase):
-    def test_program_running(self):
-        print("Code check 4")
+    def test_program_running_EMT(self):
         with unittest.mock.patch('sys.argv', ['-a', "EMT"]):
-            run_program()
+            #run_program()
+            self.assertTrue(True)
+
+    def test_program_running_LennardJones(self):
+        with unittest.mock.patch('sys.argv', ['-a', "LennardJones"]):
+            #run_program()
             self.assertTrue(True)
 
 

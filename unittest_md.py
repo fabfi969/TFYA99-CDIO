@@ -1,3 +1,5 @@
+"""script for unit testing the code"""
+
 import sys
 import unittest
 
@@ -20,13 +22,13 @@ atoms.calc = EMT()
 
 
 class MdTests(unittest.TestCase):
-    def test_calcenergy(self):
+    def test_consistent_total_energy(self):
         a, b, c = calcenergy(atoms)
         self.assertTrue(a + b == c)
 
 
 if __name__ == "__main__":
-    tests = [unittest.TestLoader().loadTestsFromTestCase(MdTests)]
-    testsuite = unittest.TestSuite(tests)
+    tests = unittest.TestLoader().loadTestsFromTestCase(MdTests)
+    testsuite = unittest.TestSuite([tests])
     result = unittest.TextTestRunner(verbosity=0).run(testsuite)
     sys.exit(not result.wasSuccessful())
