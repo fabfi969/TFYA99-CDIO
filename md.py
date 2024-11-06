@@ -62,7 +62,17 @@ def run_md(args, input_data):
             "Etot = %.3feV" % (epot, ekin, ekin / (1.5 * units.kB), etot)
         )
 
+    def saveenergydata(a=atoms):
+        epot, ekin, etot = calcenergy(a)
+        print([epot, ekin, etot], file=f)
+
+
     # Now run the dynamics
     dyn.attach(printenergy, interval=input_data["trajectory_interval"])
+    dyn.attach(saveenergydata, interval=input_data["trajectory_interval"])
+    f = open("output_data.txt", "w") # Open the target file. Overwrite existing file. 
+    print(["epot", "ekin", "etot"], file=f)
     printenergy()
+    saveenergydata()
     dyn.run(1000)
+    f.close
