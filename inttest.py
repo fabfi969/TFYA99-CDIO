@@ -35,9 +35,6 @@ class InputFileTests(unittest.TestCase):
         self.assertIsInstance(input_data["trajectory_file_name"], str)
         self.assertIsInstance(input_data["trajectory_interval"], (int, float))
 
-
-
-
     def test_create_input_test_file(self):
         input_file_name = "test_file.toml"
         create_input_file(input_file_name)
@@ -55,12 +52,12 @@ class InputFileTests(unittest.TestCase):
 class SystemTest(unittest.TestCase):
     def test_program_running_EMT(self):
         with unittest.mock.patch('sys.argv', ['-a', "EMT"]):
-            #run_program()
+            run_program()
             self.assertTrue(True)
 
     def test_program_running_LennardJones(self):
         with unittest.mock.patch('sys.argv', ['-a', "LennardJones"]):
-            #run_program()
+            run_program()
             self.assertTrue(True)
 
 
