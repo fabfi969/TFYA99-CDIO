@@ -6,6 +6,8 @@ from ase.lattice.cubic import FaceCenteredCubic
 from ase.md.velocitydistribution import MaxwellBoltzmannDistribution
 from ase.md.verlet import VelocityVerlet
 
+from create_input_file import create_input_file
+import toml
 
 def calcenergy(a):  # store a reference to atoms in the definition.
     """Function to calculate the potential, kinetic and total energy."""
@@ -30,9 +32,13 @@ def run_md(args, input_data):
     )
 
     # Describe the interatomic interactions with the Effective Medium Theory
-    if args.simulation_method == "EMT":
+    try:
+        simulation_method = args.simulation_method
+    except AttributeError:
+        simulation_method = args
+    if simulation_method == "EMT":
         atoms.calc = EMT()
-    elif args.simulation_method == "LennardJones":
+    elif simulation_method == "LennardJones":
         atoms.calc = LennardJones(
             input_data["lennard_jones"]["atomic_number"],
             input_data["lennard_jones"]["epsilon"],
@@ -66,3 +72,9 @@ def run_md(args, input_data):
     dyn.attach(printenergy, interval=input_data["trajectory_interval"])
     printenergy()
     dyn.run(1000)
+
+if __name__ == "__main__":
+    input_file_name = "input_data.toml"
+    create_input_file(input_file_name)
+    input_data = toml.load(input_file_name)
+    run_md("EMT", input_data)
