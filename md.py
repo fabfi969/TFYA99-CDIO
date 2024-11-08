@@ -16,7 +16,6 @@ def calcenergy(a):  # store a reference to atoms in the definition.
 
 
 def run_md(args, input_data):
-
     # Set up a crystal
     atoms = FaceCenteredCubic(
         directions=input_data["atoms"]["directions"],
@@ -62,17 +61,26 @@ def run_md(args, input_data):
             "Etot = %.3feV" % (epot, ekin, ekin / (1.5 * units.kB), etot)
         )
 
+    f = open("output_data.txt", "w") # Open the target file. Overwrite existing file. 
+    epot_list, ekin_list, etot_list = ([] for i in range(3))
     def saveenergydata(a=atoms):
         epot, ekin, etot = calcenergy(a)
-        print([epot, ekin, etot], file=f)
+        epot_list.append(epot)
+        ekin_list.append(ekin)
+        etot_list.append(etot)
+
+
+    def writetofile():
+        print(epot_list, file=f)
+        print(ekin_list, file=f)
+        print(etot_list, file=f)
+        f.close
 
 
     # Now run the dynamics
     dyn.attach(printenergy, interval=input_data["trajectory_interval"])
     dyn.attach(saveenergydata, interval=input_data["trajectory_interval"])
-    f = open("output_data.txt", "w") # Open the target file. Overwrite existing file. 
-    print(["epot", "ekin", "etot"], file=f)
-    printenergy()
     saveenergydata()
+    printenergy()
     dyn.run(1000)
-    f.close
+    writetofile()

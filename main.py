@@ -6,6 +6,7 @@ import toml
 
 from create_input_file import create_input_file
 from md import run_md
+from visualisation import plotenergy
 
 def run_program():
     parser = argparse.ArgumentParser(description="Parses simulation parameters.")
@@ -24,5 +25,7 @@ def run_program():
 
     run_md(args, input_data)
 
+
 if __name__ == "__main__":
     run_program()
+    plotenergy()
