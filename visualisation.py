@@ -1,7 +1,9 @@
-def plotenergy():
-    import matplotlib.pyplot as plt # This gives a warning.
-    import ast
-    
+import warnings
+warnings.filterwarnings("ignore", message = "Unable to import Axes3D")
+import matplotlib.pyplot as plt # This would give a warning without above line.
+import ast
+
+def plotenergy():    
     f = open("output_data.txt", "r")
     epot = ast.literal_eval(f.readline())
     ekin = ast.literal_eval(f.readline())
@@ -9,7 +11,6 @@ def plotenergy():
     epot.pop(0)
     ekin.pop(0)
     etot.pop(0)
-
 
     plt.plot(epot)
     plt.plot(ekin)
