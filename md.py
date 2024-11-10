@@ -71,10 +71,15 @@ def run_md(args, input_data):
 
 
     def writetofile():
+        epot_list.insert(0, "epot")
+        ekin_list.insert(0, "ekin")
+        etot_list.insert(0, "etot")
         print(epot_list, file=f)
         print(ekin_list, file=f)
         print(etot_list, file=f)
         f.close
+        print("Simulation data saved to file: ", f.name )
+
 
 
     # Now run the dynamics

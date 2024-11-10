@@ -6,6 +6,9 @@ def plotenergy():
     epot = ast.literal_eval(f.readline())
     ekin = ast.literal_eval(f.readline())
     etot = ast.literal_eval(f.readline())
+    epot.pop(0)
+    ekin.pop(0)
+    etot.pop(0)
 
 
     plt.plot(epot)
