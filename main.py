@@ -17,6 +17,14 @@ def run_program():
         choices=["EMT", "LennardJones"],
         help="Simulation method",
     )
+
+    parser.add_argument(
+        "visualisation_onoff",
+        type=str,
+        nargs = "?",
+        choices=["visualisation"]
+    )
+
     args = parser.parse_args()
 
     input_file_name = "input_data.toml"
@@ -25,7 +33,10 @@ def run_program():
 
     run_md(args, input_data)
 
+    if args.visualisation_onoff == "visualisation":
+        plotenergy()
+
+
 
 if __name__ == "__main__":
     run_program()
-    plotenergy()
