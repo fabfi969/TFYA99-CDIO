@@ -18,7 +18,6 @@ def calcenergy(a):  # store a reference to atoms in the definition.
 
 
 def run_md(args, input_data):
-
     # Set up a crystal
     atoms = FaceCenteredCubic(
         directions=input_data["atoms"]["directions"],
@@ -68,13 +67,38 @@ def run_md(args, input_data):
             "Etot = %.3feV" % (epot, ekin, ekin / (1.5 * units.kB), etot)
         )
 
+    f = open("output_data.txt", "w") # Open the target file. Overwrite existing file. 
+    epot_list, ekin_list, etot_list = ([] for i in range(3))
+    def saveenergydata(a=atoms):
+        epot, ekin, etot = calcenergy(a)
+        epot_list.append(epot)
+        ekin_list.append(ekin)
+        etot_list.append(etot)
+
+
+    def writetofile():
+        epot_list.insert(0, "epot")
+        ekin_list.insert(0, "ekin")
+        etot_list.insert(0, "etot")
+        print(epot_list, file=f)
+        print(ekin_list, file=f)
+        print(etot_list, file=f)
+        f.close
+        print("Simulation data saved to file: ", f.name )
+
+
+
     # Now run the dynamics
     dyn.attach(printenergy, interval=input_data["trajectory_interval"])
+    dyn.attach(saveenergydata, interval=input_data["trajectory_interval"])
+    saveenergydata()
     printenergy()
     dyn.run(1000)
+    writetofile()
 
 if __name__ == "__main__":
     input_file_name = "input_data.toml"
     create_input_file(input_file_name)
     input_data = toml.load(input_file_name)
     run_md("EMT", input_data)
+
