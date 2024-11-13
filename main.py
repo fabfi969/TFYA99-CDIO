@@ -21,7 +21,7 @@ def run_program():
     )
 
     parser.add_argument(
-        "-visualisation_onoff",
+        "-visualisation",
         nargs = "?",
         default = "off",
         type=str,
@@ -36,7 +36,7 @@ def run_program():
    
     run_md(args, input_data)
 
-    if args.visualisation_onoff == "on":
+    if args.visualisation == "on":
         output_file = "output_data.txt"
         plotenergy(output_file)
 
