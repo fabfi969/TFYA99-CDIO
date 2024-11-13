@@ -33,11 +33,12 @@ def run_program():
     input_file_name = "input_data.toml"
     create_input_file(input_file_name)
     input_data = toml.load(input_file_name)
-
+   
     run_md(args, input_data)
 
     if args.visualisation_onoff == "on":
-        plotenergy()
+        output_file = "output_data.txt"
+        plotenergy(output_file)
 
 
 

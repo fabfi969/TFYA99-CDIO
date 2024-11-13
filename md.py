@@ -1,6 +1,6 @@
 """Demonstrates molecular dynamics with constant energy. Is called by main"""
 
-from asap3 import EMT, LennardJones, Trajectory
+from asap3 import EMT, LennardJones, Trajectory # This line gives the terminal warnings.
 from ase import units
 from ase.lattice.cubic import FaceCenteredCubic
 from ase.md.velocitydistribution import MaxwellBoltzmannDistribution
@@ -15,6 +15,8 @@ def calcenergy(a):  # store a reference to atoms in the definition.
     ekin = a.get_kinetic_energy() / len(a)
     etot = epot + ekin
     return (epot, ekin, etot)
+
+    
 
 
 def run_md(args, input_data):
