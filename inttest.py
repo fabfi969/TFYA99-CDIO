@@ -62,13 +62,13 @@ class SystemTest(unittest.TestCase):
 
     def test_program_running_LennardJones_with_visualisation(self):
         with unittest.mock.patch('sys.argv', ["run_program.py", "-simulation_method", "LennardJones", \
-            "-visualisation_onoff", "on"]):
+            "-visualisation", "on"]):
             run_program()
             self.assertTrue(True)
 
     def test_program_running_EMT_with_visualisation(self):
         with unittest.mock.patch('sys.argv', ["run_program.py", "-simulation_method", "EMT", \
-            "-visualisation_onoff", "on"]):
+            "-visualisation", "on"]):
             run_program()
             self.assertTrue(True)
 
