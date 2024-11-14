@@ -28,6 +28,14 @@ Material simulation software description.
     ```bash
     pip install -r requirements.txt  # run when requirements.txt has been updated
 
+## How to run program
+
+1. Open terminal in program folder.
+2. type: python3 main.py
+This will run the code with EMT and without visualisation.
+3. To change simulation method, also type the following in terminal when running program: -simulation_method LennardJones
+4. To enable visualisation, also type the following when running program: -visualisation on
+
 ## Edit_README
 
 1. install the following extension for VSCode: Markdown Preview Enhanced by Yiyi Wang
