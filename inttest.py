@@ -72,6 +72,11 @@ class SystemTest(unittest.TestCase):
             run_program()
             self.assertTrue(True)
 
+    def test_program_running_without_arguments(self):
+        with unittest.mock.patch('sys.argv', ["run_program.py"]):
+            run_program()
+            self.assertTrue(True)
+
 
 
 
