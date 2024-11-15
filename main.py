@@ -12,17 +12,20 @@ def run_program():
     parser = argparse.ArgumentParser(description="Parses simulation parameters.")
 
     parser.add_argument(
-        "simulation_method",
+        "-simulation_method",
+        required = False,
+        default = "EMT",
         type=str,
         choices=["EMT", "LennardJones"],
         help="Simulation method",
     )
 
     parser.add_argument(
-        "visualisation_onoff",
+        "-visualisation",
+        required = False,
+        default = "off",
         type=str,
-        nargs = "?",
-        choices=["visualisation"]
+        choices=["on", "off"]
     )
 
     args = parser.parse_args()
@@ -33,8 +36,9 @@ def run_program():
 
     run_md(args, input_data)
 
-    if args.visualisation_onoff == "visualisation":
-        plotenergy()
+    if args.visualisation == "on":
+        output_file = "output_data.txt"
+        plotenergy(output_file)
 
 
 

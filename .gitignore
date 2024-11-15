@@ -3,3 +3,4 @@ venv/
 *.traj
 *.toml
 docs/_build/
+output_data.txt

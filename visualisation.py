@@ -3,8 +3,8 @@ warnings.filterwarnings("ignore", message = "Unable to import Axes3D")
 import matplotlib.pyplot as plt # This would give a warning without above line.
 import ast
 
-def plotenergy():    
-    f = open("output_data.txt", "r")
+def plotenergy(output_file):    
+    f = open(output_file, "r")
     epot = ast.literal_eval(f.readline())
     ekin = ast.literal_eval(f.readline())
     etot = ast.literal_eval(f.readline())
