@@ -13,7 +13,7 @@ def run_program():
 
     parser.add_argument(
         "-simulation_method",
-        nargs = "?",
+        required = False,
         default = "EMT",
         type=str,
         choices=["EMT", "LennardJones"],
@@ -22,7 +22,7 @@ def run_program():
 
     parser.add_argument(
         "-visualisation",
-        nargs = "?",
+        required = False,
         default = "off",
         type=str,
         choices=["on", "off"]
@@ -33,7 +33,7 @@ def run_program():
     input_file_name = "input_data.toml"
     create_input_file(input_file_name)
     input_data = toml.load(input_file_name)
-   
+
     run_md(args, input_data)
 
     if args.visualisation == "on":
