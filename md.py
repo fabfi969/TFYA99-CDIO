@@ -2,11 +2,14 @@
 
 from asap3 import EMT, LennardJones, Trajectory # This line gives the terminal warnings.
 from ase import units
-from ase.lattice.cubic import FaceCenteredCubic
+from ase.lattice.cubic import BodyCenteredCubic, BodyCenteredCubicFactory, Bravais, Diamond
+from ase.lattice.cubic import DiamondFactory, FaceCenteredCubic, FaceCenteredCubicFactory
+from ase.lattice.cubic import SimpleCubic, SimpleCubicFactory
 from ase.md.velocitydistribution import MaxwellBoltzmannDistribution
 from ase.md.verlet import VelocityVerlet
 
 from create_input_file import create_input_file
+from create_atoms_md import create_atoms
 import toml
 
 def calcenergy(a):  # store a reference to atoms in the definition.
@@ -16,21 +19,10 @@ def calcenergy(a):  # store a reference to atoms in the definition.
     etot = epot + ekin
     return (epot, ekin, etot)
 
-    
-
 
 def run_md(args, input_data):
     # Set up a crystal
-    atoms = FaceCenteredCubic(
-        directions=input_data["atoms"]["directions"],
-        symbol=input_data["atoms"]["materials"][0],
-        size=(
-            input_data["atoms"]["x_size"],
-            input_data["atoms"]["y_size"],
-            input_data["atoms"]["z_size"],
-        ),
-        pbc=input_data["atoms"]["pbc"],
-    )
+    atoms = create_atoms(input_data)
 
     # Describe the interatomic interactions with the Effective Medium Theory
     try:
@@ -69,7 +61,7 @@ def run_md(args, input_data):
             "Etot = %.3feV" % (epot, ekin, ekin / (1.5 * units.kB), etot)
         )
 
-    f = open("output_data.txt", "w") # Open the target file. Overwrite existing file. 
+    f = open("output_data.txt", "w") # Open the target file. Overwrite existing file.
     epot_list, ekin_list, etot_list = ([] for i in range(3))
     def saveenergydata(a=atoms):
         epot, ekin, etot = calcenergy(a)
@@ -103,4 +95,3 @@ if __name__ == "__main__":
     create_input_file(input_file_name)
     input_data = toml.load(input_file_name)
     run_md("EMT", input_data)
-

@@ -4,7 +4,6 @@ import toml
 from ase import units
 from ase.data import chemical_symbols
 
-
 def create_input_file(file_name):
     """
     function to create the TOML input file
@@ -14,12 +13,15 @@ def create_input_file(file_name):
 
     data = {
         "atoms": {
+            # 'BodyCenteredCubic', 'Diamond', 'FaceCenteredCubic', 'SimpleCubic'
+            "structure": "FaceCenteredCubic",
             "directions": [[1, 0, 0], [0, 1, 0], [0, 0, 1]],
             "materials": materials,
             "x_size": 10,
             "y_size": 10,
             "z_size": 10,
             "pbc": True,
+            "latticeconstant": 10.0,
         },
         "lennard_jones": {
             "atomic_number": [
