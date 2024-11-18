@@ -37,4 +37,6 @@ jobs:
     - name: Run the tests
       run: |
         python3 create_input_file.py
-        python3 inttest.py
+        python3 inttest_md.py
+        python3 unittest_md.py
+        python3 unittest_visualisation.py
