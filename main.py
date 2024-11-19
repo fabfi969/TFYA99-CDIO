@@ -9,6 +9,7 @@ from md import run_md
 from visualisation import plotenergy
 
 def run_program():
+    '''Uses argparse to provide the MD simulation with the simulation argument required'''
     parser = argparse.ArgumentParser(description="Parses simulation parameters.")
 
     parser.add_argument(
