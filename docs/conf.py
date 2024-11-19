@@ -23,9 +23,8 @@ release = '1.0.0'
     # "sphinx.ext.viewcode",
 
 extensions = [
-    "sphinx.ext.autodoc",
-    'sphinx.ext.autosummary',
-    'sphinx.ext.viewcode'
+    'sphinx.ext.viewcode',
+    'sphinxcontrib.apidoc',
     ]
 
 templates_path = ['_templates']
@@ -35,4 +34,10 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = 'sphinx_rtd_theme'
-html_static_path = ['_static']
+html_static_path = ['static']
+
+apidoc_module_dir = '../'
+apidoc_output_dir = 'reference'
+apidoc_excluded_paths = ["tests"]
+apidoc_separate_modules = True
+apidoc_template_dir = './templates'

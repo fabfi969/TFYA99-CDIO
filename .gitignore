@@ -2,5 +2,6 @@ __pycache__/
 venv/
 *.traj
 *.toml
-docs/_build/
+docs/build/
+docs/reference/
 output_data.txt
