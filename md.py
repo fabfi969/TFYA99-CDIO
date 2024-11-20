@@ -64,6 +64,7 @@ def run_md(args, input_data):
     f = open("output_data.txt", "w") # Open the target file. Overwrite existing file.
     epot_list, ekin_list, etot_list = ([] for i in range(3))
     def saveenergydata(a=atoms):
+        """Save the energies to lists."""
         epot, ekin, etot = calcenergy(a)
         epot_list.append(epot)
         ekin_list.append(ekin)
@@ -71,6 +72,7 @@ def run_md(args, input_data):
 
 
     def writetofile():
+        """Save simulation data to file."""
         epot_list.insert(0, "epot")
         ekin_list.insert(0, "ekin")
         etot_list.insert(0, "etot")
