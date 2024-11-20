@@ -8,7 +8,21 @@ from ase.parallel import parprint, world
 from ase import units
 import time, os, numpy
 from warnings import simplefilter
+from main import run_program
 
+# Supress some warnings that get very frequent in parallel output
+simplefilter(action='ignore', category=FutureWarning)
+
+#cpulayout = (2, 2, 2)    # 8 cores in 2*2*2 grid
+cpulayout = "auto"       # Just figure it out...
+
+# Print Asap version
+if world.rank == 0:
+    print_version(1)
+
+run_program()
+
+""" #
 # Supress some warnings that get very frequent in parallel output
 simplefilter(action='ignore', category=FutureWarning)
 
@@ -38,7 +52,7 @@ dyn.attach(traj.write, interval=100)
 
 step = 0
 def printenergy(a=atoms):
-    """Function to print the potential, kinetic and total energy"""
+    #Function to print the potential, kinetic and total energy
     global step
     epot = a.get_potential_energy()
     ekin = a.get_kinetic_energy()
@@ -54,3 +68,4 @@ def printenergy(a=atoms):
 dyn.attach(printenergy, interval=100)
 printenergy()
 dyn.run(1000)
+"""
