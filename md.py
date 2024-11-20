@@ -8,6 +8,7 @@ from ase.lattice.cubic import SimpleCubic, SimpleCubicFactory
 from ase.md.velocitydistribution import MaxwellBoltzmannDistribution
 from ase.md.verlet import VelocityVerlet
 from ase.md import Andersen
+import numpy as np
 
 
 from create_input_file import create_input_file
@@ -25,6 +26,26 @@ def calctemperature(a):
     """Function to calculate temperature."""
     temperature = a.get_temperature()
     return temperature
+
+def calcpressure(a):
+    """Function to calculate internal pressure."""
+
+    # Get kinetic energy
+    _, ekin, _ = calcenergy(a)
+
+    # Get forces and positions.
+    forces = a.get_forces()
+    positions = a.get_positions()
+
+    # Calculate the sum in formula.
+    sum_of_forces_and_positions = np.sum(forces * positions)
+
+    # Get volume.
+    volume = a.get_volume()
+
+    # Calculate pressure using formula from lecture.
+    pressure = (2 * ekin * len(a) + sum_of_forces_and_positions) / (3 * volume)
+    return pressure
 
 
 def run_md(args, input_data):
@@ -78,7 +99,7 @@ def run_md(args, input_data):
         )
 
     f = open("output_data.txt", "w") # Open the target file. Overwrite existing file.
-    epot_list, ekin_list, etot_list, temperature_list = ([] for i in range(4))
+    epot_list, ekin_list, etot_list, temperature_list, pressure_list = ([] for i in range(5))
     def savedata(a=atoms):
         """Save simulation data to lists."""
         epot, ekin, etot = calcenergy(a)
@@ -87,6 +108,8 @@ def run_md(args, input_data):
         etot_list.append(etot)
         temperature = calctemperature(a)
         temperature_list.append(temperature)
+        pressure = calcpressure(a)
+        pressure_list.append(pressure)
 
 
     def writetofile():
@@ -95,10 +118,12 @@ def run_md(args, input_data):
         ekin_list.insert(0, "ekin")
         etot_list.insert(0, "etot")
         temperature_list.insert(0, "temperature")
+        pressure_list.insert(0, "pressure")
         print(epot_list, file=f)
         print(ekin_list, file=f)
         print(etot_list, file=f)
         print(temperature_list, file=f)
+        print(pressure_list, file=f)
         f.close
         print("Simulation data saved to file: ", f.name )
 
