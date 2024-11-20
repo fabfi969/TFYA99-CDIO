@@ -7,6 +7,8 @@ from ase.lattice.cubic import DiamondFactory, FaceCenteredCubic, FaceCenteredCub
 from ase.lattice.cubic import SimpleCubic, SimpleCubicFactory
 from ase.md.velocitydistribution import MaxwellBoltzmannDistribution
 from ase.md.verlet import VelocityVerlet
+from ase.md import Andersen
+
 
 from create_input_file import create_input_file
 from create_atoms_md import create_atoms
@@ -46,9 +48,18 @@ def run_md(args, input_data):
         temperature_K=input_data["temperature_K"]
     )
 
-    # We want to run MD with constant energy using the VelocityVerlet
-    # algorithm.
-    dyn = VelocityVerlet(atoms, input_data["time_step"])
+    try:
+        ensemble_mode = args.ensemble_mode
+    except AttributeError:
+        ensemble_mode = "energy"
+    if ensemble_mode == "energy":
+        # We want to run MD with constant energy using the VelocityVerlet
+        # algorithm.
+        dyn = VelocityVerlet(atoms, input_data["time_step"])
+    elif ensemble_mode == "temperature":
+        # Run MD with constant temperature instead using Andersen thermostat.
+        dyn = Andersen(atoms, input_data["time_step"], input_data["temperature_K"], 1 * units.fs)
+
     traj = Trajectory(input_data["trajectory_file_name"], "w", atoms)
     # TODO check what next line does
     dyn.attach(traj.write, interval=input_data["trajectory_interval"])
