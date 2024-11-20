@@ -20,13 +20,22 @@ def run_program():
         choices=["EMT", "LennardJones"],
         help="Simulation method",
     )
-
     parser.add_argument(
         "-visualisation",
         required = False,
         default = "off",
         type=str,
-        choices=["on", "off"]
+        choices=["on", "off"],
+        help="on if the graphs from the simulated data is to be plotted, \
+off if not which is default",
+    )
+    parser.add_argument(
+        "-cif",
+        required = False,
+        default = '',
+        type=str,
+        help="The path to the CIF-file where the specifications of the \
+to be simulated atoms are defined",
     )
 
     args = parser.parse_args()
@@ -40,8 +49,6 @@ def run_program():
     if args.visualisation == "on":
         output_file = "output_data.txt"
         plotenergy(output_file)
-
-
 
 if __name__ == "__main__":
     run_program()
