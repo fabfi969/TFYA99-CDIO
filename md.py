@@ -21,6 +21,11 @@ def calcenergy(a):  # store a reference to atoms in the definition.
     etot = epot + ekin
     return (epot, ekin, etot)
 
+def calctemperature(a):
+    """Function to calculate temperature."""
+    temperature = a.get_temperature()
+    return temperature
+
 
 def run_md(args, input_data):
     # Set up a crystal
@@ -73,13 +78,15 @@ def run_md(args, input_data):
         )
 
     f = open("output_data.txt", "w") # Open the target file. Overwrite existing file.
-    epot_list, ekin_list, etot_list = ([] for i in range(3))
-    def saveenergydata(a=atoms):
-        """Save the energies to lists."""
+    epot_list, ekin_list, etot_list, temperature_list = ([] for i in range(4))
+    def savedata(a=atoms):
+        """Save simulation data to lists."""
         epot, ekin, etot = calcenergy(a)
         epot_list.append(epot)
         ekin_list.append(ekin)
         etot_list.append(etot)
+        temperature = calctemperature(a)
+        temperature_list.append(temperature)
 
 
     def writetofile():
@@ -87,9 +94,11 @@ def run_md(args, input_data):
         epot_list.insert(0, "epot")
         ekin_list.insert(0, "ekin")
         etot_list.insert(0, "etot")
+        temperature_list.insert(0, "temperature")
         print(epot_list, file=f)
         print(ekin_list, file=f)
         print(etot_list, file=f)
+        print(temperature_list, file=f)
         f.close
         print("Simulation data saved to file: ", f.name )
 
@@ -97,8 +106,8 @@ def run_md(args, input_data):
 
     # Now run the dynamics
     dyn.attach(printenergy, interval=input_data["trajectory_interval"])
-    dyn.attach(saveenergydata, interval=input_data["trajectory_interval"])
-    saveenergydata()
+    dyn.attach(savedata, interval=input_data["trajectory_interval"])
+    savedata()
     printenergy()
     dyn.run(1000)
     writetofile()
