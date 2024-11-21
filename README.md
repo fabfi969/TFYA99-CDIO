@@ -44,5 +44,5 @@ This will run the code with EMT and without visualisation.
 
 ## Run on supercomputer
 1. Run 'sbatch super_comp_script.q'
-2. Output will have name on format slurm-xxxxxxx.out
+2. Output file will have name on format slurm-xxxxxxx.out
 3. If code does not run properly, check if requirments are corectly installed, see Installation.
