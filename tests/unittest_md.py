@@ -24,10 +24,10 @@ class MdTests(unittest.TestCase):
         a, b, c = calcenergy(atoms)
         self.assertTrue(a + b == c)
     def test_invalid_materials_EMT(self):
-        self.assertTrue(not(invalid_materials_EMT(['Al', 'Cu', 'Ag', 'Au', 'Ni', 'Pd', 'Pt'])))
-        self.assertTrue(not(invalid_materials_EMT(['Al', 'Cu', 'Ag'])))
-        self.assertTrue(invalid_materials_EMT(['Al', 'Cu', 'Ag', 'H']))
-        self.assertTrue(invalid_materials_EMT(['H']))
+        self.assertFalse(invalid_materials_EMT(['Al', 'Cu', 'Ag', 'Au', 'Ni', 'Pd', 'Pt'])[0])
+        self.assertFalse(invalid_materials_EMT(['Al', 'Cu', 'Ag'])[0])
+        self.assertTrue(invalid_materials_EMT(['Al', 'Cu', 'Ag', 'H'])[0])
+        self.assertTrue(invalid_materials_EMT(['H'])[0])
 
 
 class InputFileTests(unittest.TestCase):
