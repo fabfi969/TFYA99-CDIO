@@ -14,6 +14,7 @@ from main import run_program
 from md import run_md
 
 class inputFileTests(unittest.TestCase):
+  
     def test_create_input_test_file(self):
         input_file_name = "test_file.toml"
         create_input_file(input_file_name)
@@ -40,7 +41,6 @@ class inputFileTests(unittest.TestCase):
                 args = arguments()
                 run_md(args, input_data)
                 self.assertTrue(True)
-
 
 class SystemTest(unittest.TestCase):
     def test_program_running_EMT(self):
