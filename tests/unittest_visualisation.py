@@ -1,8 +1,9 @@
 import unittest
 import sys
 import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from visualisation import plotenergy
-import matplotlib.pyplot as plt 
+import matplotlib.pyplot as plt
 
 class VisualisationTests(unittest.TestCase):
 
@@ -24,18 +25,17 @@ class VisualisationTests(unittest.TestCase):
     def test_nr_of_data_types(self):
         with open("temp_testfile.txt", "r") as f:
             lines = f.readlines()
-            self.assertEqual(len(lines), 3) 
+            self.assertEqual(len(lines), 3)
 
     def test_plot_created(self):
         plotenergy("temp_testfile.txt")
         fig = plt.gcf()
         self.assertIsNotNone(fig)
-        
-        
+
+
 
 if __name__ == "__main__":
     tests = unittest.TestLoader().loadTestsFromTestCase(VisualisationTests)
     testsuite = unittest.TestSuite([tests])
     result = unittest.TextTestRunner(verbosity=0).run(testsuite)
     sys.exit(not result.wasSuccessful())
-    
