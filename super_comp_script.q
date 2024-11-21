@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-#SBATCH -J testjob
+#SBATCH -J CDIO-job
 #SBATCH -A liu-compute-2024-33
 #SBATCH --reservation devel
 #SBATCH -t 00:05:00
@@ -12,8 +12,13 @@ export NSC_MODULE_SILENT=1
 export OPENBLAS_NUM_THREADS=1
 export MKL_NUM_THREADS=1
 export NUMEXPR_NUM_THREADS=1
-export OMP_NUM_THREADS=1
+export OMP_NUM_THREADS1
 
-time mpprun python3 supercomp_main.py
+for i in {1..3}
+do
+    python3 main.py
+done
+
+#time mpprun python3 md_parallel.py
 
 echo "job completed"
