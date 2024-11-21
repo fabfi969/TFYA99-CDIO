@@ -29,6 +29,14 @@ def run_program():
         choices=["on", "off"]
     )
 
+    parser.add_argument(
+        "-ensemble_mode",
+        required = False,
+        default = "energy",
+        type = str,
+        choices = ["energy", "temperature"]
+    )
+
     args = parser.parse_args()
 
     input_file_name = "input_data.toml"

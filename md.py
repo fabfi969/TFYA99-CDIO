@@ -7,6 +7,9 @@ from ase.lattice.cubic import DiamondFactory, FaceCenteredCubic, FaceCenteredCub
 from ase.lattice.cubic import SimpleCubic, SimpleCubicFactory
 from ase.md.velocitydistribution import MaxwellBoltzmannDistribution
 from ase.md.verlet import VelocityVerlet
+from ase.md import Andersen
+import numpy as np
+
 
 from create_input_file import create_input_file
 from create_atoms_md import create_atoms
@@ -18,6 +21,31 @@ def calcenergy(a):  # store a reference to atoms in the definition.
     ekin = a.get_kinetic_energy() / len(a)
     etot = epot + ekin
     return (epot, ekin, etot)
+
+def calctemperature(a):
+    """Function to calculate temperature."""
+    temperature = a.get_temperature()
+    return temperature
+
+def calcpressure(a):
+    """Function to calculate internal pressure."""
+
+    # Get kinetic energy
+    _, ekin, _ = calcenergy(a)
+
+    # Get forces and positions.
+    forces = a.get_forces()
+    positions = a.get_positions()
+
+    # Calculate the sum in formula.
+    sum_of_forces_and_positions = np.sum(forces * positions)
+
+    # Get volume.
+    volume = a.get_volume()
+
+    # Calculate pressure using formula from lecture.
+    pressure = (2 * ekin * len(a) + sum_of_forces_and_positions) / (3 * volume)
+    return pressure
 
 
 def run_md(args, input_data):
@@ -46,9 +74,18 @@ def run_md(args, input_data):
         temperature_K=input_data["temperature_K"]
     )
 
-    # We want to run MD with constant energy using the VelocityVerlet
-    # algorithm.
-    dyn = VelocityVerlet(atoms, input_data["time_step"])
+    try:
+        ensemble_mode = args.ensemble_mode
+    except AttributeError:
+        ensemble_mode = "energy"
+    if ensemble_mode == "energy":
+        # We want to run MD with constant energy using the VelocityVerlet
+        # algorithm.
+        dyn = VelocityVerlet(atoms, input_data["time_step"])
+    elif ensemble_mode == "temperature":
+        # Run MD with constant temperature instead using Andersen thermostat.
+        dyn = Andersen(atoms, input_data["time_step"], input_data["temperature_K"], 1 * units.fs)
+
     traj = Trajectory(input_data["trajectory_file_name"], "w", atoms)
     # TODO check what next line does
     dyn.attach(traj.write, interval=input_data["trajectory_interval"])
@@ -62,21 +99,31 @@ def run_md(args, input_data):
         )
 
     f = open("output_data.txt", "w") # Open the target file. Overwrite existing file.
-    epot_list, ekin_list, etot_list = ([] for i in range(3))
-    def saveenergydata(a=atoms):
+    epot_list, ekin_list, etot_list, temperature_list, pressure_list = ([] for i in range(5))
+    def savedata(a=atoms):
+        """Save simulation data to lists."""
         epot, ekin, etot = calcenergy(a)
         epot_list.append(epot)
         ekin_list.append(ekin)
         etot_list.append(etot)
+        temperature = calctemperature(a)
+        temperature_list.append(temperature)
+        pressure = calcpressure(a)
+        pressure_list.append(pressure)
 
 
     def writetofile():
+        """Save simulation data to file."""
         epot_list.insert(0, "epot")
         ekin_list.insert(0, "ekin")
         etot_list.insert(0, "etot")
+        temperature_list.insert(0, "temperature")
+        pressure_list.insert(0, "pressure")
         print(epot_list, file=f)
         print(ekin_list, file=f)
         print(etot_list, file=f)
+        print(temperature_list, file=f)
+        print(pressure_list, file=f)
         f.close
         print("Simulation data saved to file: ", f.name )
 
@@ -84,8 +131,8 @@ def run_md(args, input_data):
 
     # Now run the dynamics
     dyn.attach(printenergy, interval=input_data["trajectory_interval"])
-    dyn.attach(saveenergydata, interval=input_data["trajectory_interval"])
-    saveenergydata()
+    dyn.attach(savedata, interval=input_data["trajectory_interval"])
+    savedata()
     printenergy()
     dyn.run(1000)
     writetofile()

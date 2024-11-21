@@ -32,10 +32,20 @@ Material simulation software description.
 ## How to run program
 
 1. Open terminal in program folder.
-2. type: python3 main.py
-This will run the code with EMT and without visualisation.
-3. To change simulation method, also type the following in terminal when running program: -simulation_method LennardJones
-4. To enable visualisation, also type the following when running program: -visualisation on
+2. Type: 
+
+        python3 main.py
+    This will run the code with EMT, without visualisation and in constant energy mode.
+3.  There are a few optional flags that can be set. Those should be typed seperated by a space after main.py. Only one value for each flag can be set. The values are seperated by "/" below. The flags are the following:
+
+        -simulation_method EMT/LennardJones
+    This sets the method that should be used for the integrator.
+
+        -visualisation on/off
+    This sets if the visualisation is turned on or off.
+
+        -ensemble_mode energy/temperature
+    This sets the ensemble: constant energy (NVE) or constant temperature (NVT).
 
 ## Edit README
 
