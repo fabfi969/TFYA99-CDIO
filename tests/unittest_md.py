@@ -1,14 +1,17 @@
 """script for unit testing the code"""
 
 import sys
+import os
 import unittest
 import toml
 
 from asap3 import EMT
 from ase.lattice.cubic import FaceCenteredCubic
 
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from md import calcenergy
 from create_input_file import create_input_file
+from create_atoms_md import invalid_materials_EMT
 
 atoms = FaceCenteredCubic(
     directions=[
@@ -20,6 +23,12 @@ class MdTests(unittest.TestCase):
     def test_consistent_total_energy(self):
         a, b, c = calcenergy(atoms)
         self.assertTrue(a + b == c)
+    def test_invalid_materials_EMT(self):
+        self.assertFalse(invalid_materials_EMT(['Al', 'Cu', 'Ag', 'Au', 'Ni', 'Pd', 'Pt'])[0])
+        self.assertFalse(invalid_materials_EMT(['Al', 'Cu', 'Ag'])[0])
+        self.assertTrue(invalid_materials_EMT(['Al', 'Cu', 'Ag', 'H'])[0])
+        self.assertTrue(invalid_materials_EMT(['H'])[0])
+
 
 class InputFileTests(unittest.TestCase):
     def test_check_input_file_types(self):
