@@ -69,6 +69,11 @@ class SystemTest(unittest.TestCase):
         with unittest.mock.patch('sys.argv', ["run_program.py"]):
             run_program()
             self.assertTrue(True)
+        
+    def test_program_with_thermostat(self):
+        with unittest.mock.patch('sys.argv', ["run_program.py", "-ensemble_mode", "temperature"]):
+            run_program()
+            self.assertTrue(True)
 
     def test_program_running_with_cif(self):
         with unittest.mock.patch('sys.argv', ["run_program.py" ,"-cif", "Al.cif"]):

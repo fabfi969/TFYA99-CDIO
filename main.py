@@ -38,6 +38,14 @@ off if not which is default",
 to be simulated atoms are defined",
     )
 
+    parser.add_argument(
+        "-ensemble_mode",
+        required = False,
+        default = "energy",
+        type = str,
+        choices = ["energy", "temperature"]
+    )
+
     args = parser.parse_args()
 
     input_file_name = "input_data.toml"
