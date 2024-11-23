@@ -1,0 +1,7 @@
+supercomp\_main module
+======================
+
+.. automodule:: supercomp_main
+   :members:
+   :undoc-members:
+   :show-inheritance:

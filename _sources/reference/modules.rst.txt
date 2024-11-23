@@ -9,4 +9,5 @@ workspace
    create_input_file
    main
    md
+   supercomp_main
    visualisation
