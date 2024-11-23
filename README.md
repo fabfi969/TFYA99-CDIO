@@ -23,7 +23,7 @@ Material simulation software description.
     ```bash
     python3 -m venv venv  # only has to be run once
     source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-3. Make sure that your Python version is at least Python 3.10.12 with
+3. Make sure that your Python version is at least Python 3.9.18 with
     ```bash
     python3 -V
 4. Install the required dependencies:
