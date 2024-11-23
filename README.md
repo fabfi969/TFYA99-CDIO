@@ -9,6 +9,7 @@ Material simulation software description.
   - [Features](#features)
   - [Installation](#installation)
   - [How to run program](#how-to-run-program)
+  - [Run on supercomputer](#run-on-supercomputer)
   - [Edit README](#edit-readme)
 
 ## Features
@@ -47,12 +48,13 @@ Material simulation software description.
         -ensemble_mode energy/temperature
     This sets the ensemble: constant energy (NVE) or constant temperature (NVT).
 
-## Edit README
-
-1. open README
-3. use 'Ctrl+k v' to see the compiled file in VSCode
-
 ## Run on supercomputer
 1. Run 'sbatch super_comp_script.q'
 2. Output file will have name on format slurm-xxxxxxx.out
 3. If code does not run properly, check if requirments are corectly installed, see Installation.
+
+## Edit README
+1. open README
+3. use 'Ctrl+k v' to see the compiled file in VSCode
+
+
