@@ -3,6 +3,7 @@
 import argparse
 
 import toml
+import os
 
 from create_input_file import create_input_file
 from md import run_md
@@ -46,10 +47,20 @@ to be simulated atoms are defined",
         choices = ["energy", "temperature"]
     )
 
+    parser.add_argument(
+        "-lattice_constant",
+        required = False,
+        default = "-1.0",
+        type = float,
+    )
+
     args = parser.parse_args()
 
     input_file_name = "input_data.toml"
-    create_input_file(input_file_name)
+    if os.path.isfile(input_file_name):
+        pass
+    else:
+        create_input_file(input_file_name)
     input_data = toml.load(input_file_name)
 
     run_md(args, input_data)

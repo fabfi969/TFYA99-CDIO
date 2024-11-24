@@ -50,6 +50,14 @@ def calcpressure(a):
 def run_md(args, input_data):
     '''runs the molecular dynamics simulation'''
 
+    #command line override of lattice constant
+    if args.lattice_constant != -1:
+        input_data['atoms']['latticeconstant'] = args.lattice_constant
+        print("not -1")
+    else:
+        print("-1")
+    print(input_data['atoms']['latticeconstant'])
+
     # Set up a crystal
     if args.cif == '':
         atoms = create_atoms(input_data)
