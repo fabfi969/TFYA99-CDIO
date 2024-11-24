@@ -13,38 +13,8 @@ import numpy as np
 from create_input_file import create_input_file
 from create_atoms_md import invalid_materials_EMT, create_atoms
 import toml
-
-def calcenergy(a):  # store a reference to atoms in the definition.
-    '''Function to calculate the potential, kinetic and total energy.'''
-    epot = a.get_potential_energy() / len(a)
-    ekin = a.get_kinetic_energy() / len(a)
-    etot = epot + ekin
-    return (epot, ekin, etot)
-
-def calctemperature(a):
-    '''Function to calculate temperature.'''
-    temperature = a.get_temperature()
-    return temperature
-
-def calcpressure(a):
-    '''Function to calculate internal pressure.'''
-
-    # Get kinetic energy
-    _, ekin, _ = calcenergy(a)
-
-    # Get forces and positions.
-    forces = a.get_forces()
-    positions = a.get_positions()
-
-    # Calculate the sum in formula.
-    sum_of_forces_and_positions = np.sum(forces * positions)
-
-    # Get volume.
-    volume = a.get_volume()
-
-    # Calculate pressure using formula from lecture.
-    pressure = (2 * ekin * len(a) + sum_of_forces_and_positions) / (3 * volume)
-    return pressure
+from calculate_properties import calcenergy, calctemperature, calcpressure
+from save_data import writetofile
 
 
 def run_md(args, input_data):
@@ -80,7 +50,6 @@ the metals Al, Cu, Ag, Au, Ni, Pd and Pt.')
         atoms,
         temperature_K=input_data['temperature_K']
     )
-
 
     try:
         ensemble_mode = args.ensemble_mode
@@ -118,23 +87,6 @@ the metals Al, Cu, Ag, Au, Ni, Pd and Pt.')
         temperature_list.append(temperature)
         pressure = calcpressure(a)
         pressure_list.append(pressure)
-
-
-    def writetofile():
-        """Save simulation data to file."""
-        epot_list.insert(0, 'epot')
-        ekin_list.insert(0, 'ekin')
-        etot_list.insert(0, 'etot')
-        temperature_list.insert(0, 'temperature')
-        pressure_list.insert(0, 'pressure')
-        print(epot_list, file=f)
-        print(ekin_list, file=f)
-        print(etot_list, file=f)
-        print(temperature_list, file=f)
-        print(pressure_list, file=f)
-        f.close
-        print('Simulation data saved to file: ', f.name )
-
 
 
     # Now run the dynamics
