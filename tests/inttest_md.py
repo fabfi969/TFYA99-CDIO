@@ -37,6 +37,7 @@ class inputFileTests(unittest.TestCase):
                 input_data['atoms']['structure'] = structure
                 class arguments:
                     simulation_method = simul_method
+                    lattice_constant = -1
                     cif = ''
                 args = arguments()
                 run_md(args, input_data)
