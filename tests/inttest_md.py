@@ -7,6 +7,7 @@ import unittest
 
 import toml
 
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from unittest.mock import patch
 from create_input_file import create_input_file
 from main import run_program
@@ -32,9 +33,14 @@ class inputFileTests(unittest.TestCase):
 
         structure_list = ['BodyCenteredCubic', 'Diamond', 'FaceCenteredCubic', 'SimpleCubic']
         for structure in structure_list:
-            for simulation_method in ['EMT', 'LennardJones']:
+            for simul_method in ['EMT', 'LennardJones']:
                 input_data['atoms']['structure'] = structure
-                run_md(simulation_method, input_data)
+                class arguments:
+                    simulation_method = simul_method
+                    lattice_constant = -1
+                    cif = ''
+                args = arguments()
+                run_md(args, input_data)
                 self.assertTrue(True)
 
 class SystemTest(unittest.TestCase):
@@ -62,6 +68,16 @@ class SystemTest(unittest.TestCase):
 
     def test_program_running_without_arguments(self):
         with unittest.mock.patch('sys.argv', ["run_program.py"]):
+            run_program()
+            self.assertTrue(True)
+        
+    def test_program_with_thermostat(self):
+        with unittest.mock.patch('sys.argv', ["run_program.py", "-ensemble_mode", "temperature"]):
+            run_program()
+            self.assertTrue(True)
+
+    def test_program_running_with_cif(self):
+        with unittest.mock.patch('sys.argv', ["run_program.py" ,"-cif", "Al.cif"]):
             run_program()
             self.assertTrue(True)
 
