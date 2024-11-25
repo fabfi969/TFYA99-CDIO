@@ -1,0 +1,7 @@
+calculate\_properties module
+============================
+
+.. automodule:: calculate_properties
+   :members:
+   :undoc-members:
+   :show-inheritance:

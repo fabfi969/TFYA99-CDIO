@@ -5,9 +5,11 @@ workspace
    :maxdepth: 4
 
    alloy
+   calculate_properties
    create_atoms_md
    create_input_file
    main
    md
+   save_data
    supercomp_main
    visualisation
