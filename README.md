@@ -9,6 +9,7 @@ Material simulation software description.
   - [Features](#features)
   - [Installation](#installation)
   - [How to run program](#how-to-run-program)
+  - [Run on supercomputer](#run-on-supercomputer)
   - [Edit README](#edit-readme)
 
 ## Features
@@ -22,7 +23,7 @@ Material simulation software description.
     ```bash
     python3 -m venv venv  # only has to be run once
     source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-3. Make sure that your Python version is at least Python 3.10.12 with
+3. Make sure that your Python version is at least Python 3.9.18 with
     ```bash
     python3 -V
 4. Install the required dependencies:
@@ -47,7 +48,17 @@ Material simulation software description.
         -ensemble_mode energy/temperature
     This sets the ensemble: constant energy (NVE) or constant temperature (NVT).
 
-## Edit README
+        -lattice_constant float
+    This overrides the lattice constant set in the input file.
 
+## Run on supercomputer
+1. Run 'sbatch super_comp_script.q'
+2. Simulation method, ensable mode, etc. can be modified by appending the corresponding option to 'python3 main.py' in the same way as when program is run in terminal, see [How to run program](#how-to-run-program). 
+3. Output file will have name on format slurm-xxxxxxx.out
+4. If code does not run properly, check if requirments are corectly installed, see Installation.
+
+## Edit README
 1. open README
 3. use 'Ctrl+k v' to see the compiled file in VSCode
+
+
