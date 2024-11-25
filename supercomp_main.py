@@ -10,17 +10,18 @@ import time, os, numpy
 from warnings import simplefilter
 from main import run_program
 
-# Supress some warnings that get very frequent in parallel output
-simplefilter(action='ignore', category=FutureWarning)
+def main():
+    # Supress some warnings that get very frequent in parallel output
+    simplefilter(action='ignore', category=FutureWarning)
 
-#cpulayout = (2, 2, 2)    # 8 cores in 2*2*2 grid
-cpulayout = "auto"       # Just figure it out...
+    #cpulayout = (2, 2, 2)    # 8 cores in 2*2*2 grid
+    cpulayout = "auto"       # Just figure it out...
 
-# Print Asap version
-if world.rank == 0:
-    print_version(1)
+    # Print Asap version
+    if world.rank == 0:
+        print_version(1)
 
-run_program()
+    run_program()
 
 """ #
 # Supress some warnings that get very frequent in parallel output
@@ -69,3 +70,6 @@ dyn.attach(printenergy, interval=100)
 printenergy()
 dyn.run(1000)
 """
+
+if __name__ == '__main__':
+    main()
