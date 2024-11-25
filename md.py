@@ -7,12 +7,21 @@ from ase.lattice.cubic import DiamondFactory, FaceCenteredCubic, FaceCenteredCub
 from ase.lattice.cubic import SimpleCubic, SimpleCubicFactory
 from ase.md.velocitydistribution import MaxwellBoltzmannDistribution
 from ase.md.verlet import VelocityVerlet
+from ase.build import bulk
+from ase.build.tools import sort
+from ase.build.tools import cut, stack
 from ase.io import read
 from ase.md import Andersen
 import numpy as np
 from create_input_file import create_input_file
 from create_atoms_md import invalid_materials_EMT, create_atoms
 import toml
+from random import random
+from alloy import Interface
+
+
+
+
 
 def calcenergy(a):  # store a reference to atoms in the definition.
     '''Function to calculate the potential, kinetic and total energy.'''
@@ -20,6 +29,30 @@ def calcenergy(a):  # store a reference to atoms in the definition.
     ekin = a.get_kinetic_energy() / len(a)
     etot = epot + ekin
     return (epot, ekin, etot)
+
+def TwoBlocks(mat1, structure1, a1, mat2, structure2, a2, size, alloy_ratio = 0, alloy = "N"):
+    #Generate an two layers of atoms pressed up against each other
+    bulk1 = bulk(mat1,structure1, a=a1) * (2*size, 2*size, size)
+    if alloy != 0:
+        bulk2 = random_alloys(mat2,structure2, a2, alloy, alloy_ratio, size)
+    else:
+        bulk2 = bulk(mat2,structure2, a=a2) * (2*size, 2*size, size)
+    interface = stack(bulk1, bulk2,maxstrain=100)
+    #view(interface)
+    return interface
+
+
+def random_alloys(mat1,structure1,a1,mat2,atomic_percent,size):
+    #generates a single block of material with a randomly replaced atoms.
+    tot_at = 4*size*size*size
+    bulk1 = bulk(mat1,structure1, a=a1) * (2*size, 2*size, size)
+    next = 0
+    while next < tot_at:
+        if random() < atomic_percent:
+            bulk1.symbols[next]=mat2
+        next += 1
+    return(bulk1)
+    #view(bulk1)
 
 def calctemperature(a):
     '''Function to calculate temperature.'''
@@ -46,7 +79,6 @@ def calcpressure(a):
     pressure = (2 * ekin * len(a) + sum_of_forces_and_positions) / (3 * volume)
     return pressure
 
-
 def run_md(args, input_data):
     '''runs the molecular dynamics simulation'''
 
@@ -55,6 +87,8 @@ def run_md(args, input_data):
         input_data['atoms']['latticeconstant'] = args.lattice_constant
 
     # Set up a crystal
+    # Sim = Interface("Cu","fcc",2.54,"Au","fcc",3.4,4)
+    # atoms = Sim.get_atoms()
     if args.cif == '':
         atoms = create_atoms(input_data)
     else:
@@ -138,6 +172,7 @@ the metals Al, Cu, Ag, Au, Ni, Pd and Pt.')
         print(pressure_list, file=f)
         f.close
         print('Simulation data saved to file: ', f.name )
+
 
 
 
