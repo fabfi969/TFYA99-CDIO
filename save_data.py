@@ -1,7 +1,5 @@
-def writetofile():
+def writetofile(f, epot_list, ekin_list, etot_list, temperature_list, pressure_list):
     """Save simulation data to file."""
-    f = open('output_data.txt', 'w') # Open the target file. Overwrite existing file.
-    epot_list, ekin_list, etot_list, temperature_list, pressure_list = ([] for i in range(5))
     epot_list.insert(0, 'epot')
     ekin_list.insert(0, 'ekin')
     etot_list.insert(0, 'etot')
