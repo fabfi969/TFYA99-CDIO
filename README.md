@@ -48,6 +48,9 @@ Material simulation software description.
         -ensemble_mode energy/temperature
     This sets the ensemble: constant energy (NVE) or constant temperature (NVT).
 
+        -lattice_constant float
+    This overrides the lattice constant set in the input file.
+
 ## Run on supercomputer
 1. Run 'sbatch super_comp_script.q'
 2. Simulation method, ensable mode, etc. can be modified by appending the corresponding option to 'python3 main.py' in the same way as when program is run in terminal, see [How to run program](#how-to-run-program). 
