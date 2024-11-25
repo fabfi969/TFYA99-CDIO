@@ -25,55 +25,54 @@ def invalid_materials_EMT(materials_list):
 def create_atoms(input_data):
     '''function which creates the atoms object to be used in the md simulation'''
     structure = input_data['atoms']['structure']
-    match structure:
-            case 'BodyCenteredCubic':
-                return  BodyCenteredCubic(
-                            directions=input_data['atoms']['directions'],
-                            symbol=input_data['atoms']['materials'][0],
-                            size=(
-                                input_data['atoms']['x_size'],
-                                input_data['atoms']['y_size'],
-                                input_data['atoms']['z_size'],
-                                ),
-                            pbc=input_data['atoms']['pbc'],
-                            latticeconstant=input_data['atoms']['latticeconstant'],
-                            )
-            case 'Diamond':
-                return  Diamond(
-                            directions=input_data['atoms']['directions'],
-                            symbol=input_data['atoms']['materials'][0],
-                            size=(
-                                input_data['atoms']['x_size'],
-                                input_data['atoms']['y_size'],
-                                input_data['atoms']['z_size'],
-                                ),
-                            pbc=input_data['atoms']['pbc'],
-                            latticeconstant=input_data['atoms']['latticeconstant'],
-                            )
-            case 'FaceCenteredCubic':
-                return  FaceCenteredCubic(
-                            directions=input_data['atoms']['directions'],
-                            symbol=input_data['atoms']['materials'][0],
-                            size=(
-                                input_data['atoms']['x_size'],
-                                input_data['atoms']['y_size'],
-                                input_data['atoms']['z_size'],
-                                ),
-                            pbc=input_data['atoms']['pbc'],
-                            latticeconstant=input_data['atoms']['latticeconstant'],
-                            )
-            case 'SimpleCubic':
-                return  SimpleCubic(
-                            directions=input_data['atoms']['directions'],
-                            symbol=input_data['atoms']['materials'][0],
-                            size=(
-                                input_data['atoms']['x_size'],
-                                input_data['atoms']['y_size'],
-                                input_data['atoms']['z_size'],
-                                ),
-                            pbc=input_data['atoms']['pbc'],
-                            latticeconstant=input_data['atoms']['latticeconstant'],
-                            )
+    if structure == 'BodyCenteredCubic':
+        return  BodyCenteredCubic(
+                    directions=input_data['atoms']['directions'],
+                    symbol=input_data['atoms']['materials'][0],
+                    size=(
+                        input_data['atoms']['x_size'],
+                        input_data['atoms']['y_size'],
+                        input_data['atoms']['z_size'],
+                        ),
+                    pbc=input_data['atoms']['pbc'],
+                    latticeconstant=input_data['atoms']['latticeconstant'],
+                    )
+    elif structure == 'Diamond':
+        return  Diamond(
+                    directions=input_data['atoms']['directions'],
+                    symbol=input_data['atoms']['materials'][0],
+                    size=(
+                        input_data['atoms']['x_size'],
+                        input_data['atoms']['y_size'],
+                        input_data['atoms']['z_size'],
+                        ),
+                    pbc=input_data['atoms']['pbc'],
+                    latticeconstant=input_data['atoms']['latticeconstant'],
+                    )
+    elif structure == 'FaceCenteredCubic':
+        return  FaceCenteredCubic(
+                    directions=input_data['atoms']['directions'],
+                    symbol=input_data['atoms']['materials'][0],
+                    size=(
+                        input_data['atoms']['x_size'],
+                        input_data['atoms']['y_size'],
+                        input_data['atoms']['z_size'],
+                        ),
+                    pbc=input_data['atoms']['pbc'],
+                    latticeconstant=input_data['atoms']['latticeconstant'],
+                    )
+    elif structure == 'SimpleCubic':
+        return  SimpleCubic(
+                    directions=input_data['atoms']['directions'],
+                    symbol=input_data['atoms']['materials'][0],
+                    size=(
+                        input_data['atoms']['x_size'],
+                        input_data['atoms']['y_size'],
+                        input_data['atoms']['z_size'],
+                        ),
+                    pbc=input_data['atoms']['pbc'],
+                    latticeconstant=input_data['atoms']['latticeconstant'],
+                    )
 
 if __name__ == '__main__':
     input_file_name = 'input_data.toml'
