@@ -50,14 +50,11 @@ def run_md(args, input_data):
     '''runs the molecular dynamics simulation'''
 
     # deletes asap3 warnings in terminal
-    if args.slurm:
-        nr_delete_terminal_lines = 5
-    else:
-        nr_delete_terminal_lines = 3
-    for _ in range(nr_delete_terminal_lines):
-        sys.stdout.write("\033[F")
-        sys.stdout.write("\033[K")
-        sys.stdout.flush()
+    if not args.slurm:
+        for _ in range(3):
+            sys.stdout.write("\033[F")
+            sys.stdout.write("\033[K")
+            sys.stdout.flush()
     print("____Starting new simulation____:")
 
 
