@@ -51,7 +51,7 @@ def run_md(args, input_data):
 
     # deletes asap3 warnings in terminal
     if args.slurm:
-        nr_delete_terminal_lines = 6
+        nr_delete_terminal_lines = 5
     else:
         nr_delete_terminal_lines = 3
     for _ in range(nr_delete_terminal_lines):
