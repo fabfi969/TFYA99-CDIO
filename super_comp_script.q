@@ -16,7 +16,7 @@ export OMP_NUM_THREADS1
 
 for i in {1..3}
 do
-    python3 main.py
+    python3 main.py -slurm
 done
 
 #time mpprun python3 md_parallel.py
