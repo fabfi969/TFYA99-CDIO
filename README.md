@@ -33,7 +33,7 @@ Material simulation software description.
 ## How to run program
 
 1. Open terminal in program folder.
-2. Type: 
+2. Type:
 
         python3 main.py
     This will run the code with EMT, without visualisation and in constant energy mode.
@@ -51,11 +51,22 @@ Material simulation software description.
         -lattice_constant float
     This overrides the lattice constant set in the input file.
 
+        -slurm
+    This will tell the program to print in a way that the outputs in the terminal can be turned into a CSV-file.
+
 ## Run on supercomputer
 1. Run 'sbatch super_comp_script.q'
-2. Simulation method, ensable mode, etc. can be modified by appending the corresponding option to 'python3 main.py' in the same way as when program is run in terminal, see [How to run program](#how-to-run-program). 
+2. Simulation method, ensable mode, etc. can be modified by appending the corresponding option to 'python3 main.py' in the same way as when program is run in terminal, see [How to run program](#how-to-run-program).
 3. Output file will have name on format slurm-xxxxxxx.out
 4. If code does not run properly, check if requirments are corectly installed, see Installation.
+
+## Results from Supercomputer
+1. Push up the slurm-file to data/slurms
+2. On a local computer run:
+    ```bash
+    python3 slurm_to_csv.py
+3. Use pandas to read the CSV into Python
+
 
 ## Edit README
 1. open README
