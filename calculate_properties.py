@@ -1,4 +1,5 @@
 import numpy as np
+from ase.eos import calculate_eos
 
 def calcenergy(a):  # store a reference to atoms in the definition.
     '''Function to calculate the potential, kinetic and total energy.'''
@@ -31,3 +32,15 @@ def calcpressure(a):
     # Calculate pressure using formula from lecture.
     pressure = (2 * ekin * len(a) + sum_of_forces_and_positions) / (3 * volume)
     return pressure
+
+def calccohesiveenergy(epot_list):
+    '''Function to calculate cohesive energy.'''
+    e_cohesive = sum(epot_list) / len(epot_list)
+    return e_cohesive
+
+def calcbulkmodulus(a, input_data):
+    '''Function to calculate bulk modulus.'''
+    eos = calculate_eos(a, trajectory='Cu.traj')
+    equil_vol, equil_energ, bulk_modulus = eos.fit()
+    print(bulk_modulus*160)
+    return bulk_modulus

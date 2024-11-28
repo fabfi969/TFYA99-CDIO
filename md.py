@@ -16,7 +16,7 @@ import numpy as np
 from create_input_file import create_input_file
 from create_atoms_md import invalid_materials_EMT, create_atoms
 import toml
-from calculate_properties import calcenergy, calctemperature, calcpressure
+from calculate_properties import calcenergy, calctemperature, calcpressure, calccohesiveenergy, calcbulkmodulus
 from save_data import writetofile
 from random import random
 from alloy import Interface
@@ -112,7 +112,7 @@ the metals Al, Cu, Ag, Au, Ni, Pd and Pt.')
         )
 
     f = open('output_data.txt', 'w') # Open the target file. Overwrite existing file.
-    epot_list, ekin_list, etot_list, temperature_list, pressure_list = ([] for i in range(5))
+    epot_list, ekin_list, etot_list, temperature_list, pressure_list, bulk_modulus_list = ([] for i in range(6))
     def savedata(a=atoms):
         '''Save simulation data to lists.'''
         epot, ekin, etot = calcenergy(a)
@@ -123,6 +123,7 @@ the metals Al, Cu, Ag, Au, Ni, Pd and Pt.')
         temperature_list.append(temperature)
         pressure = calcpressure(a)
         pressure_list.append(pressure)
+        bulk_modulus_list = calcbulkmodulus(a, input_data)
 
 
     # Now run the dynamics
@@ -131,7 +132,8 @@ the metals Al, Cu, Ag, Au, Ni, Pd and Pt.')
     savedata()
     printenergy()
     dyn.run(input_data['run_time'])
-    writetofile(f, epot_list, ekin_list, etot_list, temperature_list, pressure_list)
+    cohesive_energy = calccohesiveenergy(epot_list)
+    writetofile(f, epot_list, ekin_list, etot_list, temperature_list, pressure_list, cohesive_energy, bulk_modulus_list)
 
 if __name__ == '__main__':
     input_file_name = 'input_data.toml'
