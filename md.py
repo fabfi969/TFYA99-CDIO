@@ -137,8 +137,9 @@ def run_md(args, input_data):
     printenergy()
     dyn.run(input_data['run_time'])
     if not args.slurm:
-        writetofile()
+        writetofile(f, epot_list, ekin_list, etot_list, temperature_list, pressure_list)
     print("-----End of simulation.-----")
+
 
 if __name__ == '__main__':
     input_file_name = 'input_data.toml'
