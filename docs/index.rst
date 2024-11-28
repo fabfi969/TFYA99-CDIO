@@ -24,7 +24,7 @@ Check out the :doc:`usage` section for further information, including how to
    :maxdepth: 2
    :caption: Contents:
 
-   reference/modules
+   _reference/modules
 
 Contents
 --------
