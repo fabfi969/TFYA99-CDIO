@@ -131,7 +131,7 @@ the metals Al, Cu, Ag, Au, Ni, Pd and Pt.')
     savedata()
     printenergy()
     dyn.run(input_data['run_time'])
-    writetofile()
+    writetofile(f, epot_list, ekin_list, etot_list, temperature_list, pressure_list)
 
 if __name__ == '__main__':
     input_file_name = 'input_data.toml'
