@@ -13,9 +13,6 @@ jobs:
       contents: write
 
     steps:
-    - name: Upgrade pip
-      run: |
-        /usr/local/bin/python -m pip install --upgrade pip
     - uses: actions/checkout@v4
     - name: Build HTML
       uses: ammaraskar/sphinx-action@master
