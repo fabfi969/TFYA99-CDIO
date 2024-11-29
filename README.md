@@ -59,8 +59,50 @@ Material simulation software description.
     ```bash
     sbatch super_comp_script.q
 2. Simulation method, ensable mode, etc. can be modified by appending the corresponding option to 'python3 main.py' in the same way as when program is run in terminal, see [How to run program](#how-to-run-program).
-3. Output file will have name on format slurm-xxxxxxx.out
-4. If code does not run properly, check if requirments are corectly installed, see Installation.
+3. If further modifications are needed, note that the script is written in Schell. See [Basic Shell instructions](#basic-shell-instructions) if you are unfamiliar with Shell.
+4. Output file will have name on format slurm-xxxxxxx.out
+5. If code does not run properly, check if requirments are corectly installed, see Installation.
+
+## Basic Shell instructions
+The following instructions is to allow people who have no experience in Shell to make modifications to super_comp_script.q to be able to run their desierd calculations.
+### Variables
+A variable is declered by writing
+    
+    var=value
+It is important that that there are no spaces between the variable name, the equal sign and the value since this will return errors. The following exampels will not work:
+
+    var= value
+    var =value
+    var = value
+To accsess the value of a variable put '$' in fron of it. For example:
+    
+    $var
+### For Loops
+A for loop is declered in the following way:
+    
+    for i in {1..3}
+    do
+        [insert code here]
+    done     
+This example will excecute the code in the loop for i=1, i=2 and i=3.
+
+### Floating Point Operations
+Shells normal arithmetic opperations do not suport floating point numbers. Insted a expression on the following form is requiered.
+    
+    $(bc <<<"scale=2;[expression]")
+where [expression] should be replaced by the desierd mathamatical expression.
+Scale is a varable that determains the number of decimals in the float.
+
+### Example Submit Script 
+The following is an example of an extract from super_comp_script.q demonstrating the instructions above.
+
+    for i in {2..4}
+    do
+        j=$(bc <<<"scale=2;2+$i*0.1")
+        python3 main.py -lattice_constant $j
+    done
+
+The script will run the program with lattice constant 2.2, 2.3 and 2.4.
 
 ## Results from Supercomputer
 1. Push up the slurm-file to data/slurms
