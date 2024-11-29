@@ -80,7 +80,7 @@
 <div class="viewcode-block" id="plotenergy">
 <a class="viewcode-back" href="../_reference/visualisation.html#visualisation.plotenergy">[docs]</a>
 <span class="k">def</span> <span class="nf">plotenergy</span><span class="p">(</span><span class="n">output_file</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Plot energies.&quot;&quot;&quot;</span>    
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Plot energies.&quot;&quot;&quot;</span>
     <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">output_file</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
     <span class="n">epot</span> <span class="o">=</span> <span class="n">ast</span><span class="o">.</span><span class="n">literal_eval</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
     <span class="n">ekin</span> <span class="o">=</span> <span class="n">ast</span><span class="o">.</span><span class="n">literal_eval</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>

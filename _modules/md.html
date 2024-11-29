@@ -222,17 +222,6 @@
         <span class="n">writetofile</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">epot_list</span><span class="p">,</span> <span class="n">ekin_list</span><span class="p">,</span> <span class="n">etot_list</span><span class="p">,</span> <span class="n">temperature_list</span><span class="p">,</span> <span class="n">pressure_list</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-----End of simulation.-----&quot;</span><span class="p">)</span></div>
 
-
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="n">input_file_name</span> <span class="o">=</span> <span class="s1">&#39;input_data.toml&#39;</span>
-    <span class="n">create_input_file</span><span class="p">(</span><span class="n">input_file_name</span><span class="p">)</span>
-    <span class="n">input_data</span> <span class="o">=</span> <span class="n">toml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">input_file_name</span><span class="p">)</span>
-    <span class="k">class</span> <span class="nc">arguments</span><span class="p">:</span>
-        <span class="n">simulation_method</span> <span class="o">=</span> <span class="s1">&#39;LennardJones&#39;</span>
-        <span class="n">cif</span> <span class="o">=</span> <span class="s1">&#39;SrCaMg6.cif&#39;</span>
-    <span class="n">args</span> <span class="o">=</span> <span class="n">arguments</span><span class="p">()</span>
-    <span class="n">run_md</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">input_data</span><span class="p">)</span>
 </pre></div>
 
            </div>
