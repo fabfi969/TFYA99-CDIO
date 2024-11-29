@@ -3,34 +3,40 @@
 import os
 import csv
 
-csv_categories = ['Epot,Ekin,T,Etot']
+def slurm_to_csv():
+    csv_categories = ['Epot,Ekin,T,Etot']
 
-RES_PATH = 'data/slurm_results'
-if not os.path.exists(RES_PATH):
-    os.makedirs(RES_PATH)
+    root_path = (os.getcwd()).split('TFYA99-CDIO')[0] + 'TFYA99-CDIO'
 
-for slurm_name in os.listdir('data/slurms'):
-    print(slurm_name)
+    RES_PATH = f'{root_path}/data/slurm_results'
+    if not os.path.exists(RES_PATH):
+        os.makedirs(RES_PATH)
 
-    if not os.path.exists(f'{RES_PATH}/{slurm_name}'):
-        os.makedirs(f'{RES_PATH}/{slurm_name}')
+    for slurm_name in os.listdir(f'{root_path}/data/slurms'):
+        print(slurm_name)
 
-    with open(f'data/slurms/{slurm_name}', 'r', encoding='UTF-8') as f:
-        lines = f.readlines()
+        if not os.path.exists(f'{RES_PATH}/{slurm_name}'):
+            os.makedirs(f'{RES_PATH}/{slurm_name}')
 
-    SIMUL_NR = 1
-    csv_file_lines = csv_categories[:]
-    for line in lines:
+        with open(f'{root_path}/data/slurms/{slurm_name}', 'r', encoding='UTF-8') as f:
+            lines = f.readlines()
 
-        if (line[0]).isdigit():
-            csv_file_lines.append(line[:-1])
+        SIMUL_NR = 1
+        csv_file_lines = csv_categories[:]
+        for line in lines:
 
-        elif line[0] == '-':
+            if (line[0]).isdigit():
+                csv_file_lines.append(line[:-1])
 
-            with open(f'{RES_PATH}/{slurm_name}/simulation_{SIMUL_NR}.csv',
-                        mode='w', newline='', encoding='UTF-8') as file:
-                writer = csv.writer(file)
-                for line in csv_file_lines:
-                    writer.writerow(line.split(','))
-            SIMUL_NR += 1
-            csv_file_lines = csv_categories[:]
+            elif line[0] == '-':
+
+                with open(f'{RES_PATH}/{slurm_name}/simulation_{SIMUL_NR}.csv',
+                            mode='w', newline='', encoding='UTF-8') as file:
+                    writer = csv.writer(file)
+                    for line in csv_file_lines:
+                        writer.writerow(line.split(','))
+                SIMUL_NR += 1
+                csv_file_lines = csv_categories[:]
+
+if __name__ == '__main__':
+    slurm_to_csv()
