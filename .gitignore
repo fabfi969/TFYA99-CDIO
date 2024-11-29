@@ -6,3 +6,4 @@ docs/_build/
 docs/_reference/
 output_data.txt
 *.json
+data/
