@@ -1,0 +1,203 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>create_atoms_md &mdash; Material Simulations - TFYA99 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=8d563738"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Material Simulations - TFYA99
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../_reference/modules.html">TFYA99-CDIO</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Material Simulations - TFYA99</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Module code</a></li>
+      <li class="breadcrumb-item active">create_atoms_md</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for create_atoms_md</h1><div class="highlight"><pre>
+<span></span><span class="sd">&#39;&#39;&#39;file that contains the function which creates the atoms object to be used in the md</span>
+<span class="sd">simulation&#39;&#39;&#39;</span>
+
+<span class="kn">from</span> <span class="nn">ase.lattice.cubic</span> <span class="kn">import</span> <span class="n">BodyCenteredCubic</span><span class="p">,</span> <span class="n">Diamond</span><span class="p">,</span> <span class="n">FaceCenteredCubic</span><span class="p">,</span> <span class="n">SimpleCubic</span>
+
+<span class="kn">from</span> <span class="nn">create_input_file</span> <span class="kn">import</span> <span class="n">create_input_file</span>
+<span class="kn">import</span> <span class="nn">toml</span>
+<span class="kn">import</span> <span class="nn">re</span>
+
+<div class="viewcode-block" id="invalid_materials_EMT_error">
+<a class="viewcode-back" href="../_reference/create_atoms_md.html#create_atoms_md.invalid_materials_EMT_error">[docs]</a>
+<span class="k">def</span> <span class="nf">invalid_materials_EMT_error</span><span class="p">(</span><span class="n">atoms_symbols</span><span class="p">):</span>
+    <span class="n">invalid_materials_status</span> <span class="o">=</span> <span class="n">invalid_materials_EMT</span><span class="p">(</span><span class="n">atoms_symbols</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">invalid_materials_status</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ERROR:</span><span class="se">\n</span><span class="s1">    The defined elements cannot be simulated using EMT.</span><span class="se">\n</span><span class="s1">    EMT only supports </span><span class="se">\</span>
+<span class="s1">the metals Al, Cu, Ag, Au, Ni, Pd and Pt.&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;    The defined elements are </span><span class="si">{</span><span class="n">invalid_materials_status</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+        <span class="n">quit</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="invalid_materials_EMT">
+<a class="viewcode-back" href="../_reference/create_atoms_md.html#create_atoms_md.invalid_materials_EMT">[docs]</a>
+<span class="k">def</span> <span class="nf">invalid_materials_EMT</span><span class="p">(</span><span class="n">materials_list</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;checks if the given materials can be used for EMT (effective-medium theory)</span>
+<span class="sd">    calculations. It only supports the standard EMT metals: Al, Cu, Ag, Au, Ni, Pd and Pt</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    material_list (list): a list of the chemical elements which are to be simulated</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    bool: returns True if the elements cannot be used for EMT simulations, False if they can</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">materials_list</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\d+&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">material</span><span class="p">)</span> <span class="k">for</span> <span class="n">material</span> <span class="ow">in</span> <span class="n">materials_list</span><span class="p">])</span>
+
+    <span class="n">valid_elements</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Al&#39;</span><span class="p">,</span> <span class="s1">&#39;Cu&#39;</span><span class="p">,</span> <span class="s1">&#39;Ag&#39;</span><span class="p">,</span> <span class="s1">&#39;Au&#39;</span><span class="p">,</span> <span class="s1">&#39;Ni&#39;</span><span class="p">,</span> <span class="s1">&#39;Pd&#39;</span><span class="p">,</span> <span class="s1">&#39;Pt&#39;</span><span class="p">]</span>
+    <span class="k">return</span> <span class="ow">not</span><span class="p">(</span><span class="nb">all</span><span class="p">(</span><span class="n">element</span> <span class="ow">in</span> <span class="n">valid_elements</span> <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">materials_list</span><span class="p">)),</span> <span class="n">materials_list</span></div>
+
+
+<div class="viewcode-block" id="create_atoms">
+<a class="viewcode-back" href="../_reference/create_atoms_md.html#create_atoms_md.create_atoms">[docs]</a>
+<span class="k">def</span> <span class="nf">create_atoms</span><span class="p">(</span><span class="n">input_data</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;function which creates the atoms object to be used in the md simulation&#39;&#39;&#39;</span>
+    <span class="n">structure</span> <span class="o">=</span> <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;structure&#39;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">structure</span> <span class="o">==</span> <span class="s1">&#39;BodyCenteredCubic&#39;</span><span class="p">:</span>
+        <span class="k">return</span>  <span class="n">BodyCenteredCubic</span><span class="p">(</span>
+                    <span class="n">directions</span><span class="o">=</span><span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;directions&#39;</span><span class="p">],</span>
+                    <span class="n">symbol</span><span class="o">=</span><span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;materials&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
+                    <span class="n">size</span><span class="o">=</span><span class="p">(</span>
+                        <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;x_size&#39;</span><span class="p">],</span>
+                        <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;y_size&#39;</span><span class="p">],</span>
+                        <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;z_size&#39;</span><span class="p">],</span>
+                        <span class="p">),</span>
+                    <span class="n">pbc</span><span class="o">=</span><span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;pbc&#39;</span><span class="p">],</span>
+                    <span class="n">latticeconstant</span><span class="o">=</span><span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;latticeconstant&#39;</span><span class="p">],</span>
+                    <span class="p">)</span>
+    <span class="k">elif</span> <span class="n">structure</span> <span class="o">==</span> <span class="s1">&#39;Diamond&#39;</span><span class="p">:</span>
+        <span class="k">return</span>  <span class="n">Diamond</span><span class="p">(</span>
+                    <span class="n">directions</span><span class="o">=</span><span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;directions&#39;</span><span class="p">],</span>
+                    <span class="n">symbol</span><span class="o">=</span><span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;materials&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
+                    <span class="n">size</span><span class="o">=</span><span class="p">(</span>
+                        <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;x_size&#39;</span><span class="p">],</span>
+                        <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;y_size&#39;</span><span class="p">],</span>
+                        <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;z_size&#39;</span><span class="p">],</span>
+                        <span class="p">),</span>
+                    <span class="n">pbc</span><span class="o">=</span><span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;pbc&#39;</span><span class="p">],</span>
+                    <span class="n">latticeconstant</span><span class="o">=</span><span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;latticeconstant&#39;</span><span class="p">],</span>
+                    <span class="p">)</span>
+    <span class="k">elif</span> <span class="n">structure</span> <span class="o">==</span> <span class="s1">&#39;FaceCenteredCubic&#39;</span><span class="p">:</span>
+        <span class="k">return</span>  <span class="n">FaceCenteredCubic</span><span class="p">(</span>
+                    <span class="n">directions</span><span class="o">=</span><span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;directions&#39;</span><span class="p">],</span>
+                    <span class="n">symbol</span><span class="o">=</span><span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;materials&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
+                    <span class="n">size</span><span class="o">=</span><span class="p">(</span>
+                        <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;x_size&#39;</span><span class="p">],</span>
+                        <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;y_size&#39;</span><span class="p">],</span>
+                        <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;z_size&#39;</span><span class="p">],</span>
+                        <span class="p">),</span>
+                    <span class="n">pbc</span><span class="o">=</span><span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;pbc&#39;</span><span class="p">],</span>
+                    <span class="n">latticeconstant</span><span class="o">=</span><span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;latticeconstant&#39;</span><span class="p">],</span>
+                    <span class="p">)</span>
+    <span class="k">elif</span> <span class="n">structure</span> <span class="o">==</span> <span class="s1">&#39;SimpleCubic&#39;</span><span class="p">:</span>
+        <span class="k">return</span>  <span class="n">SimpleCubic</span><span class="p">(</span>
+                    <span class="n">directions</span><span class="o">=</span><span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;directions&#39;</span><span class="p">],</span>
+                    <span class="n">symbol</span><span class="o">=</span><span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;materials&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
+                    <span class="n">size</span><span class="o">=</span><span class="p">(</span>
+                        <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;x_size&#39;</span><span class="p">],</span>
+                        <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;y_size&#39;</span><span class="p">],</span>
+                        <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;z_size&#39;</span><span class="p">],</span>
+                        <span class="p">),</span>
+                    <span class="n">pbc</span><span class="o">=</span><span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;pbc&#39;</span><span class="p">],</span>
+                    <span class="n">latticeconstant</span><span class="o">=</span><span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;latticeconstant&#39;</span><span class="p">],</span>
+                    <span class="p">)</span></div>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">input_file_name</span> <span class="o">=</span> <span class="s1">&#39;input_data.toml&#39;</span>
+    <span class="n">create_input_file</span><span class="p">(</span><span class="n">input_file_name</span><span class="p">)</span>
+    <span class="n">input_data</span> <span class="o">=</span> <span class="n">toml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">input_file_name</span><span class="p">)</span>
+    <span class="n">create_atoms</span><span class="p">(</span><span class="n">input_data</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;created atoms object&#39;</span><span class="p">)</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, joabe712 fabfi969 kaljo229 pauka833.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

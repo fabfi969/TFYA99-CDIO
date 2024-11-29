@@ -1,0 +1,7 @@
+create\_atoms\_md module
+========================
+
+.. automodule:: create_atoms_md
+   :members:
+   :undoc-members:
+   :show-inheritance:

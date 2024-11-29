@@ -1,0 +1,7 @@
+alloy module
+============
+
+.. automodule:: alloy
+   :members:
+   :undoc-members:
+   :show-inheritance:

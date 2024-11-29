@@ -1,0 +1,265 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>md &mdash; Material Simulations - TFYA99 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=8d563738"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Material Simulations - TFYA99
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../_reference/modules.html">TFYA99-CDIO</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Material Simulations - TFYA99</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Module code</a></li>
+      <li class="breadcrumb-item active">md</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for md</h1><div class="highlight"><pre>
+<span></span><span class="sd">&#39;&#39;&#39;Demonstrates molecular dynamics with constant energy. Is called by main&#39;&#39;&#39;</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">asap3</span> <span class="kn">import</span> <span class="n">EMT</span><span class="p">,</span> <span class="n">LennardJones</span><span class="p">,</span> <span class="n">Trajectory</span> <span class="c1"># This line gives the terminal warnings.</span>
+<span class="kn">from</span> <span class="nn">ase</span> <span class="kn">import</span> <span class="n">units</span>
+<span class="kn">from</span> <span class="nn">ase.lattice.cubic</span> <span class="kn">import</span> <span class="n">BodyCenteredCubic</span><span class="p">,</span> <span class="n">BodyCenteredCubicFactory</span><span class="p">,</span> <span class="n">Bravais</span><span class="p">,</span> <span class="n">Diamond</span>
+<span class="kn">from</span> <span class="nn">ase.lattice.cubic</span> <span class="kn">import</span> <span class="n">DiamondFactory</span><span class="p">,</span> <span class="n">FaceCenteredCubic</span><span class="p">,</span> <span class="n">FaceCenteredCubicFactory</span>
+<span class="kn">from</span> <span class="nn">ase.lattice.cubic</span> <span class="kn">import</span> <span class="n">SimpleCubic</span><span class="p">,</span> <span class="n">SimpleCubicFactory</span>
+<span class="kn">from</span> <span class="nn">ase.md.velocitydistribution</span> <span class="kn">import</span> <span class="n">MaxwellBoltzmannDistribution</span>
+<span class="kn">from</span> <span class="nn">ase.md.verlet</span> <span class="kn">import</span> <span class="n">VelocityVerlet</span>
+<span class="kn">from</span> <span class="nn">ase.build</span> <span class="kn">import</span> <span class="n">bulk</span>
+<span class="kn">from</span> <span class="nn">ase.build.tools</span> <span class="kn">import</span> <span class="n">sort</span>
+<span class="kn">from</span> <span class="nn">ase.build.tools</span> <span class="kn">import</span> <span class="n">cut</span><span class="p">,</span> <span class="n">stack</span>
+<span class="kn">from</span> <span class="nn">ase.io</span> <span class="kn">import</span> <span class="n">read</span>
+<span class="kn">from</span> <span class="nn">ase.md</span> <span class="kn">import</span> <span class="n">Andersen</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">create_input_file</span> <span class="kn">import</span> <span class="n">create_input_file</span>
+<span class="kn">from</span> <span class="nn">create_atoms_md</span> <span class="kn">import</span> <span class="n">invalid_materials_EMT_error</span><span class="p">,</span> <span class="n">create_atoms</span>
+<span class="kn">import</span> <span class="nn">toml</span>
+<span class="kn">from</span> <span class="nn">calculate_properties</span> <span class="kn">import</span> <span class="n">calcenergy</span><span class="p">,</span> <span class="n">calctemperature</span><span class="p">,</span> <span class="n">calcpressure</span>
+<span class="kn">from</span> <span class="nn">save_data</span> <span class="kn">import</span> <span class="n">writetofile</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">random</span>
+<span class="kn">from</span> <span class="nn">alloy</span> <span class="kn">import</span> <span class="n">Interface</span>
+
+<div class="viewcode-block" id="TwoBlocks">
+<a class="viewcode-back" href="../_reference/md.html#md.TwoBlocks">[docs]</a>
+<span class="k">def</span> <span class="nf">TwoBlocks</span><span class="p">(</span><span class="n">mat1</span><span class="p">,</span> <span class="n">structure1</span><span class="p">,</span> <span class="n">a1</span><span class="p">,</span> <span class="n">mat2</span><span class="p">,</span> <span class="n">structure2</span><span class="p">,</span> <span class="n">a2</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">alloy_ratio</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">alloy</span> <span class="o">=</span> <span class="s2">&quot;N&quot;</span><span class="p">):</span>
+    <span class="c1">#Generate an two layers of atoms pressed up against each other</span>
+    <span class="n">bulk1</span> <span class="o">=</span> <span class="n">bulk</span><span class="p">(</span><span class="n">mat1</span><span class="p">,</span><span class="n">structure1</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="n">a1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">size</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">size</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">alloy</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">bulk2</span> <span class="o">=</span> <span class="n">random_alloys</span><span class="p">(</span><span class="n">mat2</span><span class="p">,</span><span class="n">structure2</span><span class="p">,</span> <span class="n">a2</span><span class="p">,</span> <span class="n">alloy</span><span class="p">,</span> <span class="n">alloy_ratio</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">bulk2</span> <span class="o">=</span> <span class="n">bulk</span><span class="p">(</span><span class="n">mat2</span><span class="p">,</span><span class="n">structure2</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="n">a2</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">size</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">size</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+    <span class="n">interface</span> <span class="o">=</span> <span class="n">stack</span><span class="p">(</span><span class="n">bulk1</span><span class="p">,</span> <span class="n">bulk2</span><span class="p">,</span><span class="n">maxstrain</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+    <span class="c1">#view(interface)</span>
+    <span class="k">return</span> <span class="n">interface</span></div>
+
+
+
+<div class="viewcode-block" id="random_alloys">
+<a class="viewcode-back" href="../_reference/md.html#md.random_alloys">[docs]</a>
+<span class="k">def</span> <span class="nf">random_alloys</span><span class="p">(</span><span class="n">mat1</span><span class="p">,</span><span class="n">structure1</span><span class="p">,</span><span class="n">a1</span><span class="p">,</span><span class="n">mat2</span><span class="p">,</span><span class="n">atomic_percent</span><span class="p">,</span><span class="n">size</span><span class="p">):</span>
+    <span class="c1">#generates a single block of material with a randomly replaced atoms.</span>
+    <span class="n">tot_at</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="n">size</span><span class="o">*</span><span class="n">size</span><span class="o">*</span><span class="n">size</span>
+    <span class="n">bulk1</span> <span class="o">=</span> <span class="n">bulk</span><span class="p">(</span><span class="n">mat1</span><span class="p">,</span><span class="n">structure1</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="n">a1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">size</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">size</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+    <span class="nb">next</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="nb">next</span> <span class="o">&lt;</span> <span class="n">tot_at</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">atomic_percent</span><span class="p">:</span>
+            <span class="n">bulk1</span><span class="o">.</span><span class="n">symbols</span><span class="p">[</span><span class="nb">next</span><span class="p">]</span><span class="o">=</span><span class="n">mat2</span>
+        <span class="nb">next</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">bulk1</span><span class="p">)</span></div>
+
+    <span class="c1">#view(bulk1)</span>
+
+<div class="viewcode-block" id="run_md">
+<a class="viewcode-back" href="../_reference/md.html#md.run_md">[docs]</a>
+<span class="k">def</span> <span class="nf">run_md</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">input_data</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;runs the molecular dynamics simulation&#39;&#39;&#39;</span>
+
+    <span class="c1"># deletes asap3 warnings in terminal</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">args</span><span class="o">.</span><span class="n">slurm</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[F&quot;</span><span class="p">)</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[K&quot;</span><span class="p">)</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;____Starting new simulation____:&quot;</span><span class="p">)</span>
+
+
+    <span class="c1">#command line override of lattice constant</span>
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">lattice_constant</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+        <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;latticeconstant&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">lattice_constant</span>
+
+    <span class="c1"># Set up a crystal</span>
+    <span class="c1"># Sim = Interface(&quot;Cu&quot;,&quot;fcc&quot;,2.54,&quot;Au&quot;,&quot;fcc&quot;,3.4,4)</span>
+    <span class="c1"># atoms = Sim.get_atoms()</span>
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">cif</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+        <span class="n">atoms</span> <span class="o">=</span> <span class="n">create_atoms</span><span class="p">(</span><span class="n">input_data</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">atoms</span> <span class="o">=</span> <span class="n">read</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">cif</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;cif&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Describe the interatomic interactions with the Effective Medium Theory</span>
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">simulation_method</span> <span class="o">==</span> <span class="s1">&#39;EMT&#39;</span><span class="p">:</span>
+        <span class="n">invalid_materials_EMT_error</span><span class="p">(</span><span class="n">atoms</span><span class="o">.</span><span class="n">symbols</span><span class="p">)</span>
+        <span class="n">atoms</span><span class="o">.</span><span class="n">calc</span> <span class="o">=</span> <span class="n">EMT</span><span class="p">()</span>
+
+    <span class="k">elif</span> <span class="n">args</span><span class="o">.</span><span class="n">simulation_method</span> <span class="o">==</span> <span class="s1">&#39;LennardJones&#39;</span><span class="p">:</span>
+        <span class="n">atoms</span><span class="o">.</span><span class="n">calc</span> <span class="o">=</span> <span class="n">LennardJones</span><span class="p">(</span>
+            <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;lennard_jones&#39;</span><span class="p">][</span><span class="s1">&#39;atomic_number&#39;</span><span class="p">],</span>
+            <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;lennard_jones&#39;</span><span class="p">][</span><span class="s1">&#39;epsilon&#39;</span><span class="p">],</span>
+            <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;lennard_jones&#39;</span><span class="p">][</span><span class="s1">&#39;sigma&#39;</span><span class="p">],</span>
+            <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;lennard_jones&#39;</span><span class="p">][</span><span class="s1">&#39;r_cut&#39;</span><span class="p">],</span>
+            <span class="n">modified</span><span class="o">=</span><span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;lennard_jones&#39;</span><span class="p">][</span><span class="s1">&#39;modified&#39;</span><span class="p">],</span>
+        <span class="p">)</span>
+
+    <span class="c1"># Set the momenta corresponding to T=300K</span>
+    <span class="n">MaxwellBoltzmannDistribution</span><span class="p">(</span>
+        <span class="n">atoms</span><span class="p">,</span>
+        <span class="n">temperature_K</span><span class="o">=</span><span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;temperature_K&#39;</span><span class="p">]</span>
+    <span class="p">)</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">ensemble_mode</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">ensemble_mode</span>
+    <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+        <span class="n">ensemble_mode</span> <span class="o">=</span> <span class="s2">&quot;energy&quot;</span>
+    <span class="k">if</span> <span class="n">ensemble_mode</span> <span class="o">==</span> <span class="s2">&quot;energy&quot;</span><span class="p">:</span>
+        <span class="c1"># We want to run MD with constant energy using the VelocityVerlet</span>
+        <span class="c1"># algorithm.</span>
+        <span class="n">dyn</span> <span class="o">=</span> <span class="n">VelocityVerlet</span><span class="p">(</span><span class="n">atoms</span><span class="p">,</span> <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;time_step&#39;</span><span class="p">])</span>
+    <span class="k">elif</span> <span class="n">ensemble_mode</span> <span class="o">==</span> <span class="s2">&quot;temperature&quot;</span><span class="p">:</span>
+        <span class="c1"># Run MD with constant temperature instead using Andersen thermostat.</span>
+        <span class="n">dyn</span> <span class="o">=</span> <span class="n">Andersen</span><span class="p">(</span><span class="n">atoms</span><span class="p">,</span> <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;time_step&#39;</span><span class="p">],</span> <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;temperature_K&#39;</span><span class="p">],</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">units</span><span class="o">.</span><span class="n">fs</span><span class="p">)</span>
+
+    <span class="n">traj</span> <span class="o">=</span> <span class="n">Trajectory</span><span class="p">(</span><span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;trajectory_file_name&#39;</span><span class="p">],</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">atoms</span><span class="p">)</span>
+    <span class="n">dyn</span><span class="o">.</span><span class="n">attach</span><span class="p">(</span><span class="n">traj</span><span class="o">.</span><span class="n">write</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;trajectory_interval&#39;</span><span class="p">])</span>
+
+    <span class="k">def</span> <span class="nf">printenergy</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">atoms</span><span class="p">):</span>  <span class="c1"># store a reference to atoms in the definition.</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;Function to print the potential, kinetic and total energy.&#39;&#39;&#39;</span>
+        <span class="n">epot</span><span class="p">,</span> <span class="n">ekin</span><span class="p">,</span> <span class="n">etot</span> <span class="o">=</span> <span class="n">calcenergy</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">slurm</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">epot</span><span class="si">}</span><span class="s2">,</span><span class="si">{</span><span class="n">ekin</span><span class="si">}</span><span class="s2">,</span><span class="si">{</span><span class="n">ekin</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mf">1.5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">units</span><span class="o">.</span><span class="n">kB</span><span class="p">)</span><span class="si">}</span><span class="s2">,</span><span class="si">{</span><span class="n">etot</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span>
+                <span class="s1">&#39;Energy per atom: Epot = </span><span class="si">%.3f</span><span class="s1">eV  Ekin = </span><span class="si">%.3f</span><span class="s1">eV (T=</span><span class="si">%3.0f</span><span class="s1">K)  &#39;</span>
+                <span class="s1">&#39;Etot = </span><span class="si">%.3f</span><span class="s1">eV&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">epot</span><span class="p">,</span> <span class="n">ekin</span><span class="p">,</span> <span class="n">ekin</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.5</span> <span class="o">*</span> <span class="n">units</span><span class="o">.</span><span class="n">kB</span><span class="p">),</span> <span class="n">etot</span><span class="p">)</span>
+            <span class="p">)</span>
+
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;output_data.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="c1"># Open the target file. Overwrite existing file.</span>
+    <span class="n">epot_list</span><span class="p">,</span> <span class="n">ekin_list</span><span class="p">,</span> <span class="n">etot_list</span><span class="p">,</span> <span class="n">temperature_list</span><span class="p">,</span> <span class="n">pressure_list</span> <span class="o">=</span> <span class="p">([]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+    <span class="k">def</span> <span class="nf">savedata</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">atoms</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;Save simulation data to lists.&#39;&#39;&#39;</span>
+        <span class="n">epot</span><span class="p">,</span> <span class="n">ekin</span><span class="p">,</span> <span class="n">etot</span> <span class="o">=</span> <span class="n">calcenergy</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+        <span class="n">epot_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">epot</span><span class="p">)</span>
+        <span class="n">ekin_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ekin</span><span class="p">)</span>
+        <span class="n">etot_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">etot</span><span class="p">)</span>
+        <span class="n">temperature</span> <span class="o">=</span> <span class="n">calctemperature</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+        <span class="n">temperature_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">temperature</span><span class="p">)</span>
+        <span class="n">pressure</span> <span class="o">=</span> <span class="n">calcpressure</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+        <span class="n">pressure_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pressure</span><span class="p">)</span>
+
+
+    <span class="c1"># Now run the dynamics</span>
+    <span class="n">dyn</span><span class="o">.</span><span class="n">attach</span><span class="p">(</span><span class="n">printenergy</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;trajectory_interval&#39;</span><span class="p">])</span>
+    <span class="n">dyn</span><span class="o">.</span><span class="n">attach</span><span class="p">(</span><span class="n">savedata</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;trajectory_interval&#39;</span><span class="p">])</span>
+    <span class="n">savedata</span><span class="p">()</span>
+    <span class="n">printenergy</span><span class="p">()</span>
+    <span class="n">dyn</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;run_time&#39;</span><span class="p">])</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">args</span><span class="o">.</span><span class="n">slurm</span><span class="p">:</span>
+        <span class="n">writetofile</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">epot_list</span><span class="p">,</span> <span class="n">ekin_list</span><span class="p">,</span> <span class="n">etot_list</span><span class="p">,</span> <span class="n">temperature_list</span><span class="p">,</span> <span class="n">pressure_list</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-----End of simulation.-----&quot;</span><span class="p">)</span></div>
+
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">input_file_name</span> <span class="o">=</span> <span class="s1">&#39;input_data.toml&#39;</span>
+    <span class="n">create_input_file</span><span class="p">(</span><span class="n">input_file_name</span><span class="p">)</span>
+    <span class="n">input_data</span> <span class="o">=</span> <span class="n">toml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">input_file_name</span><span class="p">)</span>
+    <span class="k">class</span> <span class="nc">arguments</span><span class="p">:</span>
+        <span class="n">simulation_method</span> <span class="o">=</span> <span class="s1">&#39;LennardJones&#39;</span>
+        <span class="n">cif</span> <span class="o">=</span> <span class="s1">&#39;SrCaMg6.cif&#39;</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">arguments</span><span class="p">()</span>
+    <span class="n">run_md</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">input_data</span><span class="p">)</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, joabe712 fabfi969 kaljo229 pauka833.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
