@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt # This would give a warning without above line.
 import ast
 
 def plotenergy(output_file):
-    """Plot energies."""    
+    """Plot energies."""
     f = open(output_file, "r")
     epot = ast.literal_eval(f.readline())
     ekin = ast.literal_eval(f.readline())

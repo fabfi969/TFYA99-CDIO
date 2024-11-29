@@ -139,14 +139,3 @@ def run_md(args, input_data):
     if not args.slurm:
         writetofile(f, epot_list, ekin_list, etot_list, temperature_list, pressure_list)
     print("-----End of simulation.-----")
-
-
-if __name__ == '__main__':
-    input_file_name = 'input_data.toml'
-    create_input_file(input_file_name)
-    input_data = toml.load(input_file_name)
-    class arguments:
-        simulation_method = 'LennardJones'
-        cif = 'SrCaMg6.cif'
-    args = arguments()
-    run_md(args, input_data)
