@@ -4,7 +4,7 @@ import numpy as np
 import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from calculate_properties import calcenergy, calctemperature, calcpressure
+from calculate_properties import calcenergy, calctemperature, calcpressure, calccohesiveenergy
 
 class TestPropertyCalculations(unittest.TestCase):
 
@@ -29,6 +29,17 @@ class TestPropertyCalculations(unittest.TestCase):
         temperature = calctemperature(self.mock_atoms)
 
         self.assertAlmostEqual(temperature, 320)
+
+    def test_calccohesiveenergy(self):
+        self.mock_atoms.get_potential_energy.return_value = 20
+        
+        potential_energy_list = [self.mock_atoms.get_potential_energy()/self.mock_atoms.__len__(),\
+             self.mock_atoms.get_potential_energy()/self.mock_atoms.__len__()]
+        
+        cohesive_energy = calccohesiveenergy(potential_energy_list)
+        
+        self.assertAlmostEqual(cohesive_energy, self.mock_atoms.get_potential_energy()\
+             / self.mock_atoms.__len__())
 
 
 if __name__ == "__main__":
