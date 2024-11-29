@@ -21,7 +21,11 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
+<<<<<<< HEAD
         pip install --no-cache-dir -r docs/requirements.txt
+=======
+        pip install -r docs/requirements.txt
+>>>>>>> 7c4940f28f2a58b25b8a851238bd9fb5b0b8050f
     - uses: actions/checkout@v4
     - name: Build HTML
       uses: ammaraskar/sphinx-action@master
