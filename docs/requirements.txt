@@ -34,7 +34,7 @@ requests
 scipy
 six
 snowballstemmer
-Sphinx
+Sphinx==5.0.0
 sphinx-rtd-theme
 sphinxcontrib-apidoc
 sphinxcontrib-applehelp
