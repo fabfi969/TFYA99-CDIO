@@ -45,3 +45,8 @@ sphinxcontrib-jquery
 sphinxcontrib-jsmath
 sphinxcontrib-qthelp
 sphinxcontrib-serializinghtml
+toml
+tomli
+typing_extensions
+urllib3
+zipp
