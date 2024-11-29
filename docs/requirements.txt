@@ -1,7 +1,7 @@
+pip==20.0.2
 asap3==3.13.5
 ase==3.23.0
 babel==2.16.0
-black==24.10.0
 certifi==2024.8.30
 charset-normalizer==3.4.0
 click==8.1.7
