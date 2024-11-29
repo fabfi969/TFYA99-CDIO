@@ -123,7 +123,6 @@ the metals Al, Cu, Ag, Au, Ni, Pd and Pt.')
         temperature_list.append(temperature)
         pressure = calcpressure(a)
         pressure_list.append(pressure)
-        bulk_modulus = calcbulkmodulus(a, input_data)
 
 
     # Now run the dynamics
@@ -133,6 +132,7 @@ the metals Al, Cu, Ag, Au, Ni, Pd and Pt.')
     printenergy()
     dyn.run(input_data['run_time'])
     cohesive_energy = calccohesiveenergy(epot_list)
+    bulk_modulus = "Not available yet."
     writetofile(f, epot_list, ekin_list, etot_list, temperature_list, pressure_list, cohesive_energy, bulk_modulus)
 
 if __name__ == '__main__':

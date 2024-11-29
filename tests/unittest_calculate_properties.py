@@ -4,7 +4,7 @@ import numpy as np
 import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from calculate_properties import calcenergy, calctemperature, calcpressure, calccohesiveenergy
+from calculate_properties import calcenergy, calctemperature, calcpressure, calccohesiveenergy, calcbulkmodulus
 
 class TestPropertyCalculations(unittest.TestCase):
 

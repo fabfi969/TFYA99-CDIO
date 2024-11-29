@@ -11,6 +11,6 @@ def writetofile(f, epot_list, ekin_list, etot_list, temperature_list, pressure_l
     print(temperature_list, file=f)
     print(pressure_list, file=f)
     print("Cohesive energy: ", cohesive_energy, "eV/atom", file=f)
-    print("Bulk modulus: ", bulk_modulus, "unit..?", file=f)
+    print("Bulk modulus: ", bulk_modulus, "GPa", file=f)
     f.close()
     print('Simulation data saved to file: ', f.name )

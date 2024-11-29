@@ -1,5 +1,6 @@
 import numpy as np
-from ase.eos import calculate_eos
+from ase.eos import EquationOfState
+from ase import units
 
 def calcenergy(a):  # store a reference to atoms in the definition.
     '''Function to calculate the potential, kinetic and total energy.'''
@@ -38,9 +39,9 @@ def calccohesiveenergy(epot_list):
     e_cohesive = sum(epot_list) / len(epot_list)
     return e_cohesive
 
-def calcbulkmodulus(a, input_data):
+def calcbulkmodulus(volumes, energies):
     '''Function to calculate bulk modulus.'''
-    eos = calculate_eos(a, trajectory='Cu.traj')
-    equil_vol, equil_energ, bulk_modulus = eos.fit()
-    print(bulk_modulus*160)
+    eos = EquationOfState(volumes, energies, eos = 'murnaghan')
+    _, _, bulk_modulus = eos.fit()
+    bulk_modulus = bulk_modulus / units.kJ * 1.0e24, 'GPa' # Convert eV/Angstrom^3 to GPa
     return bulk_modulus
