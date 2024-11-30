@@ -43,5 +43,5 @@ def calcbulkmodulus(volumes, energies):
     '''Function to calculate bulk modulus.'''
     eos = EquationOfState(volumes, energies, eos = 'murnaghan')
     _, _, bulk_modulus = eos.fit()
-    bulk_modulus = bulk_modulus / units.kJ * 1.0e24, 'GPa' # Convert eV/Angstrom^3 to GPa
+    bulk_modulus = bulk_modulus / units.kJ * 1.0e24 # Convert eV/Angstrom^3 to GPa
     return bulk_modulus

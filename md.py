@@ -124,15 +124,29 @@ the metals Al, Cu, Ag, Au, Ni, Pd and Pt.')
         pressure = calcpressure(a)
         pressure_list.append(pressure)
 
+    volumes, energies = [], []
+    def volumes_and_energies(a=atoms):
+        '''Vary the lattice constant to simulate different volumes to calculate bulk modulus.'''
+        scaling_factors = np.linspace(0.95, 1.05, 10)
+        for scale in scaling_factors:
+            scaled_atoms = a.copy()
+            scaled_atoms.set_cell(atoms.get_cell() * scale, scale_atoms=True)
+            scaled_atoms.calc = a.calc
+            volumes.append(scaled_atoms.get_volume())
+            energies.append(scaled_atoms.get_potential_energy())
+        return volumes, energies
+
 
     # Now run the dynamics
     dyn.attach(printenergy, interval=input_data['trajectory_interval'])
     dyn.attach(savedata, interval=input_data['trajectory_interval'])
+    dyn.attach(volumes_and_energies, interval=input_data['trajectory_interval'])
     savedata()
     printenergy()
+    volumes_and_energies()
     dyn.run(input_data['run_time'])
     cohesive_energy = calccohesiveenergy(epot_list)
-    bulk_modulus = "Not available yet."
+    bulk_modulus = calcbulkmodulus(volumes, energies)
     writetofile(f, epot_list, ekin_list, etot_list, temperature_list, pressure_list, cohesive_energy, bulk_modulus)
 
 if __name__ == '__main__':
