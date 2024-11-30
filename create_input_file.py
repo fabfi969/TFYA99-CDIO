@@ -32,11 +32,23 @@ def create_input_file(file_name):
             'r_cut': -1,
             'modified': True,
         },
+        'interface': {
+            'substrate_atoms': 'Cu',
+            'substrate_structure': 'fcc',
+            'substrate_lattice': 2.54,
+            'film_atoms': 'Au',
+            'film_structure': 'fcc',
+            'film_lattice': 3.4,
+            'size': 10,
+            'alloy_ratio': 0.2,
+            'alloying_atoms': "Ag",
+        },
         'temperature_K': 300,
         'time_step': 1 * units.fs,
         'trajectory_file_name': 'cu.traj',
         'trajectory_interval': 10,
         'run_time': 20,
+        
     }
 
     filename = file_name
