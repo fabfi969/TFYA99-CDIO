@@ -36,7 +36,7 @@ def calcpressure(a):
 
 def calccohesiveenergy(epot_list):
     '''Function to calculate cohesive energy.'''
-    e_cohesive = sum(epot_list) / len(epot_list)
+    e_cohesive = abs(sum(epot_list) / len(epot_list))
     return e_cohesive
 
 def calcbulkmodulus(volumes, energies):
