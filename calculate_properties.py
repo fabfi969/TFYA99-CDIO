@@ -37,16 +37,22 @@ def calcpressure(a):
 
 def calccohesiveenergy(epot_list, material, simulation_method):
     '''Function to calculate cohesive energy.'''
-    isolated_atom = Atoms(material[0])
-    isolated_atom.set_cell([10.0, 10.0, 10.0])
-    isolated_atom.center()
-    isolated_atom.calc = simulation_method
-    e_cohesive = abs((sum(epot_list) / len(epot_list)) - isolated_atom.get_potential_energy())
-    return e_cohesive
+    try:
+        isolated_atom = Atoms(material[0])
+        isolated_atom.set_cell([10.0, 10.0, 10.0])
+        isolated_atom.center()
+        isolated_atom.calc = simulation_method
+        e_cohesive = abs((sum(epot_list) / len(epot_list)) - isolated_atom.get_potential_energy())
+        return e_cohesive
+    except:
+        return('Cohesive energy could not be calculated. Perhaps equilibrium was not reached.')
 
 def calcbulkmodulus(volumes, energies):
     '''Function to calculate bulk modulus.'''
-    eos = EquationOfState(volumes, energies, eos = 'murnaghan')
-    _, _, bulk_modulus = eos.fit()
-    bulk_modulus = bulk_modulus / units.kJ * 1.0e24 # Convert eV/Angstrom^3 to GPa
-    return bulk_modulus
+    try:
+        eos = EquationOfState(volumes, energies, eos = 'murnaghan')
+        _, _, bulk_modulus = eos.fit()
+        bulk_modulus = bulk_modulus / units.kJ * 1.0e24 # Convert eV/Angstrom^3 to GPa
+        return bulk_modulus
+    except:
+        return('Bulk modulus could not be calculated. Perhaps equilibrium was not reached.')
