@@ -54,6 +54,11 @@ to be simulated atoms are defined",
         type = float,
     )
 
+    parser.add_argument(
+        "-slurm",
+        action = "store_true",
+    )
+
     args = parser.parse_args()
 
     input_file_name = "input_data.toml"

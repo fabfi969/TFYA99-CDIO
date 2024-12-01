@@ -27,14 +27,14 @@ def TwoBlocks(mat1, structure1, a1, mat2, structure2, a2, size, alloy_ratio = 0,
     interface = stack(bulk1, bulk2,maxstrain=100)
     view(interface)
     return interface
-    
+
 def calcenergy(a):  # store a reference to atoms in the definition.
     """Function to calculate the potential, kinetic and total energy."""
     epot = a.get_potential_energy() / len(a)
     ekin = a.get_kinetic_energy() / len(a)
     etot = epot + ekin
     return (epot, ekin, etot)
-    
+
 def pseudo_random_alloys(mat1,structure1,a1,mat2,atomic_percent,size):
     #generates a singe block of material of intermittenly placed atoms of a different material
     tot_at = 4*size*size*size
@@ -79,7 +79,7 @@ class Interface:
         q.bulk1 = bulk1
         q.bulk2 = bulk2
         q.interface = interface
-    
+
     def get_atoms(q):
         return q.interface
 
@@ -95,9 +95,9 @@ class Interface:
 
 
 
-BeepBoop = Interface("Cu","fcc",2.54,"Au","fcc",3.4,4) 
-view(BeepBoop.get_atoms()) 
-print(BeepBoop.get_E_int()) 
+BeepBoop = Interface("Cu","fcc",2.54,"Au","fcc",3.4,4)
+# view(BeepBoop.get_atoms())
+# print(BeepBoop.get_E_int())
 #TwoBlocks("Cu","fcc",2.54,"Au","fcc",3.4,4)
 #random_alloys("Cu","sc",2.54,"Au",0.5,9)
 #pseudo_random_alloys("Cu","sc",2.54,"Au",0.17,9)
