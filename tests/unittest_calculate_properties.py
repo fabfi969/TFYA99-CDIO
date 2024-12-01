@@ -28,21 +28,45 @@ class TestPropertyCalculations(unittest.TestCase):
 
     def test_calctemperature(self):
         self.mock_atoms.get_temperature.return_value = 320
-
         temperature = calctemperature(self.mock_atoms)
-
         self.assertAlmostEqual(temperature, 320)
 
-    def test_calccohesiveenergy(self):
-        self.mock_atoms.get_potential_energy.return_value = 20
-        
-        potential_energy_list = [self.mock_atoms.get_potential_energy()/self.mock_atoms.__len__(),\
-             self.mock_atoms.get_potential_energy()/self.mock_atoms.__len__()]
-        
-        cohesive_energy = calccohesiveenergy(potential_energy_list)
-        
-        self.assertAlmostEqual(cohesive_energy, self.mock_atoms.get_potential_energy()\
-             / self.mock_atoms.__len__())
+    @patch('main.toml.load')
+    def test_calccohesiveenergy(self, mock_toml_load):
+        # Simulate gold input data.
+        mock_input_data = {
+            'temperature_K': 300,
+            'time_step': 0.09822694788464063,
+            'trajectory_file_name': "Au.traj",
+            'trajectory_interval': 10,
+            'run_time': 1200,
+            'atoms': {
+                'structure': 'FaceCenteredCubic',
+                'directions': [[1, 0, 0], [0, 1, 0], [0, 0, 1]],
+                'materials': ['Au'],
+                'x_size': 10,
+                'y_size': 10,
+                'z_size': 10,
+                'pbc': True,
+                'latticeconstant': 4.08
+            },
+            'lennard_jones': {
+                'atomic_number': [79],
+                'epsilon': 0.01,
+                'sigma': 0.8,
+                'r_cut': -1,
+                'modified': True
+            }
+        }
+        mock_toml_load.return_value = mock_input_data
+        run_program()
+        with open('output_data.txt', 'r') as file:
+            data = file.read()
+        match = re.search(r"Cohesive energy:\s+([\d.]+)\s+eV/atom", data)
+        cohesive_energy = float(match.group(1))
+        # Expected value: 3,81 eV/atom.
+        self.assertGreaterEqual(cohesive_energy, 3.70)
+        self.assertLessEqual(cohesive_energy, 3.90)
     
     @patch('main.toml.load')
     def test_calcbulkmodulus(self, mock_toml_load):
