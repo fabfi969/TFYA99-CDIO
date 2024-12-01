@@ -145,7 +145,7 @@ the metals Al, Cu, Ag, Au, Ni, Pd and Pt.')
     printenergy()
     volumes_and_energies()
     dyn.run(input_data['run_time'])
-    cohesive_energy = calccohesiveenergy(epot_list)
+    cohesive_energy = calccohesiveenergy(epot_list, input_data['atoms']['materials'], atoms.calc)
     bulk_modulus = calcbulkmodulus(volumes, energies)
     writetofile(f, epot_list, ekin_list, etot_list, temperature_list, pressure_list, cohesive_energy, bulk_modulus)
 

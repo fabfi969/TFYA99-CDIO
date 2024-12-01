@@ -1,6 +1,7 @@
 import numpy as np
 from ase.eos import EquationOfState
 from ase import units
+from ase import Atoms
 
 def calcenergy(a):  # store a reference to atoms in the definition.
     '''Function to calculate the potential, kinetic and total energy.'''
@@ -34,9 +35,13 @@ def calcpressure(a):
     pressure = (2 * ekin * len(a) + sum_of_forces_and_positions) / (3 * volume)
     return pressure
 
-def calccohesiveenergy(epot_list):
+def calccohesiveenergy(epot_list, material, simulation_method):
     '''Function to calculate cohesive energy.'''
-    e_cohesive = abs(sum(epot_list) / len(epot_list))
+    isolated_atom = Atoms(material[0])
+    isolated_atom.set_cell([10.0, 10.0, 10.0])
+    isolated_atom.center()
+    isolated_atom.calc = simulation_method
+    e_cohesive = abs((sum(epot_list) / len(epot_list)) - isolated_atom.get_potential_energy())
     return e_cohesive
 
 def calcbulkmodulus(volumes, energies):
