@@ -81,10 +81,3 @@ def create_atoms(input_data):
                     pbc=input_data['atoms']['pbc'],
                     latticeconstant=input_data['atoms']['latticeconstant'],
                     )
-
-if __name__ == '__main__':
-    input_file_name = 'input_data.toml'
-    create_input_file(input_file_name)
-    input_data = toml.load(input_file_name)
-    create_atoms(input_data)
-    print('created atoms object')
