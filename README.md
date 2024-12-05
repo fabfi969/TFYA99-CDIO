@@ -67,7 +67,7 @@ Material simulation software description.
 The following instructions is to allow people who have no experience in Shell to make modifications to super_comp_script.q to be able to run their desierd calculations.
 ### Variables
 A variable is declered by writing
-    
+
     var=value
 It is important that that there are no spaces between the variable name, the equal sign and the value since this will return errors. The following exampels will not work:
 
@@ -75,25 +75,25 @@ It is important that that there are no spaces between the variable name, the equ
     var =value
     var = value
 To accsess the value of a variable put '$' in fron of it. For example:
-    
+
     $var
 ### For Loops
 A for loop is declered in the following way:
-    
+
     for i in {1..3}
     do
         [insert code here]
-    done     
+    done
 This example will excecute the code in the loop for i=1, i=2 and i=3.
 
 ### Floating Point Operations
 Shells normal arithmetic opperations do not suport floating point numbers. Insted a expression on the following form is requiered.
-    
+
     $(bc <<<"scale=2;[expression]")
 where [expression] should be replaced by the desierd mathamatical expression.
 Scale is a varable that determains the number of decimals in the float.
 
-### Example Submit Script 
+### Example Submit Script
 The following is an example of an extract from super_comp_script.q demonstrating the instructions above.
 
     for i in {2..4}
@@ -115,3 +115,4 @@ The script will run the program with lattice constant 2.2, 2.3 and 2.4.
 ## Edit README
 1. open README
 3. use 'Ctrl+k v' to see the compiled file in VSCode
+
