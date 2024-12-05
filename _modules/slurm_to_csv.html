@@ -80,39 +80,39 @@
 <div class="viewcode-block" id="slurm_to_csv">
 <a class="viewcode-back" href="../_reference/slurm_to_csv.html#slurm_to_csv.slurm_to_csv">[docs]</a>
 <span class="k">def</span> <span class="nf">slurm_to_csv</span><span class="p">():</span>
-<span class="w">    </span><span class="sd">&#39;&#39;&#39;this parses the slurm files in data/slurms and creates CSV-files out of them located in data/slurm_results&#39;&#39;&#39;</span>
-
-
-    <span class="c1"># These are the categories written to the CSV</span>
-    <span class="c1"># TODO: ADD CATEGORIES THAT DIFFERENTIATE THE RUNS ON THE NEXT LINE, AKA thickness or material combination or something</span>
-    <span class="n">csv_categories</span> <span class="o">=</span> <span class="s1">&#39;Epot,Ekin,T,Etot&#39;</span>
-
+    <span class="n">csv_categories</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Epot,Ekin,T,Etot&#39;</span><span class="p">]</span>
 
     <span class="n">root_path</span> <span class="o">=</span> <span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;TFYA99-CDIO&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;TFYA99-CDIO&#39;</span>
-    <span class="n">RES_PATH</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">root_path</span><span class="si">}</span><span class="s1">/data/slurm_results&#39;</span>
 
+    <span class="n">RES_PATH</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">root_path</span><span class="si">}</span><span class="s1">/data/slurm_results&#39;</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">RES_PATH</span><span class="p">):</span>
         <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">RES_PATH</span><span class="p">)</span>
 
     <span class="k">for</span> <span class="n">slurm_name</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">root_path</span><span class="si">}</span><span class="s1">/data/slurms&#39;</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">slurm_name</span><span class="p">)</span>
 
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">RES_PATH</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">slurm_name</span><span class="si">}</span><span class="s1">.csv&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;UTF-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-            <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">RES_PATH</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">slurm_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">):</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">RES_PATH</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">slurm_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 
-            <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">((</span><span class="n">csv_categories</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">))</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">root_path</span><span class="si">}</span><span class="s1">/data/slurms/</span><span class="si">{</span><span class="n">slurm_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;UTF-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
 
-            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">root_path</span><span class="si">}</span><span class="s1">/data/slurms/</span><span class="si">{</span><span class="n">slurm_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;UTF-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-                <span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+        <span class="n">SIMUL_NR</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">csv_file_lines</span> <span class="o">=</span> <span class="n">csv_categories</span><span class="p">[:]</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
 
-            <span class="n">csv_file_lines</span> <span class="o">=</span> <span class="p">[]</span>
-            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
-                    <span class="n">csv_file_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-                <span class="k">elif</span> <span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;-&#39;</span><span class="p">:</span>
-                    <span class="c1"># only write the values when the system has stabilized</span>
-                    <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">((</span><span class="n">csv_file_lines</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">))</span>
-                    <span class="n">csv_file_lines</span> <span class="o">=</span> <span class="p">[]</span></div>
+            <span class="k">if</span> <span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+                <span class="n">csv_file_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+            <span class="k">elif</span> <span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;-&#39;</span><span class="p">:</span>
+
+                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">RES_PATH</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">slurm_name</span><span class="si">}</span><span class="s1">/simulation_</span><span class="si">{</span><span class="n">SIMUL_NR</span><span class="si">}</span><span class="s1">.csv&#39;</span><span class="p">,</span>
+                            <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;UTF-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+                    <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+                    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">csv_file_lines</span><span class="p">:</span>
+                        <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">))</span>
+                <span class="n">SIMUL_NR</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="n">csv_file_lines</span> <span class="o">=</span> <span class="n">csv_categories</span><span class="p">[:]</span></div>
 
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>

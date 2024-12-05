@@ -73,6 +73,9 @@
              
   <h1>Source code for calculate_properties</h1><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">ase.eos</span> <span class="kn">import</span> <span class="n">EquationOfState</span>
+<span class="kn">from</span> <span class="nn">ase</span> <span class="kn">import</span> <span class="n">units</span>
+<span class="kn">from</span> <span class="nn">ase</span> <span class="kn">import</span> <span class="n">Atoms</span>
 
 <div class="viewcode-block" id="calcenergy">
 <a class="viewcode-back" href="../_reference/calculate_properties.html#calculate_properties.calcenergy">[docs]</a>
@@ -113,6 +116,34 @@
     <span class="c1"># Calculate pressure using formula from lecture.</span>
     <span class="n">pressure</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">ekin</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="n">sum_of_forces_and_positions</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">volume</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">pressure</span></div>
+
+
+<div class="viewcode-block" id="calccohesiveenergy">
+<a class="viewcode-back" href="../_reference/calculate_properties.html#calculate_properties.calccohesiveenergy">[docs]</a>
+<span class="k">def</span> <span class="nf">calccohesiveenergy</span><span class="p">(</span><span class="n">epot_list</span><span class="p">,</span> <span class="n">material</span><span class="p">,</span> <span class="n">simulation_method</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Function to calculate cohesive energy.&#39;&#39;&#39;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">isolated_atom</span> <span class="o">=</span> <span class="n">Atoms</span><span class="p">(</span><span class="n">material</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">isolated_atom</span><span class="o">.</span><span class="n">set_cell</span><span class="p">([</span><span class="mf">10.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">])</span>
+        <span class="n">isolated_atom</span><span class="o">.</span><span class="n">center</span><span class="p">()</span>
+        <span class="n">isolated_atom</span><span class="o">.</span><span class="n">calc</span> <span class="o">=</span> <span class="n">simulation_method</span>
+        <span class="n">e_cohesive</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">((</span><span class="nb">sum</span><span class="p">(</span><span class="n">epot_list</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">epot_list</span><span class="p">))</span> <span class="o">-</span> <span class="n">isolated_atom</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">e_cohesive</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">return</span><span class="p">(</span><span class="s1">&#39;Cohesive energy could not be calculated. Perhaps equilibrium was not reached.&#39;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="calcbulkmodulus">
+<a class="viewcode-back" href="../_reference/calculate_properties.html#calculate_properties.calcbulkmodulus">[docs]</a>
+<span class="k">def</span> <span class="nf">calcbulkmodulus</span><span class="p">(</span><span class="n">volumes</span><span class="p">,</span> <span class="n">energies</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Function to calculate bulk modulus.&#39;&#39;&#39;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">eos</span> <span class="o">=</span> <span class="n">EquationOfState</span><span class="p">(</span><span class="n">volumes</span><span class="p">,</span> <span class="n">energies</span><span class="p">,</span> <span class="n">eos</span> <span class="o">=</span> <span class="s1">&#39;murnaghan&#39;</span><span class="p">)</span>
+        <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">bulk_modulus</span> <span class="o">=</span> <span class="n">eos</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+        <span class="n">bulk_modulus</span> <span class="o">=</span> <span class="n">bulk_modulus</span> <span class="o">/</span> <span class="n">units</span><span class="o">.</span><span class="n">kJ</span> <span class="o">*</span> <span class="mf">1.0e24</span> <span class="c1"># Convert eV/Angstrom^3 to GPa</span>
+        <span class="k">return</span> <span class="n">bulk_modulus</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">return</span><span class="p">(</span><span class="s1">&#39;Bulk modulus could not be calculated. Perhaps equilibrium was not reached.&#39;</span><span class="p">)</span></div>
 
 </pre></div>
 

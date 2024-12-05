@@ -74,7 +74,7 @@
   <h1>Source code for save_data</h1><div class="highlight"><pre>
 <div class="viewcode-block" id="writetofile">
 <a class="viewcode-back" href="../_reference/save_data.html#save_data.writetofile">[docs]</a>
-<span></span><span class="k">def</span> <span class="nf">writetofile</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">epot_list</span><span class="p">,</span> <span class="n">ekin_list</span><span class="p">,</span> <span class="n">etot_list</span><span class="p">,</span> <span class="n">temperature_list</span><span class="p">,</span> <span class="n">pressure_list</span><span class="p">):</span>
+<span></span><span class="k">def</span> <span class="nf">writetofile</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">epot_list</span><span class="p">,</span> <span class="n">ekin_list</span><span class="p">,</span> <span class="n">etot_list</span><span class="p">,</span> <span class="n">temperature_list</span><span class="p">,</span> <span class="n">pressure_list</span><span class="p">,</span> <span class="n">cohesive_energy</span><span class="p">,</span> <span class="n">bulk_modulus</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Save simulation data to file.&quot;&quot;&quot;</span>
     <span class="n">epot_list</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;epot&#39;</span><span class="p">)</span>
     <span class="n">ekin_list</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;ekin&#39;</span><span class="p">)</span>
@@ -86,6 +86,8 @@
     <span class="nb">print</span><span class="p">(</span><span class="n">etot_list</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">temperature_list</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">pressure_list</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cohesive energy: &quot;</span><span class="p">,</span> <span class="n">cohesive_energy</span><span class="p">,</span> <span class="s2">&quot;eV/atom&quot;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bulk modulus: &quot;</span><span class="p">,</span> <span class="n">bulk_modulus</span><span class="p">,</span> <span class="s2">&quot;GPa&quot;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
     <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Simulation data saved to file: &#39;</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">name</span> <span class="p">)</span></div>
 

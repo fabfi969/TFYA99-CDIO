@@ -91,10 +91,11 @@
 <span class="kn">from</span> <span class="nn">create_input_file</span> <span class="kn">import</span> <span class="n">create_input_file</span>
 <span class="kn">from</span> <span class="nn">create_atoms_md</span> <span class="kn">import</span> <span class="n">invalid_materials_EMT_error</span><span class="p">,</span> <span class="n">create_atoms</span>
 <span class="kn">import</span> <span class="nn">toml</span>
-<span class="kn">from</span> <span class="nn">calculate_properties</span> <span class="kn">import</span> <span class="n">calcenergy</span><span class="p">,</span> <span class="n">calctemperature</span><span class="p">,</span> <span class="n">calcpressure</span>
+<span class="kn">from</span> <span class="nn">calculate_properties</span> <span class="kn">import</span> <span class="n">calcenergy</span><span class="p">,</span> <span class="n">calctemperature</span><span class="p">,</span> <span class="n">calcpressure</span><span class="p">,</span> <span class="n">calccohesiveenergy</span><span class="p">,</span> <span class="n">calcbulkmodulus</span>
 <span class="kn">from</span> <span class="nn">save_data</span> <span class="kn">import</span> <span class="n">writetofile</span>
 <span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">random</span>
 <span class="kn">from</span> <span class="nn">alloy</span> <span class="kn">import</span> <span class="n">Interface</span>
+<span class="kn">import</span> <span class="nn">statistics</span>
 
 <div class="viewcode-block" id="TwoBlocks">
 <a class="viewcode-back" href="../_reference/md.html#md.TwoBlocks">[docs]</a>
@@ -199,27 +200,65 @@
             <span class="p">)</span>
 
     <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;output_data.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="c1"># Open the target file. Overwrite existing file.</span>
-    <span class="n">epot_list</span><span class="p">,</span> <span class="n">ekin_list</span><span class="p">,</span> <span class="n">etot_list</span><span class="p">,</span> <span class="n">temperature_list</span><span class="p">,</span> <span class="n">pressure_list</span> <span class="o">=</span> <span class="p">([]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+    <span class="n">epot_list</span><span class="p">,</span> <span class="n">ekin_list</span><span class="p">,</span> <span class="n">etot_list</span><span class="p">,</span> <span class="n">temperature_list</span><span class="p">,</span> <span class="n">pressure_list</span><span class="p">,</span> <span class="n">bulk_modulus</span> <span class="o">=</span> <span class="p">([]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">))</span>
     <span class="k">def</span> <span class="nf">savedata</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">atoms</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;Save simulation data to lists.&#39;&#39;&#39;</span>
-        <span class="n">epot</span><span class="p">,</span> <span class="n">ekin</span><span class="p">,</span> <span class="n">etot</span> <span class="o">=</span> <span class="n">calcenergy</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-        <span class="n">epot_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">epot</span><span class="p">)</span>
-        <span class="n">ekin_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ekin</span><span class="p">)</span>
-        <span class="n">etot_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">etot</span><span class="p">)</span>
-        <span class="n">temperature</span> <span class="o">=</span> <span class="n">calctemperature</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-        <span class="n">temperature_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">temperature</span><span class="p">)</span>
-        <span class="n">pressure</span> <span class="o">=</span> <span class="n">calcpressure</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-        <span class="n">pressure_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pressure</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">is_equilibrium</span><span class="p">():</span>
+            <span class="n">epot</span><span class="p">,</span> <span class="n">ekin</span><span class="p">,</span> <span class="n">etot</span> <span class="o">=</span> <span class="n">calcenergy</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+            <span class="n">epot_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">epot</span><span class="p">)</span>
+            <span class="n">ekin_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ekin</span><span class="p">)</span>
+            <span class="n">etot_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">etot</span><span class="p">)</span>
+            <span class="n">temperature</span> <span class="o">=</span> <span class="n">calctemperature</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+            <span class="n">temperature_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">temperature</span><span class="p">)</span>
+            <span class="n">pressure</span> <span class="o">=</span> <span class="n">calcpressure</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+            <span class="n">pressure_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pressure</span><span class="p">)</span>
+
+    <span class="n">volumes</span><span class="p">,</span> <span class="n">energies</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+    <span class="k">def</span> <span class="nf">volumes_and_energies</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">atoms</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;Vary the lattice constant to simulate different volumes to calculate bulk modulus.&#39;&#39;&#39;</span>
+        <span class="k">if</span> <span class="n">is_equilibrium</span><span class="p">():</span>
+            <span class="n">scaling_factors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.95</span><span class="p">,</span> <span class="mf">1.05</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">scale</span> <span class="ow">in</span> <span class="n">scaling_factors</span><span class="p">:</span>
+                <span class="n">scaled_atoms</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+                <span class="n">scaled_atoms</span><span class="o">.</span><span class="n">set_cell</span><span class="p">(</span><span class="n">atoms</span><span class="o">.</span><span class="n">get_cell</span><span class="p">()</span> <span class="o">*</span> <span class="n">scale</span><span class="p">,</span> <span class="n">scale_atoms</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                <span class="n">scaled_atoms</span><span class="o">.</span><span class="n">calc</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">calc</span>
+                <span class="n">volumes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">scaled_atoms</span><span class="o">.</span><span class="n">get_volume</span><span class="p">())</span>
+                <span class="n">energies</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">scaled_atoms</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">())</span>
+            <span class="k">return</span> <span class="n">volumes</span><span class="p">,</span> <span class="n">energies</span>
+
+
+    <span class="n">equilibrium_list</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1000</span><span class="p">,</span> <span class="o">-</span><span class="mi">1000</span><span class="p">,</span> <span class="o">-</span><span class="mi">1000</span><span class="p">,</span> <span class="o">-</span><span class="mi">1000</span><span class="p">,</span> <span class="o">-</span><span class="mi">1000</span><span class="p">,</span> <span class="o">-</span><span class="mi">1000</span><span class="p">,</span> <span class="o">-</span><span class="mi">1000</span><span class="p">,</span> <span class="o">-</span><span class="mi">1000</span><span class="p">,</span> <span class="o">-</span><span class="mi">1000</span><span class="p">,</span> <span class="o">-</span><span class="mi">1000</span><span class="p">]</span>
+    <span class="k">def</span> <span class="nf">is_equilibrium</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">atoms</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;Function to determine if equilibrium.&#39;&#39;&#39;</span>
+        <span class="k">if</span> <span class="n">ensemble_mode</span> <span class="o">==</span> <span class="s1">&#39;energy&#39;</span><span class="p">:</span>
+            <span class="n">equilibrium_list</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">get_temperature</span><span class="p">())</span>
+            <span class="n">equilibrium_list</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">statistics</span><span class="o">.</span><span class="n">pstdev</span><span class="p">(</span><span class="n">equilibrium_list</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">True</span>
+            <span class="k">else</span><span class="p">:</span> 
+                <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">elif</span> <span class="n">ensemble_mode</span> <span class="o">==</span> <span class="s1">&#39;temperature&#39;</span><span class="p">:</span>
+            <span class="n">equilibrium_list</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">()</span> <span class="o">+</span> <span class="n">a</span><span class="o">.</span><span class="n">get_kinetic_energy</span><span class="p">())</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+            <span class="n">equilibrium_list</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">statistics</span><span class="o">.</span><span class="n">pstdev</span><span class="p">(</span><span class="n">equilibrium_list</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.01</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">True</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">False</span>
+
 
 
     <span class="c1"># Now run the dynamics</span>
     <span class="n">dyn</span><span class="o">.</span><span class="n">attach</span><span class="p">(</span><span class="n">printenergy</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;trajectory_interval&#39;</span><span class="p">])</span>
     <span class="n">dyn</span><span class="o">.</span><span class="n">attach</span><span class="p">(</span><span class="n">savedata</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;trajectory_interval&#39;</span><span class="p">])</span>
+    <span class="n">dyn</span><span class="o">.</span><span class="n">attach</span><span class="p">(</span><span class="n">volumes_and_energies</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;trajectory_interval&#39;</span><span class="p">])</span>
     <span class="n">savedata</span><span class="p">()</span>
     <span class="n">printenergy</span><span class="p">()</span>
+    <span class="n">volumes_and_energies</span><span class="p">()</span>
     <span class="n">dyn</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;run_time&#39;</span><span class="p">])</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">args</span><span class="o">.</span><span class="n">slurm</span><span class="p">:</span>
-        <span class="n">writetofile</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">epot_list</span><span class="p">,</span> <span class="n">ekin_list</span><span class="p">,</span> <span class="n">etot_list</span><span class="p">,</span> <span class="n">temperature_list</span><span class="p">,</span> <span class="n">pressure_list</span><span class="p">)</span>
+        <span class="n">cohesive_energy</span> <span class="o">=</span> <span class="n">calccohesiveenergy</span><span class="p">(</span><span class="n">epot_list</span><span class="p">,</span> <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;materials&#39;</span><span class="p">],</span> <span class="n">atoms</span><span class="o">.</span><span class="n">calc</span><span class="p">)</span>
+        <span class="n">bulk_modulus</span> <span class="o">=</span> <span class="n">calcbulkmodulus</span><span class="p">(</span><span class="n">volumes</span><span class="p">,</span> <span class="n">energies</span><span class="p">)</span>
+        <span class="n">writetofile</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">epot_list</span><span class="p">,</span> <span class="n">ekin_list</span><span class="p">,</span> <span class="n">etot_list</span><span class="p">,</span> <span class="n">temperature_list</span><span class="p">,</span> <span class="n">pressure_list</span><span class="p">,</span> <span class="n">cohesive_energy</span><span class="p">,</span> <span class="n">bulk_modulus</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-----End of simulation.-----&quot;</span><span class="p">)</span></div>
 
 </pre></div>
