@@ -39,8 +39,8 @@ Material simulation software description.
     This will run the code with EMT, without visualisation and in constant energy mode.
 3.  There are a few optional flags that can be set. Those should be typed seperated by a space after main.py. Only one value for each flag can be set. The values are seperated by "/" below. The flags are the following:
 
-        -simulation_method EMT/LennardJones
-    This sets the method that should be used for the integrator.
+        -simulation_method EMT/LennardJones/Interface
+    This sets the method that should be used for the integrator. Interface uses EMT but simulates an interface between two materials.
 
         -visualisation on/off
     This sets if the visualisation is turned on or off.
@@ -50,6 +50,15 @@ Material simulation software description.
 
         -lattice_constant float
     This overrides the lattice constant set in the input file.
+
+        -substrate_lattice
+    Only for interface simulation. Overrides the lattice constant for the substrate.
+
+        -film_lattice
+    Only for interface simulation. Overrides the lattice constant for the film.
+
+        -alloy_ratio
+    Only for interface simulation. Overrides the ratio of materialsin the film.
 
         -slurm
     This will tell the program to print in a way that the outputs in the terminal can be turned into a CSV-file.
