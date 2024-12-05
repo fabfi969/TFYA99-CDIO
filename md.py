@@ -17,10 +17,11 @@ import numpy as np
 from create_input_file import create_input_file
 from create_atoms_md import invalid_materials_EMT_error, create_atoms
 import toml
-from calculate_properties import calcenergy, calctemperature, calcpressure
+from calculate_properties import calcenergy, calctemperature, calcpressure, calccohesiveenergy, calcbulkmodulus
 from save_data import writetofile
 from random import random
 from alloy import Interface
+import statistics
 
 def TwoBlocks(mat1, structure1, a1, mat2, structure2, a2, size, alloy_ratio = 0, alloy = "N"):
     #Generate an two layers of atoms pressed up against each other
@@ -117,25 +118,63 @@ def run_md(args, input_data):
             )
 
     f = open('output_data.txt', 'w') # Open the target file. Overwrite existing file.
-    epot_list, ekin_list, etot_list, temperature_list, pressure_list = ([] for i in range(5))
+    epot_list, ekin_list, etot_list, temperature_list, pressure_list, bulk_modulus = ([] for i in range(6))
     def savedata(a=atoms):
         '''Save simulation data to lists.'''
-        epot, ekin, etot = calcenergy(a)
-        epot_list.append(epot)
-        ekin_list.append(ekin)
-        etot_list.append(etot)
-        temperature = calctemperature(a)
-        temperature_list.append(temperature)
-        pressure = calcpressure(a)
-        pressure_list.append(pressure)
+        if is_equilibrium():
+            epot, ekin, etot = calcenergy(a)
+            epot_list.append(epot)
+            ekin_list.append(ekin)
+            etot_list.append(etot)
+            temperature = calctemperature(a)
+            temperature_list.append(temperature)
+            pressure = calcpressure(a)
+            pressure_list.append(pressure)
+
+    volumes, energies = [], []
+    def volumes_and_energies(a=atoms):
+        '''Vary the lattice constant to simulate different volumes to calculate bulk modulus.'''
+        if is_equilibrium():
+            scaling_factors = np.linspace(0.95, 1.05, 10)
+            for scale in scaling_factors:
+                scaled_atoms = a.copy()
+                scaled_atoms.set_cell(atoms.get_cell() * scale, scale_atoms=True)
+                scaled_atoms.calc = a.calc
+                volumes.append(scaled_atoms.get_volume())
+                energies.append(scaled_atoms.get_potential_energy())
+            return volumes, energies
+
+
+    equilibrium_list = [-1000, -1000, -1000, -1000, -1000, -1000, -1000, -1000, -1000, -1000]
+    def is_equilibrium(a=atoms):
+        '''Function to determine if equilibrium.'''
+        if ensemble_mode == 'energy':
+            equilibrium_list.insert(0, a.get_temperature())
+            equilibrium_list.pop(10)
+            if statistics.pstdev(equilibrium_list) < 5:
+                return True
+            else: 
+                return False
+        elif ensemble_mode == 'temperature':
+            equilibrium_list.insert(0, (a.get_potential_energy() + a.get_kinetic_energy())/len(a))
+            equilibrium_list.pop(10)
+            if statistics.pstdev(equilibrium_list) < 0.01:
+                return True
+            else:
+                return False
+
 
 
     # Now run the dynamics
     dyn.attach(printenergy, interval=input_data['trajectory_interval'])
     dyn.attach(savedata, interval=input_data['trajectory_interval'])
+    dyn.attach(volumes_and_energies, interval=input_data['trajectory_interval'])
     savedata()
     printenergy()
+    volumes_and_energies()
     dyn.run(input_data['run_time'])
     if not args.slurm:
-        writetofile(f, epot_list, ekin_list, etot_list, temperature_list, pressure_list)
+        cohesive_energy = calccohesiveenergy(epot_list, input_data['atoms']['materials'], atoms.calc)
+        bulk_modulus = calcbulkmodulus(volumes, energies)
+        writetofile(f, epot_list, ekin_list, etot_list, temperature_list, pressure_list, cohesive_energy, bulk_modulus)
     print("-----End of simulation.-----")
