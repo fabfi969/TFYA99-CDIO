@@ -28,7 +28,7 @@ def twoblocks(mat1,
     view(interface)
     return interface
 
-def calcenergy(atoms):  # store a reference to atoms in the definition.
+def calcenergy(atoms):  # store a reference to atoms in the definition
     """Function to calculate the potential, kinetic and total energy."""
     epot = atoms.get_potential_energy() / len(atoms)
     ekin = atoms.get_kinetic_energy() / len(atoms)

@@ -1,5 +1,6 @@
 '''Demonstrates molecular dynamics with constant energy. Is called by main'''
 
+import sys
 from asap3 import EMT, LennardJones, Trajectory # This line gives the terminal warnings.
 from ase import units
 from ase.lattice.cubic import BodyCenteredCubic, BodyCenteredCubicFactory, Bravais, Diamond
@@ -14,21 +15,13 @@ from ase.io import read
 from ase.md import Andersen
 import numpy as np
 from create_input_file import create_input_file
-from create_atoms_md import invalid_materials_EMT, create_atoms
+from create_atoms_md import invalid_materials_EMT_error, create_atoms
 import toml
+from calculate_properties import calcenergy, calctemperature, calcpressure, calccohesiveenergy, calcbulkmodulus
+from save_data import writetofile
 from random import random
 from alloy import Interface
-
-
-
-
-
-def calcenergy(a):  # store a reference to atoms in the definition.
-    '''Function to calculate the potential, kinetic and total energy.'''
-    epot = a.get_potential_energy() / len(a)
-    ekin = a.get_kinetic_energy() / len(a)
-    etot = epot + ekin
-    return (epot, ekin, etot)
+import statistics
 
 def TwoBlocks(mat1, structure1, a1, mat2, structure2, a2, size, alloy_ratio = 0, alloy = "N"):
     #Generate an two layers of atoms pressed up against each other
@@ -54,33 +47,17 @@ def random_alloys(mat1,structure1,a1,mat2,atomic_percent,size):
     return(bulk1)
     #view(bulk1)
 
-def calctemperature(a):
-    '''Function to calculate temperature.'''
-    temperature = a.get_temperature()
-    return temperature
-
-def calcpressure(a):
-    '''Function to calculate internal pressure.'''
-
-    # Get kinetic energy
-    _, ekin, _ = calcenergy(a)
-
-    # Get forces and positions.
-    forces = a.get_forces()
-    positions = a.get_positions()
-
-    # Calculate the sum in formula.
-    sum_of_forces_and_positions = np.sum(forces * positions)
-
-    # Get volume.
-    volume = a.get_volume()
-
-    # Calculate pressure using formula from lecture.
-    pressure = (2 * ekin * len(a) + sum_of_forces_and_positions) / (3 * volume)
-    return pressure
-
 def run_md(args, input_data):
     '''runs the molecular dynamics simulation'''
+
+    # deletes asap3 warnings in terminal
+    if not args.slurm:
+        for _ in range(3):
+            sys.stdout.write("\033[F")
+            sys.stdout.write("\033[K")
+            sys.stdout.flush()
+    print("____Starting new simulation____:")
+
 
     #command line override of lattice constant
     if args.lattice_constant != -1:
@@ -96,12 +73,7 @@ def run_md(args, input_data):
 
     # Describe the interatomic interactions with the Effective Medium Theory
     if args.simulation_method == 'EMT':
-        invalid_materials_status = invalid_materials_EMT(atoms.symbols)
-        if invalid_materials_status[0]:
-            print('ERROR:\n    The defined elements cannot be simulated using EMT.\n    EMT only supports \
-the metals Al, Cu, Ag, Au, Ni, Pd and Pt.')
-            print(f'    The defined elements are {invalid_materials_status[1]}.')
-            quit()
+        invalid_materials_EMT_error(atoms.symbols)
         atoms.calc = EMT()
 
     elif args.simulation_method == 'LennardJones':
@@ -119,7 +91,6 @@ the metals Al, Cu, Ag, Au, Ni, Pd and Pt.')
         temperature_K=input_data['temperature_K']
     )
 
-
     try:
         ensemble_mode = args.ensemble_mode
     except AttributeError:
@@ -133,63 +104,77 @@ the metals Al, Cu, Ag, Au, Ni, Pd and Pt.')
         dyn = Andersen(atoms, input_data['time_step'], input_data['temperature_K'], 1 * units.fs)
 
     traj = Trajectory(input_data['trajectory_file_name'], 'w', atoms)
-    # TODO check what next line does
     dyn.attach(traj.write, interval=input_data['trajectory_interval'])
 
     def printenergy(a=atoms):  # store a reference to atoms in the definition.
         '''Function to print the potential, kinetic and total energy.'''
         epot, ekin, etot = calcenergy(a)
-        print(
-            'Energy per atom: Epot = %.3feV  Ekin = %.3feV (T=%3.0fK)  '
-            'Etot = %.3feV' % (epot, ekin, ekin / (1.5 * units.kB), etot)
-        )
+        if args.slurm:
+            print(f"{epot},{ekin},{ekin / (1.5 * units.kB)},{etot}")
+        else:
+            print(
+                'Energy per atom: Epot = %.3feV  Ekin = %.3feV (T=%3.0fK)  '
+                'Etot = %.3feV' % (epot, ekin, ekin / (1.5 * units.kB), etot)
+            )
 
     f = open('output_data.txt', 'w') # Open the target file. Overwrite existing file.
-    epot_list, ekin_list, etot_list, temperature_list, pressure_list = ([] for i in range(5))
+    epot_list, ekin_list, etot_list, temperature_list, pressure_list, bulk_modulus = ([] for i in range(6))
     def savedata(a=atoms):
         '''Save simulation data to lists.'''
-        epot, ekin, etot = calcenergy(a)
-        epot_list.append(epot)
-        ekin_list.append(ekin)
-        etot_list.append(etot)
-        temperature = calctemperature(a)
-        temperature_list.append(temperature)
-        pressure = calcpressure(a)
-        pressure_list.append(pressure)
+        if is_equilibrium():
+            epot, ekin, etot = calcenergy(a)
+            epot_list.append(epot)
+            ekin_list.append(ekin)
+            etot_list.append(etot)
+            temperature = calctemperature(a)
+            temperature_list.append(temperature)
+            pressure = calcpressure(a)
+            pressure_list.append(pressure)
+
+    volumes, energies = [], []
+    def volumes_and_energies(a=atoms):
+        '''Vary the lattice constant to simulate different volumes to calculate bulk modulus.'''
+        if is_equilibrium():
+            scaling_factors = np.linspace(0.95, 1.05, 10)
+            for scale in scaling_factors:
+                scaled_atoms = a.copy()
+                scaled_atoms.set_cell(atoms.get_cell() * scale, scale_atoms=True)
+                scaled_atoms.calc = a.calc
+                volumes.append(scaled_atoms.get_volume())
+                energies.append(scaled_atoms.get_potential_energy())
+            return volumes, energies
 
 
-    def writetofile():
-        """Save simulation data to file."""
-        epot_list.insert(0, 'epot')
-        ekin_list.insert(0, 'ekin')
-        etot_list.insert(0, 'etot')
-        temperature_list.insert(0, 'temperature')
-        pressure_list.insert(0, 'pressure')
-        print(epot_list, file=f)
-        print(ekin_list, file=f)
-        print(etot_list, file=f)
-        print(temperature_list, file=f)
-        print(pressure_list, file=f)
-        f.close
-        print('Simulation data saved to file: ', f.name )
-
+    equilibrium_list = [-1000, -1000, -1000, -1000, -1000, -1000, -1000, -1000, -1000, -1000]
+    def is_equilibrium(a=atoms):
+        '''Function to determine if equilibrium.'''
+        if ensemble_mode == 'energy':
+            equilibrium_list.insert(0, a.get_temperature())
+            equilibrium_list.pop(10)
+            if statistics.pstdev(equilibrium_list) < 5:
+                return True
+            else: 
+                return False
+        elif ensemble_mode == 'temperature':
+            equilibrium_list.insert(0, (a.get_potential_energy() + a.get_kinetic_energy())/len(a))
+            equilibrium_list.pop(10)
+            if statistics.pstdev(equilibrium_list) < 0.01:
+                return True
+            else:
+                return False
 
 
 
     # Now run the dynamics
     dyn.attach(printenergy, interval=input_data['trajectory_interval'])
     dyn.attach(savedata, interval=input_data['trajectory_interval'])
+    dyn.attach(volumes_and_energies, interval=input_data['trajectory_interval'])
     savedata()
     printenergy()
+    volumes_and_energies()
     dyn.run(input_data['run_time'])
-    writetofile()
-
-if __name__ == '__main__':
-    input_file_name = 'input_data.toml'
-    create_input_file(input_file_name)
-    input_data = toml.load(input_file_name)
-    class arguments:
-        simulation_method = 'LennardJones'
-        cif = 'SrCaMg6.cif'
-    args = arguments()
-    run_md(args, input_data)
+    if not args.slurm:
+        cohesive_energy = calccohesiveenergy(epot_list, input_data['atoms']['materials'], atoms.calc)
+        bulk_modulus = calcbulkmodulus(volumes, energies)
+        writetofile(f, epot_list, ekin_list, etot_list, temperature_list, pressure_list, cohesive_energy, bulk_modulus)
+    print("-----End of simulation.-----")

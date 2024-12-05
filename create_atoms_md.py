@@ -7,6 +7,14 @@ from create_input_file import create_input_file
 import toml
 import re
 
+def invalid_materials_EMT_error(atoms_symbols):
+    invalid_materials_status = invalid_materials_EMT(atoms_symbols)
+    if invalid_materials_status[0]:
+        print('ERROR:\n    The defined elements cannot be simulated using EMT.\n    EMT only supports \
+the metals Al, Cu, Ag, Au, Ni, Pd and Pt.')
+        print(f'    The defined elements are {invalid_materials_status[1]}.')
+        quit()
+
 def invalid_materials_EMT(materials_list):
     '''checks if the given materials can be used for EMT (effective-medium theory)
     calculations. It only supports the standard EMT metals: Al, Cu, Ag, Au, Ni, Pd and Pt
@@ -73,10 +81,3 @@ def create_atoms(input_data):
                     pbc=input_data['atoms']['pbc'],
                     latticeconstant=input_data['atoms']['latticeconstant'],
                     )
-
-if __name__ == '__main__':
-    input_file_name = 'input_data.toml'
-    create_input_file(input_file_name)
-    input_data = toml.load(input_file_name)
-    create_atoms(input_data)
-    print('created atoms object')

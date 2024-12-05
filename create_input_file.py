@@ -9,7 +9,7 @@ def create_input_file(file_name):
     function to create the TOML input file
     '''
 
-    materials = ['Al']
+    materials = ['Ag']
 
     data = {
         'atoms': {
@@ -55,8 +55,6 @@ def create_input_file(file_name):
 
     with open(filename, 'w') as f:
         toml.dump(data, f)
-
-    print(f'Created {filename}')
 
 
 if __name__ == '__main__':
