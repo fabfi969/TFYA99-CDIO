@@ -145,6 +145,15 @@
     <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">lattice_constant</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
         <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;latticeconstant&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">lattice_constant</span>
 
+    <span class="c1">#command line override for parameters for inteface simulation</span>
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">simulation_method</span> <span class="o">==</span> <span class="s1">&#39;Interface&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">substrate_lattice</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;interface&#39;</span><span class="p">][</span><span class="s1">&#39;substrate_lattice&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">substrate_lattice</span>
+        <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">film_lattice</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;interface&#39;</span><span class="p">][</span><span class="s1">&#39;film_lattice&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">film_lattice</span>
+        <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">alloy_ratio</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;interface&#39;</span><span class="p">][</span><span class="s1">&#39;alloy_ratio&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">alloy_ratio</span>
+
     <span class="c1"># Set up a crystal</span>
     <span class="c1"># Sim = Interface(&quot;Cu&quot;,&quot;fcc&quot;,2.54,&quot;Au&quot;,&quot;fcc&quot;,3.4,4)</span>
     <span class="c1"># atoms = Sim.get_atoms()</span>
@@ -156,6 +165,11 @@
     <span class="c1"># Describe the interatomic interactions with the Effective Medium Theory</span>
     <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">simulation_method</span> <span class="o">==</span> <span class="s1">&#39;EMT&#39;</span><span class="p">:</span>
         <span class="n">invalid_materials_EMT_error</span><span class="p">(</span><span class="n">atoms</span><span class="o">.</span><span class="n">symbols</span><span class="p">)</span>
+        <span class="n">atoms</span><span class="o">.</span><span class="n">calc</span> <span class="o">=</span> <span class="n">EMT</span><span class="p">()</span>
+
+    <span class="k">elif</span> <span class="n">args</span><span class="o">.</span><span class="n">simulation_method</span> <span class="o">==</span> <span class="s1">&#39;Interface&#39;</span><span class="p">:</span>
+        <span class="n">interface_object</span> <span class="o">=</span> <span class="n">Interface</span><span class="p">(</span><span class="n">input_data</span><span class="p">)</span>
+        <span class="n">atoms</span> <span class="o">=</span> <span class="n">interface_object</span><span class="o">.</span><span class="n">get_atoms</span><span class="p">()</span>
         <span class="n">atoms</span><span class="o">.</span><span class="n">calc</span> <span class="o">=</span> <span class="n">EMT</span><span class="p">()</span>
 
     <span class="k">elif</span> <span class="n">args</span><span class="o">.</span><span class="n">simulation_method</span> <span class="o">==</span> <span class="s1">&#39;LennardJones&#39;</span><span class="p">:</span>
@@ -198,6 +212,9 @@
                 <span class="s1">&#39;Energy per atom: Epot = </span><span class="si">%.3f</span><span class="s1">eV  Ekin = </span><span class="si">%.3f</span><span class="s1">eV (T=</span><span class="si">%3.0f</span><span class="s1">K)  &#39;</span>
                 <span class="s1">&#39;Etot = </span><span class="si">%.3f</span><span class="s1">eV&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">epot</span><span class="p">,</span> <span class="n">ekin</span><span class="p">,</span> <span class="n">ekin</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.5</span> <span class="o">*</span> <span class="n">units</span><span class="o">.</span><span class="n">kB</span><span class="p">),</span> <span class="n">etot</span><span class="p">)</span>
             <span class="p">)</span>
+        <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">simulation_method</span> <span class="o">==</span> <span class="s1">&#39;Interface&#39;</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">interface_object</span><span class="o">.</span><span class="n">get_interface_energy</span><span class="p">())</span>
+
 
     <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;output_data.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="c1"># Open the target file. Overwrite existing file.</span>
     <span class="n">epot_list</span><span class="p">,</span> <span class="n">ekin_list</span><span class="p">,</span> <span class="n">etot_list</span><span class="p">,</span> <span class="n">temperature_list</span><span class="p">,</span> <span class="n">pressure_list</span><span class="p">,</span> <span class="n">bulk_modulus</span> <span class="o">=</span> <span class="p">([]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">))</span>
