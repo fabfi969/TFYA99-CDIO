@@ -124,14 +124,15 @@ def run_md(args, input_data):
         '''Function to print the potential, kinetic and total energy.'''
         epot, ekin, etot = calcenergy(a)
         if args.slurm:
-            print(f"{epot},{ekin},{ekin / (1.5 * units.kB)},{etot}")
+            slurm_output = f"{epot},{ekin},{ekin / (1.5 * units.kB)},{etot}"
+            if args.simulation_method == 'Interface':
+                slurm_output = slurm_output + f',{interface_object.get_interface_energy()}'
+            print(slurm_output)
         else:
             print(
                 'Energy per atom: Epot = %.3feV  Ekin = %.3feV (T=%3.0fK)  '
                 'Etot = %.3feV' % (epot, ekin, ekin / (1.5 * units.kB), etot)
             )
-        if args.simulation_method == 'Interface':
-            print(interface_object.get_interface_energy())
 
 
     f = open('output_data.txt', 'w') # Open the target file. Overwrite existing file.
@@ -170,7 +171,7 @@ def run_md(args, input_data):
             equilibrium_list.pop(10)
             if statistics.pstdev(equilibrium_list) < 5:
                 return True
-            else: 
+            else:
                 return False
         elif ensemble_mode == 'temperature':
             equilibrium_list.insert(0, (a.get_potential_energy() + a.get_kinetic_energy())/len(a))
