@@ -18,9 +18,10 @@ def run_program():
         required = False,
         default = "EMT",
         type=str,
-        choices=["EMT", "LennardJones"],
+        choices=["EMT", "LennardJones", "Interface"],
         help="Simulation method",
     )
+
     parser.add_argument(
         "-visualisation",
         required = False,
@@ -30,6 +31,7 @@ def run_program():
         help="on if the graphs from the simulated data is to be plotted, \
 off if not which is default",
     )
+
     parser.add_argument(
         "-cif",
         required = False,
@@ -59,6 +61,27 @@ to be simulated atoms are defined",
         action = "store_true",
     )
 
+    parser.add_argument(
+        "-substrate_lattice",
+        required = False,
+        default = "-1.0",
+        type = float,
+        )
+
+    parser.add_argument(
+        "-film_lattice",
+        required = False,
+        default = "-1.0",
+        type = float,
+    )
+
+    parser.add_argument(
+        "-alloy_ratio",
+        required = False,
+        default = "-1.0",
+        type = float,
+    )
+    
     args = parser.parse_args()
 
     input_file_name = "input_data.toml"

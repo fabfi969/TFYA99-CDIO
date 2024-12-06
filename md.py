@@ -63,6 +63,15 @@ def run_md(args, input_data):
     if args.lattice_constant != -1:
         input_data['atoms']['latticeconstant'] = args.lattice_constant
 
+    #command line override for parameters for inteface simulation
+    if args.simulation_method == 'Interface':
+        if args.substrate_lattice != -1:
+            input_data['interface']['substrate_lattice'] = args.substrate_lattice
+        if args.film_lattice != -1:
+            input_data['interface']['film_lattice'] = args.film_lattice
+        if args.alloy_ratio != -1:
+            input_data['interface']['alloy_ratio'] = args.alloy_ratio
+
     # Set up a crystal
     # Sim = Interface("Cu","fcc",2.54,"Au","fcc",3.4,4)
     # atoms = Sim.get_atoms()
@@ -74,6 +83,11 @@ def run_md(args, input_data):
     # Describe the interatomic interactions with the Effective Medium Theory
     if args.simulation_method == 'EMT':
         invalid_materials_EMT_error(atoms.symbols)
+        atoms.calc = EMT()
+
+    elif args.simulation_method == 'Interface':
+        interface_object = Interface(input_data)
+        atoms = interface_object.get_atoms()
         atoms.calc = EMT()
 
     elif args.simulation_method == 'LennardJones':
@@ -116,6 +130,9 @@ def run_md(args, input_data):
                 'Energy per atom: Epot = %.3feV  Ekin = %.3feV (T=%3.0fK)  '
                 'Etot = %.3feV' % (epot, ekin, ekin / (1.5 * units.kB), etot)
             )
+        if args.simulation_method == 'Interface':
+            print(interface_object.get_interface_energy())
+
 
     f = open('output_data.txt', 'w') # Open the target file. Overwrite existing file.
     epot_list, ekin_list, etot_list, temperature_list, pressure_list, bulk_modulus = ([] for i in range(6))
