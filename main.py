@@ -76,10 +76,49 @@ to be simulated atoms are defined",
     )
 
     parser.add_argument(
-        "-alloy_ratio",
+        "-substrate_alloy_ratio",
         required = False,
         default = "-1.0",
         type = float,
+    )
+
+    parser.add_argument(
+        "-film_alloy_ratio",
+        required = False,
+        default = "-1.0",
+        type = float,
+    )
+
+    parser.add_argument(
+        "-substrate_atoms",
+        required = False,
+        default = "deafult",
+        type = str,
+        choices = ["Au", "Ag", "Cu", "Al", "Ni", "Pd", "Pt", "deafult"]
+    )
+
+    parser.add_argument(
+        "-substrate_alloying_atoms",
+        required = False,
+        default = "deafult",
+        type = str,
+        choices = ["Au", "Ag", "Cu", "Al", "Ni", "Pd", "Pt", "deafult"]
+    )
+
+    parser.add_argument(
+        "-film_atoms",
+        required = False,
+        default = "deafult",
+        type = str,
+        choices = ["Au", "Ag", "Cu", "Al", "Ni", "Pd", "Pt", "deafult"]
+    )
+
+    parser.add_argument(
+        "-film_alloying_atoms",
+        required = False,
+        default = "deafult",
+        type = str,
+        choices = ["Au", "Ag", "Cu", "Al", "Ni", "Pd", "Pt", "deafult"]
     )
     
     args = parser.parse_args()

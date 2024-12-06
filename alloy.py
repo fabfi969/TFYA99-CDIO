@@ -16,12 +16,12 @@ def twoblocks(mat1,
               mat2, structure2,
               latticefilm,
               size,
-              alloy_ratio = 0,
+              film_alloy_ratio = 0,
               alloy = "N"):
     """Generate an two layers of atoms pressed up against each other"""
     bulk1 = bulk(mat1,structure1, latticesubstrate) * (2*size, 2*size, size)
     if alloy != 0:
-        bulk2 = random_alloys(mat2,structure2, latticefilm, alloy, alloy_ratio, size)
+        bulk2 = random_alloys(mat2,structure2, latticefilm, alloy, film_alloy_ratio, size)
     else:
         bulk2 = bulk(mat2,structure2, latticefilm) * (2*size, 2*size, size)
     interface = stack(bulk1, bulk2,maxstrain=100)
@@ -75,23 +75,33 @@ class Interface:
         """The init makes the interface, represented by an atoms object
         and applies several relevant atributes."""
 
-        self.substrate = mat1 = input_data['interface']['substrate_atoms']
-        self.sub_struc = structure1 = input_data['interface']['substrate_structure']
+        self.substrate = substrate_mat = input_data['interface']['substrate_atoms']
+        self.sub_struc = substrate_structure = input_data['interface']['substrate_structure']
         self.latticesubstrate = latticesubstrate = input_data['interface']['substrate_lattice']
-        self.film = mat2 = input_data['interface']['film_atoms']
-        self.film_struc = structure2 = input_data['interface']['film_structure']
+        self.substrate_alloy_ratio = substrate_alloy_ratio = input_data['interface']['substrate_alloy_ratio']
+        self.substrate_alloy_mat = substrate_alloy = input_data['interface']['substrate_alloying_atoms']
+
+        self.film = film_mat = input_data['interface']['film_atoms']
+        self.film_struc = film_struct = input_data['interface']['film_structure']
         self.latticefilm = latticefilm = input_data['interface']['film_lattice']
+        self.film_alloy_ratio = film_alloy_ratio = input_data['interface']['film_alloy_ratio']
+        self.alloy_mat = film_alloy = input_data['interface']['film_alloying_atoms']
+
         self.size = size = input_data['interface']['size']
-        self.alloy_ratio = alloy_ratio = input_data['interface']['alloy_ratio']
-        self.alloy_mat = alloy = input_data['interface']['alloying_atoms']
-        bulk1 = bulk(mat1,structure1, a=latticesubstrate) * (2*size, 2*size, size)
-        if alloy != 0:
-            bulk2 = random_alloys(mat2,structure2, latticefilm, alloy, alloy_ratio, size)
+
+        if substrate_alloy != 0:
+            substrate_bulk = random_alloys(substrate_mat, substrate_structure, latticefilm, substrate_alloy, substrate_alloy_ratio, size)
         else:
-            bulk2 = bulk(mat2,structure2, a=latticefilm) * (2*size, 2*size, size)
-        interface = stack(bulk1, bulk2,maxstrain=100)
-        self.bulk1 = bulk1
-        self.bulk2 = bulk2
+            substrate_bulk = bulk(substrate_mat, substrate_structure, a=latticefilm) * (2*size, 2*size, size)
+
+        if film_alloy != 0:
+            film_bulk = random_alloys(film_mat, film_struct, latticefilm, film_alloy, film_alloy_ratio, size)
+        else:
+            film_bulk = bulk(film_mat, film_struct, a=latticefilm) * (2*size, 2*size, size)
+        
+        interface = stack(substrate_bulk, film_bulk,maxstrain=100)
+        self.substrate_bulk = substrate_bulk
+        self.film_bulk = film_bulk
         self.interface = interface
 
     def get_atoms(self):
@@ -101,11 +111,11 @@ class Interface:
     def get_interface_energy(self):
         """Returns the interface energy of the interface"""
 
-        self.bulk1.calc = EMT()
-        self.bulk2.calc = EMT()
+        self.substrate_bulk.calc = EMT()
+        self.film_bulk.calc = EMT()
         self.interface.calc = EMT()
-        etot1 = calcenergy(self.bulk1)[2]
-        etot2 = calcenergy(self.bulk2)[2]
+        etot1 = calcenergy(self.substrate_bulk)[2]
+        etot2 = calcenergy(self.film_bulk)[2]
         etot3 = calcenergy(self.interface)[2]
         eint = (etot3 - etot2 - etot1)/2
         eint_per_å = eint/((self.size * self.latticesubstrate)*(self.size * self.latticesubstrate))

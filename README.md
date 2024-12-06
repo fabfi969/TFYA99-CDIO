@@ -10,6 +10,7 @@ Material simulation software description.
   - [Installation](#installation)
   - [How to run program](#how-to-run-program)
   - [Run on supercomputer](#run-on-supercomputer)
+  - [Basic Shell instructions](#basic-shell-instructions)
   - [Edit README](#edit-readme)
 
 ## Features
@@ -51,26 +52,42 @@ Material simulation software description.
         -lattice_constant float
     This overrides the lattice constant set in the input file.
 
-        -substrate_lattice
+        -substrate_lattice float
     Only for interface simulation. Overrides the lattice constant for the substrate.
 
-        -film_lattice
+        -film_lattice float
     Only for interface simulation. Overrides the lattice constant for the film.
 
-        -alloy_ratio
+        -substrate_atoms Au/Ag/Cu/Al/Ni/Pd/Pt
+    Only for interface simulation. Overrides the base atoms in the substrate.
+
+        -film_atoms Au/Ag/Cu/Al/Ni/Pd/Pt
+    Only for interface simulation. Overrides the base atoms in the film.
+
+        -substrate_alloying_atoms Au/Ag/Cu/Al/Ni/Pd/Pt
+    Only for interface simulation. Overrides the alloyning atoms in the substrate.
+
+        -film_alloying_atoms Au/Ag/Cu/Al/Ni/Pd/Pt
+    Only for interface simulation. Overrides the alloyning atoms in the film.
+
+        -substrate_alloy_ratio Au/Ag/Cu/Al/Ni/Pd/Pt
     Only for interface simulation. Overrides the ratio of materialsin the film.
 
-        -slurm
+        -film_alloy_ratio float
+    Only for interface simulation. Overrides the ratio of materialsin the film.
+
+        -slurm float
     This will tell the program to print in a way that the outputs in the terminal can be turned into a CSV-file.
 
 ## Run on supercomputer
-1. Run:
+1. Log in on supercomputer and move to the correct folder.
+2. Run:
     ```bash
     sbatch super_comp_script.q
-2. Simulation method, ensable mode, etc. can be modified by appending the corresponding option to 'python3 main.py' in the same way as when program is run in terminal, see [How to run program](#how-to-run-program).
-3. If further modifications are needed, note that the script is written in Schell. See [Basic Shell instructions](#basic-shell-instructions) if you are unfamiliar with Shell.
-4. Output file will have name on format slurm-xxxxxxx.out
-5. If code does not run properly, check if requirments are corectly installed, see Installation.
+3. Simulation method, ensable mode, etc. can be modified by appending the corresponding option to 'python3 main.py' in the same way as when program is run in terminal, see [How to run program](#how-to-run-program).
+4. If further modifications are needed, note that the script is written in Schell. See [Basic Shell instructions](#basic-shell-instructions) if you are unfamiliar with Shell.
+5. Output file will have name on format slurm-xxxxxxx.out
+6. If code does not run properly, check if requirments are corectly installed, see Installation.
 
 ## Basic Shell instructions
 The following instructions is to allow people who have no experience in Shell to make modifications to super_comp_script.q to be able to run their desierd calculations.
