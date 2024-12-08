@@ -96,31 +96,37 @@
 <span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">random</span>
 <span class="kn">from</span> <span class="nn">alloy</span> <span class="kn">import</span> <span class="n">Interface</span>
 <span class="kn">import</span> <span class="nn">statistics</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">def TwoBlocks(mat1, structure1, a1, mat2, structure2, a2, size, film_alloy_ratio = 0, alloy = &quot;N&quot;):</span>
-<span class="sd">    #Generate an two layers of atoms pressed up against each other</span>
-<span class="sd">    bulk1 = bulk(mat1,structure1, a=a1) * (2*size, 2*size, size)</span>
-<span class="sd">    if alloy != 0:</span>
-<span class="sd">        bulk2 = random_alloys(mat2,structure2, a2, alloy, film_alloy_ratio, size)</span>
-<span class="sd">    else:</span>
-<span class="sd">        bulk2 = bulk(mat2,structure2, a=a2) * (2*size, 2*size, size)</span>
-<span class="sd">    interface = stack(bulk1, bulk2,maxstrain=100)</span>
-<span class="sd">    #view(interface)</span>
-<span class="sd">    return interface</span>
+
+<div class="viewcode-block" id="TwoBlocks">
+<a class="viewcode-back" href="../_reference/md.html#md.TwoBlocks">[docs]</a>
+<span class="k">def</span> <span class="nf">TwoBlocks</span><span class="p">(</span><span class="n">mat1</span><span class="p">,</span> <span class="n">structure1</span><span class="p">,</span> <span class="n">a1</span><span class="p">,</span> <span class="n">mat2</span><span class="p">,</span> <span class="n">structure2</span><span class="p">,</span> <span class="n">a2</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">alloy_ratio</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">alloy</span> <span class="o">=</span> <span class="s2">&quot;N&quot;</span><span class="p">):</span>
+    <span class="c1">#Generate an two layers of atoms pressed up against each other</span>
+    <span class="n">bulk1</span> <span class="o">=</span> <span class="n">bulk</span><span class="p">(</span><span class="n">mat1</span><span class="p">,</span><span class="n">structure1</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="n">a1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">size</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">size</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">alloy</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">bulk2</span> <span class="o">=</span> <span class="n">random_alloys</span><span class="p">(</span><span class="n">mat2</span><span class="p">,</span><span class="n">structure2</span><span class="p">,</span> <span class="n">a2</span><span class="p">,</span> <span class="n">alloy</span><span class="p">,</span> <span class="n">alloy_ratio</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">bulk2</span> <span class="o">=</span> <span class="n">bulk</span><span class="p">(</span><span class="n">mat2</span><span class="p">,</span><span class="n">structure2</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="n">a2</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">size</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">size</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+    <span class="n">interface</span> <span class="o">=</span> <span class="n">stack</span><span class="p">(</span><span class="n">bulk1</span><span class="p">,</span> <span class="n">bulk2</span><span class="p">,</span><span class="n">maxstrain</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+    <span class="c1">#view(interface)</span>
+    <span class="k">return</span> <span class="n">interface</span></div>
 
 
-<span class="sd">def random_alloys(mat1,structure1,a1,mat2,atomic_percent,size):</span>
-<span class="sd">    #generates a single block of material with a randomly replaced atoms.</span>
-<span class="sd">    tot_at = 4*size*size*size</span>
-<span class="sd">    bulk1 = bulk(mat1,structure1, a=a1) * (2*size, 2*size, size)</span>
-<span class="sd">    next = 0</span>
-<span class="sd">    while next &lt; tot_at:</span>
-<span class="sd">        if random() &lt; atomic_percent:</span>
-<span class="sd">            bulk1.symbols[next]=mat2</span>
-<span class="sd">        next += 1</span>
-<span class="sd">    return(bulk1)</span>
-<span class="sd">    #view(bulk1)</span>
-<span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="random_alloys">
+<a class="viewcode-back" href="../_reference/md.html#md.random_alloys">[docs]</a>
+<span class="k">def</span> <span class="nf">random_alloys</span><span class="p">(</span><span class="n">mat1</span><span class="p">,</span><span class="n">structure1</span><span class="p">,</span><span class="n">a1</span><span class="p">,</span><span class="n">mat2</span><span class="p">,</span><span class="n">atomic_percent</span><span class="p">,</span><span class="n">size</span><span class="p">):</span>
+    <span class="c1">#generates a single block of material with a randomly replaced atoms.</span>
+    <span class="n">tot_at</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="n">size</span><span class="o">*</span><span class="n">size</span><span class="o">*</span><span class="n">size</span>
+    <span class="n">bulk1</span> <span class="o">=</span> <span class="n">bulk</span><span class="p">(</span><span class="n">mat1</span><span class="p">,</span><span class="n">structure1</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="n">a1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">size</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">size</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+    <span class="nb">next</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="nb">next</span> <span class="o">&lt;</span> <span class="n">tot_at</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">atomic_percent</span><span class="p">:</span>
+            <span class="n">bulk1</span><span class="o">.</span><span class="n">symbols</span><span class="p">[</span><span class="nb">next</span><span class="p">]</span><span class="o">=</span><span class="n">mat2</span>
+        <span class="nb">next</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">bulk1</span><span class="p">)</span></div>
+
+    <span class="c1">#view(bulk1)</span>
+
 <div class="viewcode-block" id="run_md">
 <a class="viewcode-back" href="../_reference/md.html#md.run_md">[docs]</a>
 <span class="k">def</span> <span class="nf">run_md</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">input_data</span><span class="p">):</span>
@@ -145,18 +151,8 @@
             <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;interface&#39;</span><span class="p">][</span><span class="s1">&#39;substrate_lattice&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">substrate_lattice</span>
         <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">film_lattice</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
             <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;interface&#39;</span><span class="p">][</span><span class="s1">&#39;film_lattice&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">film_lattice</span>
-        <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">substrate_alloy_ratio</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
-            <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;interface&#39;</span><span class="p">][</span><span class="s1">&#39;substrate_alloy_ratio&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">substrate_alloy_ratio</span>
-        <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">film_alloy_ratio</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
-            <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;interface&#39;</span><span class="p">][</span><span class="s1">&#39;film_alloy_ratio&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">film_alloy_ratio</span>
-        <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">substrate_atoms</span> <span class="o">!=</span> <span class="s2">&quot;deafult&quot;</span><span class="p">:</span>
-            <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;interface&#39;</span><span class="p">][</span><span class="s1">&#39;substrate_atoms&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">substrate_atoms</span>
-        <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">substrate_alloying_atoms</span> <span class="o">!=</span> <span class="s2">&quot;deafult&quot;</span><span class="p">:</span>
-            <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;interface&#39;</span><span class="p">][</span><span class="s1">&#39;substrate_alloying_atoms&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">substrate_alloying_atoms</span>
-        <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">film_atoms</span> <span class="o">!=</span> <span class="s2">&quot;deafult&quot;</span><span class="p">:</span>
-            <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;interface&#39;</span><span class="p">][</span><span class="s1">&#39;film_atoms&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">film_atoms</span>
-        <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">film_alloying_atoms</span> <span class="o">!=</span> <span class="s2">&quot;deafult&quot;</span><span class="p">:</span>
-            <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;interface&#39;</span><span class="p">][</span><span class="s1">&#39;film_alloying_atoms&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">film_alloying_atoms</span>
+        <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">alloy_ratio</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;interface&#39;</span><span class="p">][</span><span class="s1">&#39;alloy_ratio&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">alloy_ratio</span>
 
     <span class="c1"># Set up a crystal</span>
     <span class="c1"># Sim = Interface(&quot;Cu&quot;,&quot;fcc&quot;,2.54,&quot;Au&quot;,&quot;fcc&quot;,3.4,4)</span>

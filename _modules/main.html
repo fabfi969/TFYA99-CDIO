@@ -152,49 +152,10 @@
     <span class="p">)</span>
 
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
-        <span class="s2">&quot;-substrate_alloy_ratio&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;-alloy_ratio&quot;</span><span class="p">,</span>
         <span class="n">required</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
         <span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;-1.0&quot;</span><span class="p">,</span>
         <span class="nb">type</span> <span class="o">=</span> <span class="nb">float</span><span class="p">,</span>
-    <span class="p">)</span>
-
-    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
-        <span class="s2">&quot;-film_alloy_ratio&quot;</span><span class="p">,</span>
-        <span class="n">required</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-        <span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;-1.0&quot;</span><span class="p">,</span>
-        <span class="nb">type</span> <span class="o">=</span> <span class="nb">float</span><span class="p">,</span>
-    <span class="p">)</span>
-
-    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
-        <span class="s2">&quot;-substrate_atoms&quot;</span><span class="p">,</span>
-        <span class="n">required</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-        <span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;deafult&quot;</span><span class="p">,</span>
-        <span class="nb">type</span> <span class="o">=</span> <span class="nb">str</span><span class="p">,</span>
-        <span class="n">choices</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Au&quot;</span><span class="p">,</span> <span class="s2">&quot;Ag&quot;</span><span class="p">,</span> <span class="s2">&quot;Cu&quot;</span><span class="p">,</span> <span class="s2">&quot;Al&quot;</span><span class="p">,</span> <span class="s2">&quot;Ni&quot;</span><span class="p">,</span> <span class="s2">&quot;Pd&quot;</span><span class="p">,</span> <span class="s2">&quot;Pt&quot;</span><span class="p">,</span> <span class="s2">&quot;deafult&quot;</span><span class="p">]</span>
-    <span class="p">)</span>
-
-    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
-        <span class="s2">&quot;-substrate_alloying_atoms&quot;</span><span class="p">,</span>
-        <span class="n">required</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-        <span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;deafult&quot;</span><span class="p">,</span>
-        <span class="nb">type</span> <span class="o">=</span> <span class="nb">str</span><span class="p">,</span>
-        <span class="n">choices</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Au&quot;</span><span class="p">,</span> <span class="s2">&quot;Ag&quot;</span><span class="p">,</span> <span class="s2">&quot;Cu&quot;</span><span class="p">,</span> <span class="s2">&quot;Al&quot;</span><span class="p">,</span> <span class="s2">&quot;Ni&quot;</span><span class="p">,</span> <span class="s2">&quot;Pd&quot;</span><span class="p">,</span> <span class="s2">&quot;Pt&quot;</span><span class="p">,</span> <span class="s2">&quot;deafult&quot;</span><span class="p">]</span>
-    <span class="p">)</span>
-
-    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
-        <span class="s2">&quot;-film_atoms&quot;</span><span class="p">,</span>
-        <span class="n">required</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-        <span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;deafult&quot;</span><span class="p">,</span>
-        <span class="nb">type</span> <span class="o">=</span> <span class="nb">str</span><span class="p">,</span>
-        <span class="n">choices</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Au&quot;</span><span class="p">,</span> <span class="s2">&quot;Ag&quot;</span><span class="p">,</span> <span class="s2">&quot;Cu&quot;</span><span class="p">,</span> <span class="s2">&quot;Al&quot;</span><span class="p">,</span> <span class="s2">&quot;Ni&quot;</span><span class="p">,</span> <span class="s2">&quot;Pd&quot;</span><span class="p">,</span> <span class="s2">&quot;Pt&quot;</span><span class="p">,</span> <span class="s2">&quot;deafult&quot;</span><span class="p">]</span>
-    <span class="p">)</span>
-
-    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
-        <span class="s2">&quot;-film_alloying_atoms&quot;</span><span class="p">,</span>
-        <span class="n">required</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-        <span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;deafult&quot;</span><span class="p">,</span>
-        <span class="nb">type</span> <span class="o">=</span> <span class="nb">str</span><span class="p">,</span>
-        <span class="n">choices</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Au&quot;</span><span class="p">,</span> <span class="s2">&quot;Ag&quot;</span><span class="p">,</span> <span class="s2">&quot;Cu&quot;</span><span class="p">,</span> <span class="s2">&quot;Al&quot;</span><span class="p">,</span> <span class="s2">&quot;Ni&quot;</span><span class="p">,</span> <span class="s2">&quot;Pd&quot;</span><span class="p">,</span> <span class="s2">&quot;Pt&quot;</span><span class="p">,</span> <span class="s2">&quot;deafult&quot;</span><span class="p">]</span>
     <span class="p">)</span>
     
     <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
