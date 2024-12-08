@@ -21,6 +21,5 @@ def plot_interface_energy_vs_atomic_concentration(file_name):
     plt.show()
     
 
-#file_name = input("Type the CSV file name:")
-file_name = 'slurm-4056000.out.csv'
+file_name = input("Type the CSV file name:")
 plot_interface_energy_vs_atomic_concentration(file_name)
