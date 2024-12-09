@@ -1,0 +1,7 @@
+interface\_energy\_plot module
+==============================
+
+.. automodule:: interface_energy_plot
+   :members:
+   :undoc-members:
+   :show-inheritance:
