@@ -130,7 +130,8 @@
         <span class="n">e_cohesive</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">((</span><span class="nb">sum</span><span class="p">(</span><span class="n">epot_list</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">epot_list</span><span class="p">))</span> <span class="o">-</span> <span class="n">isolated_atom</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">e_cohesive</span>
     <span class="k">except</span><span class="p">:</span>
-        <span class="k">return</span><span class="p">(</span><span class="s1">&#39;Cohesive energy could not be calculated. Perhaps equilibrium was not reached.&#39;</span><span class="p">)</span></div>
+        <span class="c1"># Cohesive energy could not be calculated. Perhaps equilibrium was not reached.</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span></div>
 
 
 <div class="viewcode-block" id="calcbulkmodulus">
@@ -143,7 +144,8 @@
         <span class="n">bulk_modulus</span> <span class="o">=</span> <span class="n">bulk_modulus</span> <span class="o">/</span> <span class="n">units</span><span class="o">.</span><span class="n">kJ</span> <span class="o">*</span> <span class="mf">1.0e24</span> <span class="c1"># Convert eV/Angstrom^3 to GPa</span>
         <span class="k">return</span> <span class="n">bulk_modulus</span>
     <span class="k">except</span><span class="p">:</span>
-        <span class="k">return</span><span class="p">(</span><span class="s1">&#39;Bulk modulus could not be calculated. Perhaps equilibrium was not reached.&#39;</span><span class="p">)</span></div>
+        <span class="c1"># Bulk modulus could not be calculated. Perhaps equilibrium was not reached.</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span></div>
 
 </pre></div>
 

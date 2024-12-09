@@ -97,7 +97,7 @@
             <span class="s1">&#39;y_size&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
             <span class="s1">&#39;z_size&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
             <span class="s1">&#39;pbc&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-            <span class="s1">&#39;latticeconstant&#39;</span><span class="p">:</span> <span class="mf">10.0</span><span class="p">,</span>
+            <span class="s1">&#39;latticeconstant&#39;</span><span class="p">:</span> <span class="mf">4.09</span><span class="p">,</span>
         <span class="p">},</span>
         <span class="s1">&#39;lennard_jones&#39;</span><span class="p">:</span> <span class="p">{</span>
             <span class="s1">&#39;atomic_number&#39;</span><span class="p">:</span> <span class="p">[</span>
@@ -125,8 +125,40 @@
         <span class="s1">&#39;time_step&#39;</span><span class="p">:</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">units</span><span class="o">.</span><span class="n">fs</span><span class="p">,</span>
         <span class="s1">&#39;trajectory_file_name&#39;</span><span class="p">:</span> <span class="s1">&#39;cu.traj&#39;</span><span class="p">,</span>
         <span class="s1">&#39;trajectory_interval&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
-        <span class="s1">&#39;run_time&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
-        
+        <span class="s1">&#39;run_time&#39;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+
+        <span class="s1">&#39;lattice_constant&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;Au&#39;</span><span class="p">:</span> <span class="mf">3.0</span><span class="p">,</span>
+        <span class="s1">&#39;Ag&#39;</span><span class="p">:</span> <span class="mf">4.0</span><span class="p">,</span>
+        <span class="s1">&#39;Cu&#39;</span><span class="p">:</span> <span class="mf">3.0</span><span class="p">,</span>
+        <span class="s1">&#39;Al&#39;</span><span class="p">:</span> <span class="mf">3.0</span><span class="p">,</span>
+        <span class="s1">&#39;Ni&#39;</span><span class="p">:</span> <span class="mf">3.0</span><span class="p">,</span>
+        <span class="s1">&#39;Pd&#39;</span><span class="p">:</span> <span class="mf">3.0</span><span class="p">,</span>
+        <span class="s1">&#39;Pt&#39;</span><span class="p">:</span> <span class="mf">3.0</span><span class="p">,</span>
+        <span class="s1">&#39;AuAg&#39;</span><span class="p">:</span> <span class="mf">5.0</span><span class="p">,</span>
+        <span class="s1">&#39;AuCu&#39;</span><span class="p">:</span> <span class="mf">3.0</span><span class="p">,</span>
+        <span class="s1">&#39;AuAl&#39;</span><span class="p">:</span> <span class="mf">3.0</span><span class="p">,</span>
+        <span class="s1">&#39;AuNi&#39;</span><span class="p">:</span> <span class="mf">3.0</span><span class="p">,</span>
+        <span class="s1">&#39;AuPd&#39;</span><span class="p">:</span> <span class="mf">3.0</span><span class="p">,</span>
+        <span class="s1">&#39;AuPt&#39;</span><span class="p">:</span> <span class="mf">3.0</span><span class="p">,</span>
+        <span class="s1">&#39;AgCu&#39;</span><span class="p">:</span> <span class="mf">5.0</span><span class="p">,</span>
+        <span class="s1">&#39;AgAl&#39;</span><span class="p">:</span> <span class="mf">3.0</span><span class="p">,</span>
+        <span class="s1">&#39;AgNi&#39;</span><span class="p">:</span> <span class="mf">3.0</span><span class="p">,</span>
+        <span class="s1">&#39;AgPd&#39;</span><span class="p">:</span> <span class="mf">3.0</span><span class="p">,</span>
+        <span class="s1">&#39;AgPt&#39;</span><span class="p">:</span> <span class="mf">3.0</span><span class="p">,</span>
+        <span class="s1">&#39;CuAl&#39;</span><span class="p">:</span> <span class="mf">3.0</span><span class="p">,</span>
+        <span class="s1">&#39;CuNi&#39;</span><span class="p">:</span> <span class="mf">3.0</span><span class="p">,</span>
+        <span class="s1">&#39;CuPd&#39;</span><span class="p">:</span> <span class="mf">3.0</span><span class="p">,</span>
+        <span class="s1">&#39;CuPt&#39;</span><span class="p">:</span> <span class="mf">3.0</span><span class="p">,</span>
+        <span class="s1">&#39;AlNi&#39;</span><span class="p">:</span> <span class="mf">3.0</span><span class="p">,</span>
+        <span class="s1">&#39;AlPd&#39;</span><span class="p">:</span> <span class="mf">3.0</span><span class="p">,</span>
+        <span class="s1">&#39;AlPt&#39;</span><span class="p">:</span> <span class="mf">3.0</span><span class="p">,</span>
+        <span class="s1">&#39;NiPd&#39;</span><span class="p">:</span> <span class="mf">3.0</span><span class="p">,</span>
+        <span class="s1">&#39;NiPt&#39;</span><span class="p">:</span> <span class="mf">3.0</span><span class="p">,</span>
+        <span class="s1">&#39;PdPt&#39;</span><span class="p">:</span> <span class="mf">3.0</span><span class="p">,</span>
+        <span class="p">}</span>
+
+
     <span class="p">}</span>
 
     <span class="n">filename</span> <span class="o">=</span> <span class="n">file_name</span>
