@@ -1,0 +1,34 @@
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_fabfi/project-hands-on/TFYA99-CDIO/main.py", line 145, in <module>
+    run_program()
+  File "/home/x_fabfi/project-hands-on/TFYA99-CDIO/main.py", line 138, in run_program
+    run_md(args, input_data)
+  File "/home/x_fabfi/project-hands-on/TFYA99-CDIO/md.py", line 131, in run_md
+    interface_object = Interface(input_data)
+  File "/home/x_fabfi/project-hands-on/TFYA99-CDIO/alloy.py", line 81, in __init__
+    self.substrate_alloy_ratio = substrate_alloy_ratio = input_data['interface']['substrate_alloy_ratio']
+KeyError: 'substrate_alloy_ratio'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_fabfi/project-hands-on/TFYA99-CDIO/main.py", line 145, in <module>
+    run_program()
+  File "/home/x_fabfi/project-hands-on/TFYA99-CDIO/main.py", line 138, in run_program
+    run_md(args, input_data)
+  File "/home/x_fabfi/project-hands-on/TFYA99-CDIO/md.py", line 131, in run_md
+    interface_object = Interface(input_data)
+  File "/home/x_fabfi/project-hands-on/TFYA99-CDIO/alloy.py", line 81, in __init__
+    self.substrate_alloy_ratio = substrate_alloy_ratio = input_data['interface']['substrate_alloy_ratio']
+KeyError: 'substrate_alloy_ratio'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_fabfi/project-hands-on/TFYA99-CDIO/main.py", line 145, in <module>
+    run_program()
+  File "/home/x_fabfi/project-hands-on/TFYA99-CDIO/main.py", line 138, in run_program
+    run_md(args, input_data)
+  File "/home/x_fabfi/project-hands-on/TFYA99-CDIO/md.py", line 131, in run_md
+    interface_object = Interface(input_data)
+  File "/home/x_fabfi/project-hands-on/TFYA99-CDIO/alloy.py", line 81, in __init__
+    self.substrate_alloy_ratio = substrate_alloy_ratio = input_data['interface']['substrate_alloy_ratio']
+KeyError: 'substrate_alloy_ratio'
+job completed
