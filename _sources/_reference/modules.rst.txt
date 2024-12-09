@@ -8,7 +8,6 @@ TFYA99-CDIO
    calculate_properties
    create_atoms_md
    create_input_file
-   interface_energy_plot
    main
    md
    save_data
