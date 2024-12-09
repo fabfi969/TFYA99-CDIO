@@ -86,14 +86,14 @@ def run_md(args, input_data):
     if args.lattice_interpolation and args.simulation_method == 'Interface':
         try:
             substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
-        except KeyError:  
+        except KeyError:
             substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
         try:
             film_alloy_lattice = input_data['lattice_constant'][input_data['interface']['film_atoms']+input_data['interface']['film_alloying_atoms']]
-        except KeyError:  
+        except KeyError:
             film_alloy_lattice = input_data['lattice_constant'][input_data['interface']['film_alloying_atoms']+input_data['interface']['film_atoms']]
-        
-        sub_alloy_ratio = input_data['interface']['substrate_alloy_ratio'] 
+
+        sub_alloy_ratio = input_data['interface']['substrate_alloy_ratio']
         if sub_alloy_ratio < 0.5:
             sub_atom_lat = input_data['lattice_constant'][input_data['interface']['substrate_atoms']]
             interpolated_sub_lattice = (1-2*sub_alloy_ratio)*sub_atom_lat+2*sub_alloy_ratio*substrate_alloy_lattice
@@ -102,7 +102,7 @@ def run_md(args, input_data):
             interpolated_sub_lattice = (2-2*sub_alloy_ratio)*substrate_alloy_lattice+(2*sub_alloy_ratio-1)*sub_alloy_atom_lat
         input_data['interface']['substrate_lattice'] = interpolated_sub_lattice
 
-        film_alloy_ratio = input_data['interface']['film_alloy_ratio'] 
+        film_alloy_ratio = input_data['interface']['film_alloy_ratio']
         if film_alloy_ratio < 0.5:
             film_atom_lat = input_data['lattice_constant'][input_data['interface']['film_atoms']]
             interpolated_film_lattice = (1-2*film_alloy_ratio)*film_atom_lat+2*film_alloy_ratio*film_alloy_lattice
@@ -164,23 +164,15 @@ def run_md(args, input_data):
 
     def printenergy(a=atoms):  # store a reference to atoms in the definition.
         '''Function to print the potential, kinetic and total energy.'''
-        epot, ekin, etot = calcenergy(a)
-
         if args.slurm:
-            if args.simulation_method == 'Interface':
-                print(f"{epot},{ekin},{ekin / (1.5 * units.kB)},{etot},{input_data['atoms']['latticeconstant']},\
-                {input_data['interface']['substrate_alloy_ratio']},\
-                {input_data['interface']['film_alloy_ratio']},{interface_object.get_interface_energy()[1]},\
-                {interface_object.get_interface_energy()[1]}")
-            else:
-                print(f"{epot},{ekin},{ekin / (1.5 * units.kB)},{etot}")
-        else:
-            print(
-                'Energy per atom: Epot = %.3feV  Ekin = %.3feV (T=%3.0fK)  '
-                'Etot = %.3feV' % (epot, ekin, ekin / (1.5 * units.kB), etot)
-            )
-            if args.simulation_method == 'Interface':
-                print(interface_object.get_interface_energy())
+            return
+        epot, ekin, etot = calcenergy(a)
+        print(
+            'Energy per atom: Epot = %.3feV  Ekin = %.3feV (T=%3.0fK)  '
+            'Etot = %.3feV' % (epot, ekin, ekin / (1.5 * units.kB), etot)
+        )
+        if args.simulation_method == 'Interface':
+            print(interface_object.get_interface_energy())
 
 
     f = open('output_data.txt', 'w') # Open the target file. Overwrite existing file.
@@ -219,7 +211,7 @@ def run_md(args, input_data):
             equilibrium_list.pop(10)
             if statistics.pstdev(equilibrium_list) < 5:
                 return True
-            else: 
+            else:
                 return False
         elif ensemble_mode == 'temperature':
             equilibrium_list.insert(0, (a.get_potential_energy() + a.get_kinetic_energy())/len(a))
@@ -239,7 +231,28 @@ def run_md(args, input_data):
     printenergy()
     volumes_and_energies()
     dyn.run(input_data['run_time'])
-    if not args.slurm:
+
+    cohesive_energy = calccohesiveenergy(epot_list, input_data['atoms']['materials'], atoms.calc)
+    bulk_modulus = calcbulkmodulus(volumes, energies)
+    if args.slurm:
+
+        epot, ekin, etot = calcenergy(atoms)
+        slurm_cat = "Epot,Ekin,T,Etot,bulk_modulus,"
+        slurm_print = f"{epot},{ekin},{ekin / (1.5 * units.kB)},{etot},{bulk_modulus},"
+
+        if args.simulation_method == 'Interface':
+
+            interface_energies = interface_object.get_interface_energy()
+            slurm_cat_extend = 'interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film'
+            slurm_print_extend = f"{interface_energies[0]},{input_data['interface']['substrate_alloy_ratio']},{input_data['interface']['film_alloy_ratio']},{input_data['interface']['substrate_lattice']},{input_data['interface']['film_lattice']},{interface_energies[2]},{interface_energies[3]}"
+        else:
+            slurm_cat_extend = 'pressure,lattice_constant,cohesive_energy,bulk_modulus'
+            slurm_print_extend =f"{pressure_list[-1]},{input_data['atoms']['latticeconstant']},{cohesive_energy},{bulk_modulus}"
+
+        print(slurm_cat + slurm_cat_extend)
+        print(slurm_print + slurm_print_extend)
+
+    else:
         cohesive_energy = calccohesiveenergy(epot_list, input_data['atoms']['materials'], atoms.calc)
         bulk_modulus = calcbulkmodulus(volumes, energies)
         writetofile(f, epot_list, ekin_list, etot_list, temperature_list, pressure_list, cohesive_energy, bulk_modulus)

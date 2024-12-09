@@ -21,7 +21,7 @@ def create_input_file(file_name):
             'y_size': 10,
             'z_size': 10,
             'pbc': True,
-            'latticeconstant': 10.0,
+            'latticeconstant': 4.09,
         },
         'lennard_jones': {
             'atomic_number': [
@@ -49,7 +49,7 @@ def create_input_file(file_name):
         'time_step': 1 * units.fs,
         'trajectory_file_name': 'cu.traj',
         'trajectory_interval': 10,
-        'run_time': 20,
+        'run_time': 1000,
 
         'lattice_constant': {
         'Au': 3.0,
@@ -82,7 +82,7 @@ def create_input_file(file_name):
         'PdPt': 3.0,
         }
 
-        
+
     }
 
     filename = file_name

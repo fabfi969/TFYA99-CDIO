@@ -45,7 +45,8 @@ def calccohesiveenergy(epot_list, material, simulation_method):
         e_cohesive = abs((sum(epot_list) / len(epot_list)) - isolated_atom.get_potential_energy())
         return e_cohesive
     except:
-        return('Cohesive energy could not be calculated. Perhaps equilibrium was not reached.')
+        # Cohesive energy could not be calculated. Perhaps equilibrium was not reached.
+        return -1
 
 def calcbulkmodulus(volumes, energies):
     '''Function to calculate bulk modulus.'''
@@ -55,4 +56,5 @@ def calcbulkmodulus(volumes, energies):
         bulk_modulus = bulk_modulus / units.kJ * 1.0e24 # Convert eV/Angstrom^3 to GPa
         return bulk_modulus
     except:
-        return('Bulk modulus could not be calculated. Perhaps equilibrium was not reached.')
+        # Bulk modulus could not be calculated. Perhaps equilibrium was not reached.
+        return -1
