@@ -24,13 +24,13 @@ def slurm_to_csv():
             # write the categories into the CSV-file only once
             for line in lines:
                 if line[0] == 'E':
-                    writer.writerow(line[:-1])
+                    writer.writerow((line[:-1]).split(','))
                     break
 
             # write data to CSV
             for line in lines:
                 if (line[0]).isdigit():
-                    writer.writerow(line[:-1])
+                    writer.writerow((line[:-1]).split(','))
 
 if __name__ == '__main__':
     slurm_to_csv()
