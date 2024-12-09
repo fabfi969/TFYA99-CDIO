@@ -135,9 +135,10 @@ The script will run the program with lattice constant 2.2, 2.3 and 2.4.
 2. On a local computer run:
     ```bash
     python3 slurm_to_csv.py
-3. Use pandas to read the CSV into Python
-
-
+3. To visualize the result, run: 
+    ```bash
+    python3 interface_energy_plot.py
+When requested, enter the csv file name.
 ## Edit README
 1. open README
 3. use 'Ctrl+k v' to see the compiled file in VSCode
