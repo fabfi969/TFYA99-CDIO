@@ -98,7 +98,7 @@ class Interface:
             film_bulk = random_alloys(film_mat, film_struct, latticefilm, film_alloy, film_alloy_ratio, size)
         else:
             film_bulk = bulk(film_mat, film_struct, a=latticefilm) * (2*size, 2*size, size)
-        
+
         interface = stack(substrate_bulk, film_bulk,maxstrain=100)
         self.substrate_bulk = substrate_bulk
         self.film_bulk = film_bulk
@@ -119,10 +119,10 @@ class Interface:
         etot3 = calcenergy(self.interface)[2]
         eint = (etot3 - etot2 - etot1)/2
         eint_per_å = eint/((self.size * self.latticesubstrate)*(self.size * self.latticesubstrate))
-        return eint, eint_per_å
+        return eint, eint_per_å, etot1, etot2
 
 
-if __name__ == "__main__":  
+if __name__ == "__main__":
     BeepBoop = Interface()
     view(BeepBoop.get_atoms())
     print(BeepBoop.get_interface_energy())

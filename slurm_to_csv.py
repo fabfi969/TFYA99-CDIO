@@ -21,19 +21,16 @@ def slurm_to_csv():
             with open(f'{root_path}/data/slurms/{slurm_name}', 'r', encoding='UTF-8') as f:
                 lines = f.readlines()
 
-            # These are the categories written to the CSV
-            # TODO: ADD CATEGORIES THAT DIFFERENTIATE THE RUNS ON THE NEXT LINE, AKA thickness or material combination or something
-            csv_categories = 'Epot,Ekin,T,Etot'
-            if len(lines[2].split(',')) > 4:
-                csv_categories = csv_categories + ',interface_E'
-            writer.writerow((csv_categories).split(','))
+            # write the categories into the CSV-file only once
+            for line in lines:
+                if line[0] == 'E':
+                    writer.writerow((line[:-1]).split(','))
+                    break
 
+            # write data to CSV
             for line in lines:
                 if (line[0]).isdigit():
-                    csv_file_line = line[:-1]
-                elif line[0] == '-':
-                    # only write the values when the system has stabilized
-                    writer.writerow(csv_file_line.split(','))
+                    writer.writerow((line[:-1]).split(','))
 
 if __name__ == '__main__':
     slurm_to_csv()

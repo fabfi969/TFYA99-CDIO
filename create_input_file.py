@@ -21,7 +21,7 @@ def create_input_file(file_name):
             'y_size': 10,
             'z_size': 10,
             'pbc': True,
-            'latticeconstant': 10.0,
+            'latticeconstant': 4.09,
         },
         'lennard_jones': {
             'atomic_number': [
@@ -49,8 +49,40 @@ def create_input_file(file_name):
         'time_step': 1 * units.fs,
         'trajectory_file_name': 'cu.traj',
         'trajectory_interval': 10,
-        'run_time': 20,
-        
+        'run_time': 1000,
+
+        'lattice_constant': {
+        'Au': 3.0,
+        'Ag': 4.0,
+        'Cu': 3.0,
+        'Al': 3.0,
+        'Ni': 3.0,
+        'Pd': 3.0,
+        'Pt': 3.0,
+        'AuAg': 5.0,
+        'AuCu': 3.0,
+        'AuAl': 3.0,
+        'AuNi': 3.0,
+        'AuPd': 3.0,
+        'AuPt': 3.0,
+        'AgCu': 5.0,
+        'AgAl': 3.0,
+        'AgNi': 3.0,
+        'AgPd': 3.0,
+        'AgPt': 3.0,
+        'CuAl': 3.0,
+        'CuNi': 3.0,
+        'CuPd': 3.0,
+        'CuPt': 3.0,
+        'AlNi': 3.0,
+        'AlPd': 3.0,
+        'AlPt': 3.0,
+        'NiPd': 3.0,
+        'NiPt': 3.0,
+        'PdPt': 3.0,
+        }
+
+
     }
 
     filename = file_name

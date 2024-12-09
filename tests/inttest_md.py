@@ -40,6 +40,7 @@ class inputFileTests(unittest.TestCase):
                     lattice_constant = -1
                     cif = ''
                     slurm = False
+                    lattice_interpolation = False
                 args = arguments()
                 run_md(args, input_data)
                 self.assertTrue(True)
