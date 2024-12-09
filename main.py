@@ -62,6 +62,11 @@ to be simulated atoms are defined",
     )
 
     parser.add_argument(
+        "-lattice_interpolation",
+        action = "store_true",
+    )
+
+    parser.add_argument(
         "-substrate_lattice",
         required = False,
         default = "-1.0",
