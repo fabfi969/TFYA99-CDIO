@@ -243,11 +243,12 @@ def run_md(args, input_data):
         if args.simulation_method == 'Interface':
 
             interface_energies = interface_object.get_interface_energy()
-            slurm_cat_extend = 'interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film'
-            slurm_print_extend = f"{interface_energies[0]},{input_data['interface']['substrate_alloy_ratio']},{input_data['interface']['film_alloy_ratio']},{input_data['interface']['substrate_lattice']},{input_data['interface']['film_lattice']},{interface_energies[2]},{interface_energies[3]}"
+            slurm_cat_extend = 'interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms'
+            slurm_print_extend = f"{interface_energies[0]},{input_data['interface']['substrate_alloy_ratio']},{input_data['interface']['film_alloy_ratio']},{input_data['interface']['substrate_lattice']},{input_data['interface']['film_lattice']},{interface_energies[2]},{interface_energies[3]},\
+{input_data['interface']['substrate_atoms']},{input_data['interface']['substrate_structure']},{input_data['interface']['substrate_alloying_atoms']},{input_data['interface']['film_atoms']},{input_data['interface']['film_structure']},{input_data['interface']['film_alloying_atoms']}"
         else:
-            slurm_cat_extend = 'pressure,lattice_constant,cohesive_energy,bulk_modulus'
-            slurm_print_extend =f"{pressure_list[-1]},{input_data['atoms']['latticeconstant']},{cohesive_energy},{bulk_modulus}"
+            slurm_cat_extend = 'pressure,lattice_constant,cohesive_energy,bulk_modulus,material, structure'
+            slurm_print_extend =f"{pressure_list[-1]},{input_data['atoms']['latticeconstant']},{cohesive_energy},{bulk_modulus},{input_data['atoms']['materials'][0]},{input_data['atoms']['structure']}"
 
         print(slurm_cat + slurm_cat_extend)
         print(slurm_print + slurm_print_extend)
