@@ -3,7 +3,7 @@
 #SBATCH -J CDIO-job
 #SBATCH -A liu-compute-2024-33
 #SBATCH --reservation devel
-#SBATCH -t 00:05:00
+#SBATCH -t 00:25:00
 #SBATCH -N 1
 #SBATCH -n 32
 #SBATCH --exclusive
@@ -16,7 +16,7 @@ export OMP_NUM_THREADS1
 
 for i in {1..50}
 do
-    j=$(bcc<<<"scale=2;2+$i*0.1")
+    j=$(bc<<<"scale=2;2+$i*0.1")
     python3 main.py -film_lattice $j -simulation_method Interface -slurm
 done
 
