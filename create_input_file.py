@@ -43,7 +43,7 @@ def create_input_file(file_name):
             'film_structure': 'fcc',
             'film_lattice': 3.52,
             'film_alloy_ratio': 0.5,
-            'film_alloying_atoms': "Ag",
+            'film_alloying_atoms': "Au",
             'size': 10,
         },
         'temperature_K': 300,
