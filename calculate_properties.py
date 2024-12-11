@@ -2,6 +2,10 @@ import numpy as np
 from ase.eos import EquationOfState
 from ase import units
 from ase import Atoms
+import warnings
+# Hide this warning since it only occurs when not equilibrium.
+warnings.filterwarnings("ignore", message="The minimum volume of your fit is not in your volumes.*")
+
 
 def calcenergy(a):  # store a reference to atoms in the definition.
     '''Function to calculate the potential, kinetic and total energy.'''
