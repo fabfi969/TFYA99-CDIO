@@ -76,6 +76,10 @@
 <span class="kn">from</span> <span class="nn">ase.eos</span> <span class="kn">import</span> <span class="n">EquationOfState</span>
 <span class="kn">from</span> <span class="nn">ase</span> <span class="kn">import</span> <span class="n">units</span>
 <span class="kn">from</span> <span class="nn">ase</span> <span class="kn">import</span> <span class="n">Atoms</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="c1"># Hide this warning since it only occurs when not equilibrium.</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s2">&quot;The minimum volume of your fit is not in your volumes.*&quot;</span><span class="p">)</span>
+
 
 <div class="viewcode-block" id="calcenergy">
 <a class="viewcode-back" href="../_reference/calculate_properties.html#calculate_properties.calcenergy">[docs]</a>
