@@ -2,6 +2,10 @@ import numpy as np
 from ase.eos import EquationOfState
 from ase import units
 from ase import Atoms
+import warnings
+# Set this warning to an error since it gives a bad result for bulk modulus othervise.
+warnings.filterwarnings("error", message="The minimum volume of your fit is not in your volumes.*")
+
 
 def calcenergy(a):  # store a reference to atoms in the definition.
     '''Function to calculate the potential, kinetic and total energy.'''
@@ -55,6 +59,6 @@ def calcbulkmodulus(volumes, energies):
         _, _, bulk_modulus = eos.fit()
         bulk_modulus = bulk_modulus / units.kJ * 1.0e24 # Convert eV/Angstrom^3 to GPa
         return bulk_modulus
-    except:
+    except Warning:
         # Bulk modulus could not be calculated. Perhaps equilibrium was not reached.
         return -1
