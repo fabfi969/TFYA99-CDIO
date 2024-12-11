@@ -16,7 +16,8 @@ export OMP_NUM_THREADS1
 
 for i in {1..50}
 do
-    python3 main.py -film_lattice -simulation_method Interface -slurm
+    j=$(bcc<<<"scale=2;2+$i*0.1")
+    python3 main.py -film_lattice $j -simulation_method Interface -slurm
 done
 
 #time mpprun python3 md_parallel.py
