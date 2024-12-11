@@ -23,6 +23,15 @@ def run_program():
     )
 
     parser.add_argument(
+        "-structure",
+        required = False,
+        default = -1,
+        type=int,
+        choices=[-1,0,1,2,3],
+        help="Structure: 0 = SimpleCubic, 1 = FaceCenteredCubic, 2 = BodyCenteredCubic, 3 = Diamond",
+    )
+
+    parser.add_argument(
         "-visualisation",
         required = False,
         default = "off",

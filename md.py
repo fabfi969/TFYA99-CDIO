@@ -59,10 +59,12 @@ def run_md(args, input_data):
     print("____Starting new simulation____:")
 
 
-    #command line override of lattice constant
+    #command line override of lattice constant and structure
     if args.lattice_constant != -1:
         input_data['atoms']['latticeconstant'] = args.lattice_constant
-
+    if args.structure != -1:
+        input_data['atoms']['structure'] = input_data['structure_choices'][args.structure]
+        print(input_data['structure_choices'][args.structure])
     #command line override for parameters for inteface simulation
     if args.simulation_method == 'Interface':
         if args.substrate_lattice != -1:
@@ -234,26 +236,31 @@ def run_md(args, input_data):
 
     cohesive_energy = calccohesiveenergy(epot_list, input_data['atoms']['materials'], atoms.calc)
     bulk_modulus = calcbulkmodulus(volumes, energies)
-    if args.slurm:
+    if is_equilibrium():
+        if args.slurm:
 
-        epot, ekin, etot = calcenergy(atoms)
-        slurm_cat = "Epot,Ekin,T,Etot,bulk_modulus,"
-        slurm_print = f"{epot},{ekin},{ekin / (1.5 * units.kB)},{etot},{bulk_modulus},"
+            epot, ekin, etot = calcenergy(atoms)
+            slurm_cat = "Epot,Ekin,T,Etot,bulk_modulus,"
+            slurm_print = f"{epot},{ekin},{ekin / (1.5 * units.kB)},{etot},{bulk_modulus},"
 
-        if args.simulation_method == 'Interface':
+            if args.simulation_method == 'Interface':
 
-            interface_energies = interface_object.get_interface_energy()
-            slurm_cat_extend = 'interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film'
-            slurm_print_extend = f"{interface_energies[0]},{input_data['interface']['substrate_alloy_ratio']},{input_data['interface']['film_alloy_ratio']},{input_data['interface']['substrate_lattice']},{input_data['interface']['film_lattice']},{interface_energies[2]},{interface_energies[3]}"
+                interface_energies = interface_object.get_interface_energy()
+                slurm_cat_extend = 'interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms'
+                slurm_print_extend = f"{interface_energies[0]},{input_data['interface']['substrate_alloy_ratio']},{input_data['interface']['film_alloy_ratio']},{input_data['interface']['substrate_lattice']},{input_data['interface']['film_lattice']},{interface_energies[2]},{interface_energies[3]},\
+{input_data['interface']['substrate_atoms']},{input_data['interface']['substrate_structure']},{input_data['interface']['substrate_alloying_atoms']},{input_data['interface']['film_atoms']},{input_data['interface']['film_structure']},{input_data['interface']['film_alloying_atoms']}"
+            else:
+                slurm_cat_extend = 'pressure,lattice_constant,cohesive_energy,bulk_modulus,material, structure'
+                slurm_print_extend =f"{pressure_list[-1]},{input_data['atoms']['latticeconstant']},{cohesive_energy},{bulk_modulus},{input_data['atoms']['materials'][0]},{input_data['atoms']['structure']}"
+
+
+            print(slurm_cat + slurm_cat_extend)
+            print(slurm_print + slurm_print_extend)
+
         else:
-            slurm_cat_extend = 'pressure,lattice_constant,cohesive_energy,bulk_modulus'
-            slurm_print_extend =f"{pressure_list[-1]},{input_data['atoms']['latticeconstant']},{cohesive_energy},{bulk_modulus}"
-
-        print(slurm_cat + slurm_cat_extend)
-        print(slurm_print + slurm_print_extend)
-
+            cohesive_energy = calccohesiveenergy(epot_list, input_data['atoms']['materials'], atoms.calc)
+            bulk_modulus = calcbulkmodulus(volumes, energies)
+            writetofile(f, epot_list, ekin_list, etot_list, temperature_list, pressure_list, cohesive_energy, bulk_modulus)
     else:
-        cohesive_energy = calccohesiveenergy(epot_list, input_data['atoms']['materials'], atoms.calc)
-        bulk_modulus = calcbulkmodulus(volumes, energies)
-        writetofile(f, epot_list, ekin_list, etot_list, temperature_list, pressure_list, cohesive_energy, bulk_modulus)
+        print("Equilibrium not reached")
     print("-----End of simulation.-----")

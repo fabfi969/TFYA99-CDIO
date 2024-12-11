@@ -38,6 +38,7 @@ class inputFileTests(unittest.TestCase):
                 class arguments:
                     simulation_method = simul_method
                     lattice_constant = -1
+                    structure = -1
                     cif = ''
                     slurm = False
                     lattice_interpolation = False
