@@ -13,7 +13,7 @@ def create_input_file(file_name):
 
     data = {
         'atoms': {
-            # 'BodyCenteredCubic', 'Diamond', 'FaceCenteredCubic', 'SimpleCubic'
+            # 'SimpleCubic', 'FaceCenteredCubic', 'BodyCenteredCubic', 'Diamond'
             'structure': 'FaceCenteredCubic',
             'directions': [[1, 0, 0], [0, 1, 0], [0, 0, 1]],
             'materials': materials,
@@ -23,6 +23,7 @@ def create_input_file(file_name):
             'pbc': True,
             'latticeconstant': 4.09,
         },
+        'structure_choices':['SimpleCubic', 'FaceCenteredCubic', 'BodyCenteredCubic', 'Diamond'],
         'lennard_jones': {
             'atomic_number': [
                 chemical_symbols.index(material) for material in materials
