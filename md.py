@@ -251,8 +251,10 @@ def run_md(args, input_data):
 {input_data['interface']['substrate_atoms']},{input_data['interface']['substrate_structure']},{input_data['interface']['substrate_alloying_atoms']},{input_data['interface']['film_atoms']},{input_data['interface']['film_structure']},{input_data['interface']['film_alloying_atoms']}"
             else:
                 slurm_cat_extend = 'pressure,lattice_constant,cohesive_energy,bulk_modulus,material, structure'
-                slurm_print_extend =f"{pressure_list[-1]},{input_data['atoms']['latticeconstant']},{cohesive_energy},{bulk_modulus},{input_data['atoms']['materials'][0]},{input_data['atoms']['structure']}"
-
+                try:
+                    slurm_print_extend =f"{pressure_list[-1]},{input_data['atoms']['latticeconstant']},{cohesive_energy},{bulk_modulus},{input_data['atoms']['materials'][0]},{input_data['atoms']['structure']}"
+                except IndexError:
+                    slurm_print_extend =f"-1,{input_data['atoms']['latticeconstant']},{cohesive_energy},{bulk_modulus},{input_data['atoms']['materials'][0]},{input_data['atoms']['structure']}"
 
             print(slurm_cat + slurm_cat_extend)
             print(slurm_print + slurm_print_extend)
