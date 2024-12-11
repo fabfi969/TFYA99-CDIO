@@ -1,0 +1,75 @@
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.07042382710357603,0.02895688314170495,224.02052614557945,0.09938071024528097,169.89880493798475,-0.014210615721163774,0.5,0.5,2.54,3.8,0.06797077603708263,0.059831165650525896,Cu,fcc,Ag,Pd,fcc,Pt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.043307944588104566,0.025873165735165054,200.16381503075624,0.06918111032326962,165.71221333946292,0.0031593824304565823,0.5,0.5,2.54,3.9,0.06817124988986252,-0.005308904427506059,Cu,fcc,Ag,Pd,fcc,Pt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.09804342515224787,0.02619668333676673,202.66665979389936,0.1242401084890146,164.84004757367023,-0.024957688045240622,0.5,0.5,2.54,4.0,0.11881032940147873,0.055345155178017115,Cu,fcc,Ag,Pd,fcc,Pt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.19372200713044577,0.052362346357216684,405.09333562445295,0.24608435348766244,151.5085651496426,-0.08513643251542714,0.5,0.5,2.54,4.1,0.21059956104033103,0.2057576574781857,Cu,fcc,Ag,Pd,fcc,Pt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.30446482807910863,0.10350569346737655,800.7560688128506,0.40797052154648517,127.27394031639645,-0.16677007737831168,0.5,0.5,2.54,4.2,0.3225969089348343,0.41891376736827424,Cu,fcc,Ag,Pd,fcc,Pt
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+slurmstepd: error: *** JOB 4059248 ON n1162 CANCELLED AT 2024-12-11T15:18:47 DUE TO TIME LIMIT ***
