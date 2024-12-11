@@ -89,7 +89,7 @@
 
     <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s1">&#39;atoms&#39;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="c1"># &#39;BodyCenteredCubic&#39;, &#39;Diamond&#39;, &#39;FaceCenteredCubic&#39;, &#39;SimpleCubic&#39;</span>
+            <span class="c1"># &#39;SimpleCubic&#39;, &#39;FaceCenteredCubic&#39;, &#39;BodyCenteredCubic&#39;, &#39;Diamond&#39;</span>
             <span class="s1">&#39;structure&#39;</span><span class="p">:</span> <span class="s1">&#39;FaceCenteredCubic&#39;</span><span class="p">,</span>
             <span class="s1">&#39;directions&#39;</span><span class="p">:</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]],</span>
             <span class="s1">&#39;materials&#39;</span><span class="p">:</span> <span class="n">materials</span><span class="p">,</span>
@@ -99,6 +99,7 @@
             <span class="s1">&#39;pbc&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
             <span class="s1">&#39;latticeconstant&#39;</span><span class="p">:</span> <span class="mf">4.09</span><span class="p">,</span>
         <span class="p">},</span>
+        <span class="s1">&#39;structure_choices&#39;</span><span class="p">:[</span><span class="s1">&#39;SimpleCubic&#39;</span><span class="p">,</span> <span class="s1">&#39;FaceCenteredCubic&#39;</span><span class="p">,</span> <span class="s1">&#39;BodyCenteredCubic&#39;</span><span class="p">,</span> <span class="s1">&#39;Diamond&#39;</span><span class="p">],</span>
         <span class="s1">&#39;lennard_jones&#39;</span><span class="p">:</span> <span class="p">{</span>
             <span class="s1">&#39;atomic_number&#39;</span><span class="p">:</span> <span class="p">[</span>
                 <span class="n">chemical_symbols</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">material</span><span class="p">)</span> <span class="k">for</span> <span class="n">material</span> <span class="ow">in</span> <span class="n">materials</span>
