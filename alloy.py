@@ -7,6 +7,8 @@ from ase.build import bulk
 from ase.build.tools import stack
 from create_input_file import create_input_file
 import toml
+
+from asap3 import MakeParallelAtoms
 #from md import calcenergy
 
 
@@ -99,10 +101,12 @@ class Interface:
         else:
             film_bulk = bulk(film_mat, film_struct, a=latticefilm) * (2*size, 2*size, size)
 
+        cpulayout = (1,1,1)
+
         interface = stack(substrate_bulk, film_bulk,maxstrain=100)
-        self.substrate_bulk = substrate_bulk
-        self.film_bulk = film_bulk
-        self.interface = interface
+        self.substrate_bulk = MakeParallelAtoms(substrate_bulk, cpulayout, cell=None, pbc=None, distribute=True)
+        self.film_bulk = MakeParallelAtoms(film_bulk, cpulayout, cell=None, pbc=None, distribute=True)
+        self.interface = MakeParallelAtoms(interface, cpulayout, cell=None, pbc=None, distribute=True)
 
     def get_atoms(self):
         """Returns the atoms objects that represents the interface"""
@@ -110,6 +114,8 @@ class Interface:
 
     def get_interface_energy(self):
         """Returns the interface energy of the interface"""
+
+        
 
         self.substrate_bulk.calc = EMT()
         self.film_bulk.calc = EMT()
