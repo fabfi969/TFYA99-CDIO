@@ -43,6 +43,9 @@ Material simulation software description.
         -simulation_method EMT/LennardJones/Interface
     This sets the method that should be used for the integrator. Interface uses EMT but simulates an interface between two materials.
 
+        -cores 1/8
+    The number of cores the simulation is run on. If not 1, make sure that you have acces to the specified number of cores of the program will crash.
+
         -visualisation on/off
     This sets if the visualisation is turned on or off.
 
@@ -76,8 +79,11 @@ Material simulation software description.
         -film_alloy_ratio float
     Only for interface simulation. Overrides the ratio of materialsin the film.
 
-        -slurm float
-    This will tell the program to print in a way that the outputs in the terminal can be turned into a CSV-file.
+        -lattice_interpolation
+    If included the program will interpolate the lattice constants for the alloys based on the alloy ratio and the lattice constants for different materials and alloy in the input file. Only applicible for interface simulations.
+
+        -slurm
+    If included the program will print in a way that the outputs in the terminal can be turned into a CSV-file.
 
 ## Run on supercomputer
 1. Log in on supercomputer and move to the correct folder.
@@ -85,10 +91,21 @@ Material simulation software description.
     ```bash
     sbatch super_comp_script.q
 3. Simulation method, ensable mode, etc. can be modified by appending the corresponding option to 'python3 main.py' in the same way as when program is run in terminal, see [How to run program](#how-to-run-program).
-4. If further modifications are needed, note that the script is written in Schell. See [Basic Shell instructions](#basic-shell-instructions) if you are unfamiliar with Shell.
-5. Output file will have name on format slurm-xxxxxxx.out
-6. If code does not run properly, check if requirments are corectly installed, see Installation.
+4. The number of cores the program is running on are modified by the line 
+    
+        #SBATCH -n X
+    in super_comp_script.q where X is the number of cores. Note that to acctly use the cores the input argument -cores needs to be used as well, see [How to run program](#how-to-run-program).
+5. The maximum time the program is allowed to run is modified by the line 
 
+        #SBATCH -t hh:mm:ss
+    in super_comp_script.q where hh is the number of hours, mm is the number of minutes and ss is the number of seconds. If the program takes longer to run than the specified time it will be stoped before it is finished.
+6. If further modifications are needed, note that the script is written in Schell. See [Basic Shell instructions](#basic-shell-instructions) if you are unfamiliar with Shell.
+7. Output file will have name on format slurm-xxxxxxx.out
+8. If code does not run properly, check if requirments are corectly installed, see [Installation](#installation).
+9. If MakeParallelAtoms can't be imported run 
+
+        source /proj/liu-compute-2024-33/software/init.sh
+    in the terminal.
 ## Basic Shell instructions
 The following instructions is to allow people who have no experience in Shell to make modifications to super_comp_script.q to be able to run their desierd calculations.
 ### Variables
