@@ -85,7 +85,7 @@ def create_atoms(args, input_data):
                     )
     if args.cores == 1:
         return atoms
-    else 
+    else:
         if args.cores == 8:
             cpulayout = (2,2,2)
         elif args.cores == 32:

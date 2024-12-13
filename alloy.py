@@ -106,7 +106,7 @@ class Interface:
             self.substrate_bulk = substrate_bulk
             self.film_bulk = film_bulk
             self.interface = interface
-        else 
+        else:
             if args.cores == 8:
                 cpulayout = (2,2,2)
             elif args.cores == 32:
