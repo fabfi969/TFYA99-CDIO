@@ -1,0 +1,259 @@
+mpprun INFO: mpprun v1.10.1 started
+mpprun INFO: mpprun srun handler invoked on: /proj/liu-compute-2024-33/software/venv/bin/python3
+mpprun WARNING: Using srun handler that just uses srun without setting up the environment; no MPI module will be loaded, etc.
+mpprun INFO: Setting env variable: SLURM_KILL_BAD_EXIT=1 (was unset; to override, set to 0 before invoking mpprun)
+mpprun INFO: all known threading env variables set by user: OMP_NUM_THREADS=1, OPENBLAS_NUM_THREADS=1, MKL_NUM_THREADS=1, NUMEXPR_NUM_THREADS=1
+mpprun INFO: mpprun v1.10.1 executing: /usr/bin/srun /proj/liu-compute-2024-33/software/venv/bin/python3 supercomp_main.py -simulation_method Interface -slurm -cores 8
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_fabfi/project-hands-on/TFYA99-CDIO/supercomp_main.py", line 75, in <module>
+    main()
+  File "/home/x_fabfi/project-hands-on/TFYA99-CDIO/supercomp_main.py", line 24, in main
+ASAP version 3.13.4 parallel, compiled Sep 24 2024 15:57:06 on sigma.nsc.liu.se using 'setuptools with mpic++ -Wno-unknown-pragmas -Wno-sign-compare -Wno-unused-function -Wno-c++11-compat-deprecated-writable-strings -Wno-unknown-attributes'
+  Python module:  /proj/liu-compute-2024-33/software/venv/lib/python3.10/site-packages/asap3/__init__.py
+  C++ module:     /proj/liu-compute-2024-33/software/venv/lib/python3.10/site-packages/_asap.cpython-310-x86_64-linux-gnu.so
+  ase module:     /proj/liu-compute-2024-33/software/venv/lib/python3.10/site-packages/ase/__init__.py
+
+  Python version: 3.10.4 (main, Oct  6 2023, 16:37:55) [GCC 11.3.0]
+  numpy version:  1.22.3
+  ase version:    3.23.0
+____Starting new simulation____:
+    run_program()
+  File "/home/x_fabfi/project-hands-on/TFYA99-CDIO/main.py", line 157, in run_program
+Traceback (most recent call last):
+  File "/home/x_fabfi/project-hands-on/TFYA99-CDIO/supercomp_main.py", line 75, in <module>
+    run_md(args, input_data)
+  File "/home/x_fabfi/project-hands-on/TFYA99-CDIO/md.py", line 236, in run_md
+    dyn.run(input_data['run_time'])
+  File "/proj/liu-compute-2024-33/software/venv/lib/python3.10/site-packages/ase/md/md.py", line 178, in run
+    return Dynamics.run(self, steps=steps)
+  File "/proj/liu-compute-2024-33/software/venv/lib/python3.10/site-packages/ase/optimize/optimize.py", line 275, in run
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_fabfi/project-hands-on/TFYA99-CDIO/supercomp_main.py", line 75, in <module>
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_fabfi/project-hands-on/TFYA99-CDIO/supercomp_main.py", line 75, in <module>
+    for converged in Dynamics.irun(self, steps=steps):
+  File "/proj/liu-compute-2024-33/software/venv/lib/python3.10/site-packages/ase/optimize/optimize.py", line 225, in irun
+    self.optimizable.get_forces()
+  File "/proj/liu-compute-2024-33/software/venv/lib/python3.10/site-packages/ase/optimize/optimize.py", line 34, in get_forces
+    main()
+  File "/home/x_fabfi/project-hands-on/TFYA99-CDIO/supercomp_main.py", line 24, in main
+    return self.atoms.get_forces()
+  File "/proj/liu-compute-2024-33/software/venv/lib/python3.10/site-packages/ase/atoms.py", line 812, in get_forces
+    run_program()
+  File "/home/x_fabfi/project-hands-on/TFYA99-CDIO/main.py", line 157, in run_program
+    run_md(args, input_data)
+  File "/home/x_fabfi/project-hands-on/TFYA99-CDIO/md.py", line 236, in run_md
+    dyn.run(input_data['run_time'])
+  File "/proj/liu-compute-2024-33/software/venv/lib/python3.10/site-packages/ase/md/md.py", line 178, in run
+    forces = self._calc.get_forces(self)
+_asap.AsapError: XX Collision between atoms 0 and 1031
+    main()
+  File "/home/x_fabfi/project-hands-on/TFYA99-CDIO/supercomp_main.py", line 24, in main
+    main()
+  File "/home/x_fabfi/project-hands-on/TFYA99-CDIO/supercomp_main.py", line 24, in main
+    run_program()
+  File "/home/x_fabfi/project-hands-on/TFYA99-CDIO/main.py", line 157, in run_program
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_fabfi/project-hands-on/TFYA99-CDIO/supercomp_main.py", line 75, in <module>
+    run_program()
+  File "/home/x_fabfi/project-hands-on/TFYA99-CDIO/main.py", line 157, in run_program
+    run_md(args, input_data)
+  File "/home/x_fabfi/project-hands-on/TFYA99-CDIO/md.py", line 236, in run_md
+    return Dynamics.run(self, steps=steps)
+  File "/proj/liu-compute-2024-33/software/venv/lib/python3.10/site-packages/ase/optimize/optimize.py", line 275, in run
+    run_md(args, input_data)
+  File "/home/x_fabfi/project-hands-on/TFYA99-CDIO/md.py", line 236, in run_md
+    dyn.run(input_data['run_time'])
+  File "/proj/liu-compute-2024-33/software/venv/lib/python3.10/site-packages/ase/md/md.py", line 178, in run
+    for converged in Dynamics.irun(self, steps=steps):
+  File "/proj/liu-compute-2024-33/software/venv/lib/python3.10/site-packages/ase/optimize/optimize.py", line 225, in irun
+    dyn.run(input_data['run_time'])
+  File "/proj/liu-compute-2024-33/software/venv/lib/python3.10/site-packages/ase/md/md.py", line 178, in run
+    self.optimizable.get_forces()
+  File "/proj/liu-compute-2024-33/software/venv/lib/python3.10/site-packages/ase/optimize/optimize.py", line 34, in get_forces
+____Starting new simulation____:
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_fabfi/project-hands-on/TFYA99-CDIO/supercomp_main.py", line 75, in <module>
+Traceback (most recent call last):
+  File "/home/x_fabfi/project-hands-on/TFYA99-CDIO/supercomp_main.py", line 75, in <module>
+    return Dynamics.run(self, steps=steps)
+  File "/proj/liu-compute-2024-33/software/venv/lib/python3.10/site-packages/ase/optimize/optimize.py", line 275, in run
+    return self.atoms.get_forces()
+  File "/proj/liu-compute-2024-33/software/venv/lib/python3.10/site-packages/ase/atoms.py", line 812, in get_forces
+____Starting new simulation____:
+    return Dynamics.run(self, steps=steps)
+  File "/proj/liu-compute-2024-33/software/venv/lib/python3.10/site-packages/ase/optimize/optimize.py", line 275, in run
+Traceback (most recent call last):
+  File "/home/x_fabfi/project-hands-on/TFYA99-CDIO/supercomp_main.py", line 75, in <module>
+    for converged in Dynamics.irun(self, steps=steps):
+  File "/proj/liu-compute-2024-33/software/venv/lib/python3.10/site-packages/ase/optimize/optimize.py", line 225, in irun
+ASE CLEANUP (node 7): <class '_asap.AsapError'> occurred.  Calling MPI_Abort!
+    for converged in Dynamics.irun(self, steps=steps):
+  File "/proj/liu-compute-2024-33/software/venv/lib/python3.10/site-packages/ase/optimize/optimize.py", line 225, in irun
+    main()
+  File "/home/x_fabfi/project-hands-on/TFYA99-CDIO/supercomp_main.py", line 24, in main
+    forces = self._calc.get_forces(self)
+_asap.AsapError: XX Collision between atoms 0 and 947
+    self.optimizable.get_forces()
+  File "/proj/liu-compute-2024-33/software/venv/lib/python3.10/site-packages/ase/optimize/optimize.py", line 34, in get_forces
+    run_program()
+  File "/home/x_fabfi/project-hands-on/TFYA99-CDIO/main.py", line 157, in run_program
+    self.optimizable.get_forces()
+  File "/proj/liu-compute-2024-33/software/venv/lib/python3.10/site-packages/ase/optimize/optimize.py", line 34, in get_forces
+    return self.atoms.get_forces()
+  File "/proj/liu-compute-2024-33/software/venv/lib/python3.10/site-packages/ase/atoms.py", line 812, in get_forces
+    run_md(args, input_data)
+  File "/home/x_fabfi/project-hands-on/TFYA99-CDIO/md.py", line 236, in run_md
+    return self.atoms.get_forces()
+  File "/proj/liu-compute-2024-33/software/venv/lib/python3.10/site-packages/ase/atoms.py", line 812, in get_forces
+    dyn.run(input_data['run_time'])
+  File "/proj/liu-compute-2024-33/software/venv/lib/python3.10/site-packages/ase/md/md.py", line 178, in run
+    forces = self._calc.get_forces(self)
+    main()
+_asap.AsapError: XX Collision between atoms 0 and 1012
+  File "/home/x_fabfi/project-hands-on/TFYA99-CDIO/supercomp_main.py", line 24, in main
+    main()
+  File "/home/x_fabfi/project-hands-on/TFYA99-CDIO/supercomp_main.py", line 24, in main
+    forces = self._calc.get_forces(self)
+    main()
+  File "/home/x_fabfi/project-hands-on/TFYA99-CDIO/supercomp_main.py", line 24, in main
+_asap.AsapError: XX Collision between atoms 0 and 991
+    return Dynamics.run(self, steps=steps)
+  File "/proj/liu-compute-2024-33/software/venv/lib/python3.10/site-packages/ase/optimize/optimize.py", line 275, in run
+    run_program()
+  File "/home/x_fabfi/project-hands-on/TFYA99-CDIO/main.py", line 157, in run_program
+    run_program()
+  File "/home/x_fabfi/project-hands-on/TFYA99-CDIO/main.py", line 157, in run_program
+    run_program()
+  File "/home/x_fabfi/project-hands-on/TFYA99-CDIO/main.py", line 157, in run_program
+    run_md(args, input_data)
+  File "/home/x_fabfi/project-hands-on/TFYA99-CDIO/md.py", line 236, in run_md
+    run_md(args, input_data)
+  File "/home/x_fabfi/project-hands-on/TFYA99-CDIO/md.py", line 236, in run_md
+    for converged in Dynamics.irun(self, steps=steps):
+  File "/proj/liu-compute-2024-33/software/venv/lib/python3.10/site-packages/ase/optimize/optimize.py", line 225, in irun
+    run_md(args, input_data)
+  File "/home/x_fabfi/project-hands-on/TFYA99-CDIO/md.py", line 236, in run_md
+    dyn.run(input_data['run_time'])
+  File "/proj/liu-compute-2024-33/software/venv/lib/python3.10/site-packages/ase/md/md.py", line 178, in run
+ASE CLEANUP (node 0): <class '_asap.AsapError'> occurred.  Calling MPI_Abort!
+    dyn.run(input_data['run_time'])
+  File "/proj/liu-compute-2024-33/software/venv/lib/python3.10/site-packages/ase/md/md.py", line 178, in run
+    self.optimizable.get_forces()
+  File "/proj/liu-compute-2024-33/software/venv/lib/python3.10/site-packages/ase/optimize/optimize.py", line 34, in get_forces
+    dyn.run(input_data['run_time'])
+  File "/proj/liu-compute-2024-33/software/venv/lib/python3.10/site-packages/ase/md/md.py", line 178, in run
+    return self.atoms.get_forces()
+  File "/proj/liu-compute-2024-33/software/venv/lib/python3.10/site-packages/ase/atoms.py", line 812, in get_forces
+    return Dynamics.run(self, steps=steps)
+  File "/proj/liu-compute-2024-33/software/venv/lib/python3.10/site-packages/ase/optimize/optimize.py", line 275, in run
+    return Dynamics.run(self, steps=steps)
+  File "/proj/liu-compute-2024-33/software/venv/lib/python3.10/site-packages/ase/optimize/optimize.py", line 275, in run
+    return Dynamics.run(self, steps=steps)
+  File "/proj/liu-compute-2024-33/software/venv/lib/python3.10/site-packages/ase/optimize/optimize.py", line 275, in run
+    for converged in Dynamics.irun(self, steps=steps):
+  File "/proj/liu-compute-2024-33/software/venv/lib/python3.10/site-packages/ase/optimize/optimize.py", line 225, in irun
+    for converged in Dynamics.irun(self, steps=steps):
+ASE CLEANUP (node 6): <class '_asap.AsapError'> occurred.  Calling MPI_Abort!
+  File "/proj/liu-compute-2024-33/software/venv/lib/python3.10/site-packages/ase/optimize/optimize.py", line 225, in irun
+    forces = self._calc.get_forces(self)
+_asap.AsapError: XX Collision between atoms 0 and 966
+    self.optimizable.get_forces()
+  File "/proj/liu-compute-2024-33/software/venv/lib/python3.10/site-packages/ase/optimize/optimize.py", line 34, in get_forces
+ASE CLEANUP (node 2): <class '_asap.AsapError'> occurred.  Calling MPI_Abort!
+    for converged in Dynamics.irun(self, steps=steps):
+  File "/proj/liu-compute-2024-33/software/venv/lib/python3.10/site-packages/ase/optimize/optimize.py", line 225, in irun
+    self.optimizable.get_forces()
+  File "/proj/liu-compute-2024-33/software/venv/lib/python3.10/site-packages/ase/optimize/optimize.py", line 34, in get_forces
+    self.optimizable.get_forces()
+  File "/proj/liu-compute-2024-33/software/venv/lib/python3.10/site-packages/ase/optimize/optimize.py", line 34, in get_forces
+    return self.atoms.get_forces()
+  File "/proj/liu-compute-2024-33/software/venv/lib/python3.10/site-packages/ase/atoms.py", line 812, in get_forces
+    return self.atoms.get_forces()
+  File "/proj/liu-compute-2024-33/software/venv/lib/python3.10/site-packages/ase/atoms.py", line 812, in get_forces
+    return self.atoms.get_forces()
+  File "/proj/liu-compute-2024-33/software/venv/lib/python3.10/site-packages/ase/atoms.py", line 812, in get_forces
+    forces = self._calc.get_forces(self)
+    forces = self._calc.get_forces(self)
+_asap.AsapError: XX Collision between atoms 0 and 1017
+_asap.AsapError: XX Collision between atoms 0 and 1004
+    forces = self._calc.get_forces(self)
+_asap.AsapError: XX Collision between atoms 0 and 1032
+ASE CLEANUP (node 4): <class '_asap.AsapError'> occurred.  Calling MPI_Abort!
+ASE CLEANUP (node 5): <class '_asap.AsapError'> occurred.  Calling MPI_Abort!
+ASE CLEANUP (node 1): <class '_asap.AsapError'> occurred.  Calling MPI_Abort!
+ASE CLEANUP (node 3): <class '_asap.AsapError'> occurred.  Calling MPI_Abort!
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 7 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 42.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 0 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 42.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 1 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 42.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 2 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 42.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 6 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 42.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 4 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 42.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 3 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 42.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 5 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 42.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+slurmstepd: error: *** STEP 4061071.0 ON n1235 CANCELLED AT 2024-12-13T16:28:50 ***
+srun: Job step aborted: Waiting up to 302 seconds for job step to finish.
+srun: error: n1235: tasks 0-7: Exited with exit code 42
+srun: Terminating StepId=4061071.0
+job completed
