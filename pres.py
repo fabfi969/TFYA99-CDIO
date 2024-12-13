@@ -1,11 +1,7 @@
 import os
 
-
-
 os.system("python3 create_input_file_1.py")
-os.system("python3 main.py -view_atoms")
-
-
+# os.system("python3 main.py -view_atoms -visualisation on")
 
 os.system("python3 main.py -simulation_method LennardJones")
 

@@ -133,10 +133,6 @@ def run_md(args, input_data):
         atoms = interface_object.get_atoms()
         atoms.calc = EMT()
 
-    if args.view_atoms:
-        view(atoms)
-        print(atoms.symbols)
-
     elif args.simulation_method == 'LennardJones':
         atoms.calc = LennardJones(
             input_data['lennard_jones']['atomic_number'],
@@ -145,6 +141,10 @@ def run_md(args, input_data):
             input_data['lennard_jones']['r_cut'],
             modified=input_data['lennard_jones']['modified'],
         )
+
+    if args.view_atoms:
+        view(atoms)
+        print(atoms.symbols)
 
     # Set the momenta corresponding to T=300K
     MaxwellBoltzmannDistribution(
