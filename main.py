@@ -33,7 +33,7 @@ def run_program():
     )
 
     parser.add_argument(
-        "-cores"
+        "-cores",
         required = False,
         default = 1,
         type=int,
