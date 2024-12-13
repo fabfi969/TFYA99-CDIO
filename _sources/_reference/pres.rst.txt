@@ -1,7 +1,0 @@
-pres module
-===========
-
-.. automodule:: pres
-   :members:
-   :undoc-members:
-   :show-inheritance:
