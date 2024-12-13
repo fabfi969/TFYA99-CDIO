@@ -88,6 +88,7 @@
 <span class="kn">from</span> <span class="nn">ase.io</span> <span class="kn">import</span> <span class="n">read</span>
 <span class="kn">from</span> <span class="nn">ase.md</span> <span class="kn">import</span> <span class="n">Andersen</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">ase.visualize</span> <span class="kn">import</span> <span class="n">view</span>
 <span class="kn">from</span> <span class="nn">create_input_file</span> <span class="kn">import</span> <span class="n">create_input_file</span>
 <span class="kn">from</span> <span class="nn">create_atoms_md</span> <span class="kn">import</span> <span class="n">invalid_materials_EMT_error</span><span class="p">,</span> <span class="n">create_atoms</span>
 <span class="kn">import</span> <span class="nn">toml</span>
@@ -209,6 +210,10 @@
         <span class="n">interface_object</span> <span class="o">=</span> <span class="n">Interface</span><span class="p">(</span><span class="n">input_data</span><span class="p">)</span>
         <span class="n">atoms</span> <span class="o">=</span> <span class="n">interface_object</span><span class="o">.</span><span class="n">get_atoms</span><span class="p">()</span>
         <span class="n">atoms</span><span class="o">.</span><span class="n">calc</span> <span class="o">=</span> <span class="n">EMT</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">view_atoms</span><span class="p">:</span>
+        <span class="n">view</span><span class="p">(</span><span class="n">atoms</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">atoms</span><span class="o">.</span><span class="n">symbols</span><span class="p">)</span>
 
     <span class="k">elif</span> <span class="n">args</span><span class="o">.</span><span class="n">simulation_method</span> <span class="o">==</span> <span class="s1">&#39;LennardJones&#39;</span><span class="p">:</span>
         <span class="n">atoms</span><span class="o">.</span><span class="n">calc</span> <span class="o">=</span> <span class="n">LennardJones</span><span class="p">(</span>
