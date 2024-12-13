@@ -76,7 +76,7 @@ Material simulation software description.
         -film_alloy_ratio float
     Only for interface simulation. Overrides the ratio of materialsin the film.
 
-        -slurm bool
+        -slurm
     This will tell the program to print in a way that the outputs in the terminal can be turned into a CSV-file.
 
 ## Run on supercomputer
