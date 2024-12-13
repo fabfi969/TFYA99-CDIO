@@ -73,7 +73,7 @@ def random_alloys(mat1,
 
 class Interface:
     """A class that generates objects that are interfaces between to objects"""
-    def __init__(self, input_data):
+    def __init__(self, args, input_data):
         """The init makes the interface, represented by an atoms object
         and applies several relevant atributes."""
 
@@ -101,12 +101,17 @@ class Interface:
         else:
             film_bulk = bulk(film_mat, film_struct, a=latticefilm) * (2*size, 2*size, size)
 
-        cpulayout = (1,1,1)
-
         interface = stack(substrate_bulk, film_bulk,maxstrain=100)
-        self.substrate_bulk = MakeParallelAtoms(substrate_bulk, cpulayout, cell=None, pbc=None, distribute=True)
-        self.film_bulk = MakeParallelAtoms(film_bulk, cpulayout, cell=None, pbc=None, distribute=True)
-        self.interface = MakeParallelAtoms(interface, cpulayout, cell=None, pbc=None, distribute=True)
+
+        if args.cores == 1:
+            self.substrate_bulk = substrate_bulk
+            self.film_bulk = film_bulk
+            self.interface = interface
+        elif args.cores == 8:
+            cpulayout = (2,2,2)
+            self.substrate_bulk = MakeParallelAtoms(substrate_bulk, cpulayout, cell=None, pbc=None, distribute=True)
+            self.film_bulk = MakeParallelAtoms(film_bulk, cpulayout, cell=None, pbc=None, distribute=True)
+            self.interface = MakeParallelAtoms(interface, cpulayout, cell=None, pbc=None, distribute=True)
 
     def get_atoms(self):
         """Returns the atoms objects that represents the interface"""

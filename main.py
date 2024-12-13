@@ -10,6 +10,7 @@ from md import run_md
 from visualisation import plotenergy
 
 def run_program():
+
     '''Uses argparse to provide the MD simulation with the simulation argument required'''
     parser = argparse.ArgumentParser(description="Parses simulation parameters.")
 
@@ -29,6 +30,15 @@ def run_program():
         type=int,
         choices=[-1,0,1,2,3],
         help="Structure: 0 = SimpleCubic, 1 = FaceCenteredCubic, 2 = BodyCenteredCubic, 3 = Diamond",
+    )
+
+    parser.add_argument(
+        "-cores"
+        required = False,
+        default = 1,
+        type=int,
+        choices=[1,8],
+        help="Number of cores simulation is running on. Currently only 1 or 8 is supported."
     )
 
     parser.add_argument(
