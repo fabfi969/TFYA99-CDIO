@@ -43,7 +43,7 @@ Material simulation software description.
         -simulation_method EMT/LennardJones/Interface
     This sets the method that should be used for the integrator. Interface uses EMT but simulates an interface between two materials.
 
-        -cores 1/8
+        -cores 1/8/32
     The number of cores the simulation is run on. If not 1, make sure that you have acces to the specified number of cores of the program will crash. Note that bulk modulus will not work if the program is run on more than 1 core.
 
         -visualisation on/off

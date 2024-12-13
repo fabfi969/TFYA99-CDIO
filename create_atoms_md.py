@@ -85,6 +85,9 @@ def create_atoms(args, input_data):
                     )
     if args.cores == 1:
         return atoms
-    elif args.cores == 8:
-        cpulayout = (2,2,2)
+    else 
+        if args.cores == 8:
+            cpulayout = (2,2,2)
+        elif args.cores == 32:
+            cpulayout = (4,4,2)
         return MakeParallelAtoms(atoms, cpulayout, cell=None, pbc=None, distribute=True)

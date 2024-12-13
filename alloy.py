@@ -106,8 +106,11 @@ class Interface:
             self.substrate_bulk = substrate_bulk
             self.film_bulk = film_bulk
             self.interface = interface
-        elif args.cores == 8:
-            cpulayout = (2,2,2)
+        else 
+            if args.cores == 8:
+                cpulayout = (2,2,2)
+            elif args.cores == 32:
+                cpulayout = (4,4,2)
             self.substrate_bulk = MakeParallelAtoms(substrate_bulk, cpulayout, cell=None, pbc=None, distribute=True)
             self.film_bulk = MakeParallelAtoms(film_bulk, cpulayout, cell=None, pbc=None, distribute=True)
             self.interface = MakeParallelAtoms(interface, cpulayout, cell=None, pbc=None, distribute=True)

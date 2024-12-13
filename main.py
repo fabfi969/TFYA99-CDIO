@@ -37,7 +37,7 @@ def run_program():
         required = False,
         default = 1,
         type=int,
-        choices=[1,8],
+        choices=[1,8,32],
         help="Number of cores simulation is running on. Currently only 1 or 8 is supported."
     )
 
