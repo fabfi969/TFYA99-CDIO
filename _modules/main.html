@@ -147,11 +147,6 @@
     <span class="p">)</span>
 
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
-        <span class="s2">&quot;-view_atoms&quot;</span><span class="p">,</span>
-        <span class="n">action</span> <span class="o">=</span> <span class="s2">&quot;store_true&quot;</span><span class="p">,</span>
-    <span class="p">)</span>
-
-    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
         <span class="s2">&quot;-lattice_interpolation&quot;</span><span class="p">,</span>
         <span class="n">action</span> <span class="o">=</span> <span class="s2">&quot;store_true&quot;</span><span class="p">,</span>
     <span class="p">)</span>
@@ -215,7 +210,7 @@
         <span class="nb">type</span> <span class="o">=</span> <span class="nb">str</span><span class="p">,</span>
         <span class="n">choices</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Au&quot;</span><span class="p">,</span> <span class="s2">&quot;Ag&quot;</span><span class="p">,</span> <span class="s2">&quot;Cu&quot;</span><span class="p">,</span> <span class="s2">&quot;Al&quot;</span><span class="p">,</span> <span class="s2">&quot;Ni&quot;</span><span class="p">,</span> <span class="s2">&quot;Pd&quot;</span><span class="p">,</span> <span class="s2">&quot;Pt&quot;</span><span class="p">,</span> <span class="s2">&quot;deafult&quot;</span><span class="p">]</span>
     <span class="p">)</span>
-
+    
     <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
 
     <span class="n">input_file_name</span> <span class="o">=</span> <span class="s2">&quot;input_data.toml&quot;</span>

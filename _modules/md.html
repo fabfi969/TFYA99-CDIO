@@ -88,7 +88,6 @@
 <span class="kn">from</span> <span class="nn">ase.io</span> <span class="kn">import</span> <span class="n">read</span>
 <span class="kn">from</span> <span class="nn">ase.md</span> <span class="kn">import</span> <span class="n">Andersen</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">ase.visualize</span> <span class="kn">import</span> <span class="n">view</span>
 <span class="kn">from</span> <span class="nn">create_input_file</span> <span class="kn">import</span> <span class="n">create_input_file</span>
 <span class="kn">from</span> <span class="nn">create_atoms_md</span> <span class="kn">import</span> <span class="n">invalid_materials_EMT_error</span><span class="p">,</span> <span class="n">create_atoms</span>
 <span class="kn">import</span> <span class="nn">toml</span>
@@ -220,10 +219,6 @@
             <span class="n">modified</span><span class="o">=</span><span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;lennard_jones&#39;</span><span class="p">][</span><span class="s1">&#39;modified&#39;</span><span class="p">],</span>
         <span class="p">)</span>
 
-    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">view_atoms</span><span class="p">:</span>
-        <span class="n">view</span><span class="p">(</span><span class="n">atoms</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">atoms</span><span class="o">.</span><span class="n">symbols</span><span class="p">)</span>
-
     <span class="c1"># Set the momenta corresponding to T=300K</span>
     <span class="n">MaxwellBoltzmannDistribution</span><span class="p">(</span>
         <span class="n">atoms</span><span class="p">,</span>
@@ -340,11 +335,12 @@
             <span class="nb">print</span><span class="p">(</span><span class="n">slurm_cat</span> <span class="o">+</span> <span class="n">slurm_cat_extend</span><span class="p">)</span>
             <span class="nb">print</span><span class="p">(</span><span class="n">slurm_print</span> <span class="o">+</span> <span class="n">slurm_print_extend</span><span class="p">)</span>
 
-        <span class="n">writetofile</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">epot_list</span><span class="p">,</span> <span class="n">ekin_list</span><span class="p">,</span> <span class="n">etot_list</span><span class="p">,</span> <span class="n">temperature_list</span><span class="p">,</span> <span class="n">pressure_list</span><span class="p">,</span> <span class="n">cohesive_energy</span><span class="p">,</span> <span class="n">bulk_modulus</span><span class="p">)</span>
-        
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">cohesive_energy</span> <span class="o">=</span> <span class="n">calccohesiveenergy</span><span class="p">(</span><span class="n">epot_list</span><span class="p">,</span> <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;materials&#39;</span><span class="p">],</span> <span class="n">atoms</span><span class="o">.</span><span class="n">calc</span><span class="p">)</span>
+            <span class="n">bulk_modulus</span> <span class="o">=</span> <span class="n">calcbulkmodulus</span><span class="p">(</span><span class="n">volumes</span><span class="p">,</span> <span class="n">energies</span><span class="p">)</span>
+            <span class="n">writetofile</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">epot_list</span><span class="p">,</span> <span class="n">ekin_list</span><span class="p">,</span> <span class="n">etot_list</span><span class="p">,</span> <span class="n">temperature_list</span><span class="p">,</span> <span class="n">pressure_list</span><span class="p">,</span> <span class="n">cohesive_energy</span><span class="p">,</span> <span class="n">bulk_modulus</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Equilibrium not reached&quot;</span><span class="p">)</span>
-
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-----End of simulation.-----&quot;</span><span class="p">)</span></div>
 
 </pre></div>

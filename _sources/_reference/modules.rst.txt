@@ -11,7 +11,6 @@ TFYA99-CDIO
    interface_energy_plot
    main
    md
-   pres
    save_data
    slurm_to_csv
    supercomp_main
