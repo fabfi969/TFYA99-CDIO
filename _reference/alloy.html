@@ -45,7 +45,19 @@
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">TFYA99-CDIO</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">alloy module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">alloy module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#alloy.Interface"><code class="docutils literal notranslate"><span class="pre">Interface</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#alloy.Interface.get_atoms"><code class="docutils literal notranslate"><span class="pre">Interface.get_atoms()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#alloy.Interface.get_interface_energy"><code class="docutils literal notranslate"><span class="pre">Interface.get_interface_energy()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#alloy.calcenergy"><code class="docutils literal notranslate"><span class="pre">calcenergy()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#alloy.pseudo_random_alloys"><code class="docutils literal notranslate"><span class="pre">pseudo_random_alloys()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#alloy.random"><code class="docutils literal notranslate"><span class="pre">random()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#alloy.random_alloys"><code class="docutils literal notranslate"><span class="pre">random_alloys()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#alloy.twoblocks"><code class="docutils literal notranslate"><span class="pre">twoblocks()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="calculate_properties.html">calculate_properties module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="create_atoms_md.html">create_atoms_md module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="create_input_file.html">create_input_file module</a></li>
@@ -88,8 +100,57 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="alloy-module">
-<h1>alloy module<a class="headerlink" href="#alloy-module" title="Link to this heading"></a></h1>
+  <section id="module-alloy">
+<span id="alloy-module"></span><h1>alloy module<a class="headerlink" href="#module-alloy" title="Link to this heading"></a></h1>
+<p>A large set of function to be used when simulating materials</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="alloy.Interface">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alloy.</span></span><span class="sig-name descname"><span class="pre">Interface</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/alloy.html#Interface"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#alloy.Interface" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class that generates objects that are interfaces between to objects</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="alloy.Interface.get_atoms">
+<span class="sig-name descname"><span class="pre">get_atoms</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/alloy.html#Interface.get_atoms"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#alloy.Interface.get_atoms" title="Link to this definition"></a></dt>
+<dd><p>Returns the atoms objects that represents the interface</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alloy.Interface.get_interface_energy">
+<span class="sig-name descname"><span class="pre">get_interface_energy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/alloy.html#Interface.get_interface_energy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#alloy.Interface.get_interface_energy" title="Link to this definition"></a></dt>
+<dd><p>Returns the interface energy of the interface</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="alloy.calcenergy">
+<span class="sig-prename descclassname"><span class="pre">alloy.</span></span><span class="sig-name descname"><span class="pre">calcenergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atoms</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/alloy.html#calcenergy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#alloy.calcenergy" title="Link to this definition"></a></dt>
+<dd><p>Function to calculate the potential, kinetic and total energy.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="alloy.pseudo_random_alloys">
+<span class="sig-prename descclassname"><span class="pre">alloy.</span></span><span class="sig-name descname"><span class="pre">pseudo_random_alloys</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mat1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">structure1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latticesubstrate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mat2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atomic_percent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/alloy.html#pseudo_random_alloys"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#alloy.pseudo_random_alloys" title="Link to this definition"></a></dt>
+<dd><p>generates a singe block of material of intermittenly placed atoms of a different material</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="alloy.random">
+<span class="sig-prename descclassname"><span class="pre">alloy.</span></span><span class="sig-name descname"><span class="pre">random</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">x</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">interval</span> <span class="pre">[0,</span> <span class="pre">1).</span></span></span><a class="headerlink" href="#alloy.random" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="alloy.random_alloys">
+<span class="sig-prename descclassname"><span class="pre">alloy.</span></span><span class="sig-name descname"><span class="pre">random_alloys</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mat1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">structure1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latticesubstrate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mat2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atomic_percent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/alloy.html#random_alloys"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#alloy.random_alloys" title="Link to this definition"></a></dt>
+<dd><p>generates a single block of material with a randomly replaced atoms.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="alloy.twoblocks">
+<span class="sig-prename descclassname"><span class="pre">alloy.</span></span><span class="sig-name descname"><span class="pre">twoblocks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mat1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">structure1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latticesubstrate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mat2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">structure2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latticefilm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">film_alloy_ratio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alloy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'N'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/alloy.html#twoblocks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#alloy.twoblocks" title="Link to this definition"></a></dt>
+<dd><p>Generate an two layers of atoms pressed up against each other</p>
+</dd></dl>
+
 </section>
 
 

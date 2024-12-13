@@ -1,0 +1,256 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>alloy &mdash; Material Simulations - TFYA99 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=8d563738"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Material Simulations - TFYA99
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../_reference/modules.html">TFYA99-CDIO</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Material Simulations - TFYA99</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Module code</a></li>
+      <li class="breadcrumb-item active">alloy</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for alloy</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;A large set of function to be used when simulating materials&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">random</span>
+<span class="kn">from</span> <span class="nn">asap3</span> <span class="kn">import</span> <span class="n">EMT</span>
+<span class="kn">from</span> <span class="nn">ase.visualize</span> <span class="kn">import</span> <span class="n">view</span>
+<span class="kn">from</span> <span class="nn">ase.build</span> <span class="kn">import</span> <span class="n">bulk</span>
+<span class="kn">from</span> <span class="nn">ase.build.tools</span> <span class="kn">import</span> <span class="n">stack</span>
+<span class="kn">from</span> <span class="nn">create_input_file</span> <span class="kn">import</span> <span class="n">create_input_file</span>
+<span class="kn">import</span> <span class="nn">toml</span>
+<span class="c1">#from md import calcenergy</span>
+
+
+<div class="viewcode-block" id="twoblocks">
+<a class="viewcode-back" href="../_reference/alloy.html#alloy.twoblocks">[docs]</a>
+<span class="k">def</span> <span class="nf">twoblocks</span><span class="p">(</span><span class="n">mat1</span><span class="p">,</span>
+              <span class="n">structure1</span><span class="p">,</span>
+              <span class="n">latticesubstrate</span><span class="p">,</span>
+              <span class="n">mat2</span><span class="p">,</span> <span class="n">structure2</span><span class="p">,</span>
+              <span class="n">latticefilm</span><span class="p">,</span>
+              <span class="n">size</span><span class="p">,</span>
+              <span class="n">film_alloy_ratio</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+              <span class="n">alloy</span> <span class="o">=</span> <span class="s2">&quot;N&quot;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate an two layers of atoms pressed up against each other&quot;&quot;&quot;</span>
+    <span class="n">bulk1</span> <span class="o">=</span> <span class="n">bulk</span><span class="p">(</span><span class="n">mat1</span><span class="p">,</span><span class="n">structure1</span><span class="p">,</span> <span class="n">latticesubstrate</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">size</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">size</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">alloy</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">bulk2</span> <span class="o">=</span> <span class="n">random_alloys</span><span class="p">(</span><span class="n">mat2</span><span class="p">,</span><span class="n">structure2</span><span class="p">,</span> <span class="n">latticefilm</span><span class="p">,</span> <span class="n">alloy</span><span class="p">,</span> <span class="n">film_alloy_ratio</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">bulk2</span> <span class="o">=</span> <span class="n">bulk</span><span class="p">(</span><span class="n">mat2</span><span class="p">,</span><span class="n">structure2</span><span class="p">,</span> <span class="n">latticefilm</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">size</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">size</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+    <span class="n">interface</span> <span class="o">=</span> <span class="n">stack</span><span class="p">(</span><span class="n">bulk1</span><span class="p">,</span> <span class="n">bulk2</span><span class="p">,</span><span class="n">maxstrain</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">view</span><span class="p">(</span><span class="n">interface</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">interface</span></div>
+
+
+<div class="viewcode-block" id="calcenergy">
+<a class="viewcode-back" href="../_reference/alloy.html#alloy.calcenergy">[docs]</a>
+<span class="k">def</span> <span class="nf">calcenergy</span><span class="p">(</span><span class="n">atoms</span><span class="p">):</span>  <span class="c1"># store a reference to atoms in the definition</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Function to calculate the potential, kinetic and total energy.&quot;&quot;&quot;</span>
+    <span class="n">epot</span> <span class="o">=</span> <span class="n">atoms</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">atoms</span><span class="p">)</span>
+    <span class="n">ekin</span> <span class="o">=</span> <span class="n">atoms</span><span class="o">.</span><span class="n">get_kinetic_energy</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">atoms</span><span class="p">)</span>
+    <span class="n">etot</span> <span class="o">=</span> <span class="n">epot</span> <span class="o">+</span> <span class="n">ekin</span>
+    <span class="k">return</span> <span class="n">epot</span><span class="p">,</span> <span class="n">ekin</span><span class="p">,</span> <span class="n">etot</span></div>
+
+
+<div class="viewcode-block" id="pseudo_random_alloys">
+<a class="viewcode-back" href="../_reference/alloy.html#alloy.pseudo_random_alloys">[docs]</a>
+<span class="k">def</span> <span class="nf">pseudo_random_alloys</span><span class="p">(</span><span class="n">mat1</span><span class="p">,</span>
+                         <span class="n">structure1</span><span class="p">,</span>
+                         <span class="n">latticesubstrate</span><span class="p">,</span>
+                         <span class="n">mat2</span><span class="p">,</span>
+                         <span class="n">atomic_percent</span><span class="p">,</span>
+                         <span class="n">size</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;generates a singe block of material of intermittenly placed atoms of a different material&quot;&quot;&quot;</span>
+    <span class="n">tot_at</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="n">size</span><span class="o">*</span><span class="n">size</span><span class="o">*</span><span class="n">size</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">atomic_percent</span>
+    <span class="n">bulk1</span> <span class="o">=</span> <span class="n">bulk</span><span class="p">(</span><span class="n">mat1</span><span class="p">,</span><span class="n">structure1</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="n">latticesubstrate</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">size</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">size</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="n">tot_at</span><span class="p">:</span>
+        <span class="n">place</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+        <span class="n">bulk1</span><span class="o">.</span><span class="n">symbols</span><span class="p">[</span><span class="n">place</span><span class="p">]</span><span class="o">=</span><span class="n">mat2</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="n">step</span></div>
+
+    <span class="c1">#view(bulk1)</span>
+
+<div class="viewcode-block" id="random_alloys">
+<a class="viewcode-back" href="../_reference/alloy.html#alloy.random_alloys">[docs]</a>
+<span class="k">def</span> <span class="nf">random_alloys</span><span class="p">(</span><span class="n">mat1</span><span class="p">,</span>
+                  <span class="n">structure1</span><span class="p">,</span>
+                  <span class="n">latticesubstrate</span><span class="p">,</span>
+                  <span class="n">mat2</span><span class="p">,</span>
+                  <span class="n">atomic_percent</span><span class="p">,</span>
+                  <span class="n">size</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;generates a single block of material with a randomly replaced atoms.&quot;&quot;&quot;</span>
+    <span class="n">tot_at</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="n">size</span><span class="o">*</span><span class="n">size</span><span class="o">*</span><span class="n">size</span>
+    <span class="n">bulk1</span> <span class="o">=</span> <span class="n">bulk</span><span class="p">(</span><span class="n">mat1</span><span class="p">,</span><span class="n">structure1</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="n">latticesubstrate</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">size</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">size</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="n">tot_at</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">atomic_percent</span><span class="p">:</span>
+            <span class="n">bulk1</span><span class="o">.</span><span class="n">symbols</span><span class="p">[</span><span class="n">count</span><span class="p">]</span><span class="o">=</span><span class="n">mat2</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">bulk1</span></div>
+
+    <span class="c1">#view(bulk1)</span>
+
+<div class="viewcode-block" id="Interface">
+<a class="viewcode-back" href="../_reference/alloy.html#alloy.Interface">[docs]</a>
+<span class="k">class</span> <span class="nc">Interface</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A class that generates objects that are interfaces between to objects&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_data</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The init makes the interface, represented by an atoms object</span>
+<span class="sd">        and applies several relevant atributes.&quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">substrate</span> <span class="o">=</span> <span class="n">substrate_mat</span> <span class="o">=</span> <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;interface&#39;</span><span class="p">][</span><span class="s1">&#39;substrate_atoms&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sub_struc</span> <span class="o">=</span> <span class="n">substrate_structure</span> <span class="o">=</span> <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;interface&#39;</span><span class="p">][</span><span class="s1">&#39;substrate_structure&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">latticesubstrate</span> <span class="o">=</span> <span class="n">latticesubstrate</span> <span class="o">=</span> <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;interface&#39;</span><span class="p">][</span><span class="s1">&#39;substrate_lattice&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">substrate_alloy_ratio</span> <span class="o">=</span> <span class="n">substrate_alloy_ratio</span> <span class="o">=</span> <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;interface&#39;</span><span class="p">][</span><span class="s1">&#39;substrate_alloy_ratio&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">substrate_alloy_mat</span> <span class="o">=</span> <span class="n">substrate_alloy</span> <span class="o">=</span> <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;interface&#39;</span><span class="p">][</span><span class="s1">&#39;substrate_alloying_atoms&#39;</span><span class="p">]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">film</span> <span class="o">=</span> <span class="n">film_mat</span> <span class="o">=</span> <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;interface&#39;</span><span class="p">][</span><span class="s1">&#39;film_atoms&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">film_struc</span> <span class="o">=</span> <span class="n">film_struct</span> <span class="o">=</span> <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;interface&#39;</span><span class="p">][</span><span class="s1">&#39;film_structure&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">latticefilm</span> <span class="o">=</span> <span class="n">latticefilm</span> <span class="o">=</span> <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;interface&#39;</span><span class="p">][</span><span class="s1">&#39;film_lattice&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">film_alloy_ratio</span> <span class="o">=</span> <span class="n">film_alloy_ratio</span> <span class="o">=</span> <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;interface&#39;</span><span class="p">][</span><span class="s1">&#39;film_alloy_ratio&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">alloy_mat</span> <span class="o">=</span> <span class="n">film_alloy</span> <span class="o">=</span> <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;interface&#39;</span><span class="p">][</span><span class="s1">&#39;film_alloying_atoms&#39;</span><span class="p">]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">size</span> <span class="o">=</span> <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;interface&#39;</span><span class="p">][</span><span class="s1">&#39;size&#39;</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">substrate_alloy</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">substrate_bulk</span> <span class="o">=</span> <span class="n">random_alloys</span><span class="p">(</span><span class="n">substrate_mat</span><span class="p">,</span> <span class="n">substrate_structure</span><span class="p">,</span> <span class="n">latticefilm</span><span class="p">,</span> <span class="n">substrate_alloy</span><span class="p">,</span> <span class="n">substrate_alloy_ratio</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">substrate_bulk</span> <span class="o">=</span> <span class="n">bulk</span><span class="p">(</span><span class="n">substrate_mat</span><span class="p">,</span> <span class="n">substrate_structure</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="n">latticefilm</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">size</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">size</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">film_alloy</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">film_bulk</span> <span class="o">=</span> <span class="n">random_alloys</span><span class="p">(</span><span class="n">film_mat</span><span class="p">,</span> <span class="n">film_struct</span><span class="p">,</span> <span class="n">latticefilm</span><span class="p">,</span> <span class="n">film_alloy</span><span class="p">,</span> <span class="n">film_alloy_ratio</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">film_bulk</span> <span class="o">=</span> <span class="n">bulk</span><span class="p">(</span><span class="n">film_mat</span><span class="p">,</span> <span class="n">film_struct</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="n">latticefilm</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">size</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">size</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+
+        <span class="n">interface</span> <span class="o">=</span> <span class="n">stack</span><span class="p">(</span><span class="n">substrate_bulk</span><span class="p">,</span> <span class="n">film_bulk</span><span class="p">,</span><span class="n">maxstrain</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">substrate_bulk</span> <span class="o">=</span> <span class="n">substrate_bulk</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">film_bulk</span> <span class="o">=</span> <span class="n">film_bulk</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interface</span> <span class="o">=</span> <span class="n">interface</span>
+
+<div class="viewcode-block" id="Interface.get_atoms">
+<a class="viewcode-back" href="../_reference/alloy.html#alloy.Interface.get_atoms">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_atoms</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the atoms objects that represents the interface&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">interface</span></div>
+
+
+<div class="viewcode-block" id="Interface.get_interface_energy">
+<a class="viewcode-back" href="../_reference/alloy.html#alloy.Interface.get_interface_energy">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_interface_energy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the interface energy of the interface&quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">substrate_bulk</span><span class="o">.</span><span class="n">calc</span> <span class="o">=</span> <span class="n">EMT</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">film_bulk</span><span class="o">.</span><span class="n">calc</span> <span class="o">=</span> <span class="n">EMT</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">calc</span> <span class="o">=</span> <span class="n">EMT</span><span class="p">()</span>
+        <span class="n">etot1</span> <span class="o">=</span> <span class="n">calcenergy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">substrate_bulk</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span>
+        <span class="n">etot2</span> <span class="o">=</span> <span class="n">calcenergy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">film_bulk</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span>
+        <span class="n">etot3</span> <span class="o">=</span> <span class="n">calcenergy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">interface</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span>
+        <span class="n">eint</span> <span class="o">=</span> <span class="p">(</span><span class="n">etot3</span> <span class="o">-</span> <span class="n">etot2</span> <span class="o">-</span> <span class="n">etot1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+        <span class="n">eint_per_å</span> <span class="o">=</span> <span class="n">eint</span><span class="o">/</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">latticesubstrate</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">latticesubstrate</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">eint</span><span class="p">,</span> <span class="n">eint_per_å</span><span class="p">,</span> <span class="n">etot1</span><span class="p">,</span> <span class="n">etot2</span></div>
+</div>
+
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">BeepBoop</span> <span class="o">=</span> <span class="n">Interface</span><span class="p">()</span>
+    <span class="n">view</span><span class="p">(</span><span class="n">BeepBoop</span><span class="o">.</span><span class="n">get_atoms</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">BeepBoop</span><span class="o">.</span><span class="n">get_interface_energy</span><span class="p">())</span>
+    <span class="c1">#twoBlocks(&quot;Cu&quot;,&quot;fcc&quot;,2.54,&quot;Au&quot;,&quot;fcc&quot;,3.4,4)</span>
+    <span class="c1">#random_alloys(&quot;Cu&quot;,&quot;sc&quot;,2.54,&quot;Au&quot;,0.5,9)</span>
+    <span class="c1">#pseudo_random_alloys(&quot;Cu&quot;,&quot;sc&quot;,2.54,&quot;Au&quot;,0.17,9)</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, joabe712 fabfi969 kaljo229 pauka833.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

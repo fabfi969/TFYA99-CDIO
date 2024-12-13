@@ -47,7 +47,12 @@
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">TFYA99-CDIO</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="alloy.html">alloy module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="calculate_properties.html">calculate_properties module</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">create_atoms_md module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">create_atoms_md module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#create_atoms_md.create_atoms"><code class="docutils literal notranslate"><span class="pre">create_atoms()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create_atoms_md.invalid_materials_EMT"><code class="docutils literal notranslate"><span class="pre">invalid_materials_EMT()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create_atoms_md.invalid_materials_EMT_error"><code class="docutils literal notranslate"><span class="pre">invalid_materials_EMT_error()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="create_input_file.html">create_input_file module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="interface_energy_plot.html">interface_energy_plot module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="main.html">main module</a></li>
@@ -88,8 +93,32 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="create-atoms-md-module">
-<h1>create_atoms_md module<a class="headerlink" href="#create-atoms-md-module" title="Link to this heading"></a></h1>
+  <section id="module-create_atoms_md">
+<span id="create-atoms-md-module"></span><h1>create_atoms_md module<a class="headerlink" href="#module-create_atoms_md" title="Link to this heading"></a></h1>
+<p>file that contains the function which creates the atoms object to be used in the md
+simulation</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="create_atoms_md.create_atoms">
+<span class="sig-prename descclassname"><span class="pre">create_atoms_md.</span></span><span class="sig-name descname"><span class="pre">create_atoms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/create_atoms_md.html#create_atoms"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#create_atoms_md.create_atoms" title="Link to this definition"></a></dt>
+<dd><p>function which creates the atoms object to be used in the md simulation</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="create_atoms_md.invalid_materials_EMT">
+<span class="sig-prename descclassname"><span class="pre">create_atoms_md.</span></span><span class="sig-name descname"><span class="pre">invalid_materials_EMT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">materials_list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/create_atoms_md.html#invalid_materials_EMT"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#create_atoms_md.invalid_materials_EMT" title="Link to this definition"></a></dt>
+<dd><p>checks if the given materials can be used for EMT (effective-medium theory)
+calculations. It only supports the standard EMT metals: Al, Cu, Ag, Au, Ni, Pd and Pt</p>
+<p>Parameters:
+material_list (list): a list of the chemical elements which are to be simulated</p>
+<p>Returns:
+bool: returns True if the elements cannot be used for EMT simulations, False if they can</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="create_atoms_md.invalid_materials_EMT_error">
+<span class="sig-prename descclassname"><span class="pre">create_atoms_md.</span></span><span class="sig-name descname"><span class="pre">invalid_materials_EMT_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atoms_symbols</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/create_atoms_md.html#invalid_materials_EMT_error"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#create_atoms_md.invalid_materials_EMT_error" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
 </section>
 
 
