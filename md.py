@@ -258,8 +258,7 @@ def run_md(args, input_data):
         print(slurm_cat + slurm_cat_extend)
         print(slurm_print + slurm_print_extend)
 
-    else:
-        cohesive_energy = calccohesiveenergy(epot_list, input_data['atoms']['materials'], atoms.calc)
-        bulk_modulus = calcbulkmodulus(volumes, energies)
-        writetofile(f, epot_list, ekin_list, etot_list, temperature_list, pressure_list, cohesive_energy, bulk_modulus)
+    cohesive_energy = calccohesiveenergy(epot_list, input_data['atoms']['materials'], atoms.calc)
+    bulk_modulus = calcbulkmodulus(volumes, energies)
+    writetofile(f, epot_list, ekin_list, etot_list, temperature_list, pressure_list, cohesive_energy, bulk_modulus)
     print("-----End of simulation.-----")
