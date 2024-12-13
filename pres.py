@@ -1,3 +1,5 @@
+'''This is a file containing examples of simulations that can be run with our program'''
+
 import os
 
 os.system("python3 create_input_file.py")
