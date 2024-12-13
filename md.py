@@ -229,17 +229,20 @@ def run_md(args, input_data):
     # Now run the dynamics
     dyn.attach(printenergy, interval=input_data['trajectory_interval'])
     dyn.attach(savedata, interval=input_data['trajectory_interval'])
+
     savedata()
     printenergy()
-    
+
     dyn.run(input_data['run_time'])
     cohesive_energy = calccohesiveenergy(epot_list, input_data['atoms']['materials'], atoms.calc)
+    
     if args.cores == 1:
         dyn.attach(volumes_and_energies, interval=input_data['trajectory_interval'])
         volumes_and_energies()
         bulk_modulus = calcbulkmodulus(volumes, energies)
     else:
         bulk_modulus = -1
+
 
     if is_equilibrium():
         if args.slurm:
