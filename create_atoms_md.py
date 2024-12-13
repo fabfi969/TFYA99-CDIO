@@ -6,6 +6,8 @@ from ase.lattice.cubic import BodyCenteredCubic, Diamond, FaceCenteredCubic, Sim
 from create_input_file import create_input_file
 import toml
 import re
+from asap3 import MakeParallelAtoms
+
 
 def invalid_materials_EMT_error(atoms_symbols):
     invalid_materials_status = invalid_materials_EMT(atoms_symbols)
@@ -30,11 +32,11 @@ def invalid_materials_EMT(materials_list):
     valid_elements = ['Al', 'Cu', 'Ag', 'Au', 'Ni', 'Pd', 'Pt']
     return not(all(element in valid_elements for element in materials_list)), materials_list
 
-def create_atoms(input_data):
+def create_atoms(args, input_data):
     '''function which creates the atoms object to be used in the md simulation'''
     structure = input_data['atoms']['structure']
     if structure == 'BodyCenteredCubic':
-        return  BodyCenteredCubic(
+        atoms = BodyCenteredCubic(
                     directions=input_data['atoms']['directions'],
                     symbol=input_data['atoms']['materials'][0],
                     size=(
@@ -46,7 +48,7 @@ def create_atoms(input_data):
                     latticeconstant=input_data['atoms']['latticeconstant'],
                     )
     elif structure == 'Diamond':
-        return  Diamond(
+        atoms = Diamond(
                     directions=input_data['atoms']['directions'],
                     symbol=input_data['atoms']['materials'][0],
                     size=(
@@ -58,7 +60,7 @@ def create_atoms(input_data):
                     latticeconstant=input_data['atoms']['latticeconstant'],
                     )
     elif structure == 'FaceCenteredCubic':
-        return  FaceCenteredCubic(
+        atoms = FaceCenteredCubic(
                     directions=input_data['atoms']['directions'],
                     symbol=input_data['atoms']['materials'][0],
                     size=(
@@ -70,7 +72,7 @@ def create_atoms(input_data):
                     latticeconstant=input_data['atoms']['latticeconstant'],
                     )
     elif structure == 'SimpleCubic':
-        return  SimpleCubic(
+        atoms = SimpleCubic(
                     directions=input_data['atoms']['directions'],
                     symbol=input_data['atoms']['materials'][0],
                     size=(
@@ -81,3 +83,8 @@ def create_atoms(input_data):
                     pbc=input_data['atoms']['pbc'],
                     latticeconstant=input_data['atoms']['latticeconstant'],
                     )
+    if args.cores == 1:
+        return atoms
+    elif args.cores == 8:
+        cpulayout = (2,2,2)
+        return MakeParallelAtoms(atoms, cpulayout, cell=None, pbc=None, distribute=True)

@@ -121,7 +121,7 @@ def run_md(args, input_data):
     # Sim = Interface("Cu","fcc",2.54,"Au","fcc",3.4,4)
     # atoms = Sim.get_atoms()
     if args.cif == '':
-        atoms = create_atoms(input_data)
+        atoms = create_atoms(args, input_data)
     else:
         atoms = read(args.cif, format='cif')
 

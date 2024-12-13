@@ -7,7 +7,6 @@ from ase.build import bulk
 from ase.build.tools import stack
 from create_input_file import create_input_file
 import toml
-
 from asap3 import MakeParallelAtoms
 #from md import calcenergy
 
