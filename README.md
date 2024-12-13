@@ -44,7 +44,7 @@ Material simulation software description.
     This sets the method that should be used for the integrator. Interface uses EMT but simulates an interface between two materials.
 
         -cores 1/8
-    The number of cores the simulation is run on. If not 1, make sure that you have acces to the specified number of cores of the program will crash.
+    The number of cores the simulation is run on. If not 1, make sure that you have acces to the specified number of cores of the program will crash. Note that bulk modulus will not work if the program is run on more than 1 core.
 
         -visualisation on/off
     This sets if the visualisation is turned on or off.
@@ -80,7 +80,7 @@ Material simulation software description.
     Only for interface simulation. Overrides the ratio of materialsin the film.
 
         -lattice_interpolation
-    If included the program will interpolate the lattice constants for the alloys based on the alloy ratio and the lattice constants for different materials and alloy in the input file. Only applicible for interface simulations.
+    If included the program will interpolate the lattice constants for the alloys based on the alloy ratio and the lattice constants for different materials and alloy in the input file. Only applicible for interface simulations. 
 
         -slurm
     If included the program will print in a way that the outputs in the terminal can be turned into a CSV-file.
