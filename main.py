@@ -134,6 +134,28 @@ to be simulated atoms are defined",
         type = str,
         choices = ["Au", "Ag", "Cu", "Al", "Ni", "Pd", "Pt", "deafult"]
     )
+
+    parser.add_argument(
+        "-sc_lattice_offset"
+        required = False,
+        default = "-1.0",
+        type = float,
+    )
+
+    parser.add_argument(
+        "-sc_film_alloy_ratio_offset"
+        required = False,
+        default = "-1.0",
+        type = float,
+    )
+
+    parser.add_argument(
+        "-sc_substarte_alloy_ratio_offset"
+        required = False,
+        default = "-1.0",
+        type = float,
+    )
+
     
     args = parser.parse_args()
 
