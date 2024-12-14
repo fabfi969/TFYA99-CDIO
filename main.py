@@ -136,7 +136,26 @@ to be simulated atoms are defined",
     )
 
     parser.add_argument(
+        "-sc",
+        action = "store_true",
+    )
+    
+    parser.add_argument(
         "-sc_lattice_offset",
+        required = False,
+        default = "-1.0",
+        type = float,
+    )
+
+    parser.add_argument(
+        "-sc_film_lattice_offset",
+        required = False,
+        default = "-1.0",
+        type = float,
+    )
+
+    parser.add_argument(
+        "-sc_substrate_lattice_offset",
         required = False,
         default = "-1.0",
         type = float,

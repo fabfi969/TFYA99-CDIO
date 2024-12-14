@@ -15,7 +15,7 @@ export NUMEXPR_NUM_THREADS=1
 export OMP_NUM_THREADS1
 
 j=$(bc <<<"scale=2;0.1")
-mpprun python3 supercomp_main.py -slurm -lattice_constant 2 -sc_lattice_offset $j
+mpprun python3 supercomp_main.py -slurm -lattice_constant 2 -sc_lattice_offset $j -sc
 
 #time mpprun python3 md_parallel.py
 

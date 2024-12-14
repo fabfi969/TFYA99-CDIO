@@ -10,7 +10,6 @@ import time, os, numpy
 from warnings import simplefilter
 from main import run_program
 
-from mpi4py import MPI
 
 def main():
     # Supress some warnings that get very frequent in parallel output
@@ -23,9 +22,6 @@ def main():
     #if world.rank == 0:
     #    print_version(1)
 
-    comm = MPI.COMM_WORLD
-    rank = comm.Get_rank()
-    print("rank: " + str(rank))
 
     run_program()
 
