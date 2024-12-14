@@ -210,6 +210,47 @@
         <span class="nb">type</span> <span class="o">=</span> <span class="nb">str</span><span class="p">,</span>
         <span class="n">choices</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Au&quot;</span><span class="p">,</span> <span class="s2">&quot;Ag&quot;</span><span class="p">,</span> <span class="s2">&quot;Cu&quot;</span><span class="p">,</span> <span class="s2">&quot;Al&quot;</span><span class="p">,</span> <span class="s2">&quot;Ni&quot;</span><span class="p">,</span> <span class="s2">&quot;Pd&quot;</span><span class="p">,</span> <span class="s2">&quot;Pt&quot;</span><span class="p">,</span> <span class="s2">&quot;deafult&quot;</span><span class="p">]</span>
     <span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">&quot;-sc&quot;</span><span class="p">,</span>
+        <span class="n">action</span> <span class="o">=</span> <span class="s2">&quot;store_true&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">&quot;-sc_lattice_offset&quot;</span><span class="p">,</span>
+        <span class="n">required</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;-1.0&quot;</span><span class="p">,</span>
+        <span class="nb">type</span> <span class="o">=</span> <span class="nb">float</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">&quot;-sc_film_lattice_offset&quot;</span><span class="p">,</span>
+        <span class="n">required</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;-1.0&quot;</span><span class="p">,</span>
+        <span class="nb">type</span> <span class="o">=</span> <span class="nb">float</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">&quot;-sc_substrate_lattice_offset&quot;</span><span class="p">,</span>
+        <span class="n">required</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;-1.0&quot;</span><span class="p">,</span>
+        <span class="nb">type</span> <span class="o">=</span> <span class="nb">float</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">&quot;-sc_film_alloy_ratio_offset&quot;</span><span class="p">,</span>
+        <span class="n">required</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;-1.0&quot;</span><span class="p">,</span>
+        <span class="nb">type</span> <span class="o">=</span> <span class="nb">float</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">&quot;-sc_substarte_alloy_ratio_offset&quot;</span><span class="p">,</span>
+        <span class="n">required</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;-1.0&quot;</span><span class="p">,</span>
+        <span class="nb">type</span> <span class="o">=</span> <span class="nb">float</span><span class="p">,</span>
+    <span class="p">)</span>
+
     
     <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
 
