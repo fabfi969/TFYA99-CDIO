@@ -14,8 +14,8 @@ export MKL_NUM_THREADS=1
 export NUMEXPR_NUM_THREADS=1
 export OMP_NUM_THREADS1
 
-
-mpprun python3 supercomp_main.py -slurm
+j=$(bc <<<"scale=2;2+$i*0.1")
+mpprun python3 supercomp_main.py -slurm -lattice_constant 2 -sc_lattice_offset $j
 
 #time mpprun python3 md_parallel.py
 

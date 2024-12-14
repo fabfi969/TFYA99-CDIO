@@ -136,21 +136,21 @@ to be simulated atoms are defined",
     )
 
     parser.add_argument(
-        "-sc_lattice_offset"
+        "-sc_lattice_offset",
         required = False,
         default = "-1.0",
         type = float,
     )
 
     parser.add_argument(
-        "-sc_film_alloy_ratio_offset"
+        "-sc_film_alloy_ratio_offset",
         required = False,
         default = "-1.0",
         type = float,
     )
 
     parser.add_argument(
-        "-sc_substarte_alloy_ratio_offset"
+        "-sc_substarte_alloy_ratio_offset",
         required = False,
         default = "-1.0",
         type = float,
