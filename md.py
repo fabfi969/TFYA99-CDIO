@@ -99,7 +99,7 @@ def run_md(args, input_data):
         comm = MPI.COMM_WORLD
         rank = comm.Get_rank()
         input_data['interface']['substarte_alloy_ratio'] += rank * args.sc_substarte_alloy_ratio_offset
-    print(input_data['atoms']['latticeconstant']
+    print(input_data['atoms']['latticeconstant'])
 
     #linear interpolation of lattice constant
     if args.lattice_interpolation and args.simulation_method == 'Interface':
