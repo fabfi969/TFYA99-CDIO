@@ -15,7 +15,7 @@ export NUMEXPR_NUM_THREADS=1
 export OMP_NUM_THREADS1
 
 
-mpprun python3 main.py -slurm
+mpprun python3 supercomp_main.py -slurm
 
 #time mpprun python3 md_parallel.py
 
