@@ -76,7 +76,7 @@ Material simulation software description.
         -film_alloy_ratio float
     Only for interface simulation. Overrides the ratio of materialsin the film.
 
-        -slurm float
+        -slurm
     This will tell the program to print in a way that the outputs in the terminal can be turned into a CSV-file.
 
 ## Run on supercomputer
@@ -135,7 +135,7 @@ The script will run the program with lattice constant 2.2, 2.3 and 2.4.
 2. On a local computer run:
     ```bash
     python3 slurm_to_csv.py
-3. To visualize the result, run: 
+3. To visualize the result, run:
     ```bash
     python3 interface_energy_plot.py
 When requested, enter the csv file name.

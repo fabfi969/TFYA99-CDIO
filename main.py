@@ -71,6 +71,11 @@ to be simulated atoms are defined",
     )
 
     parser.add_argument(
+        "-view_atoms",
+        action = "store_true",
+    )
+
+    parser.add_argument(
         "-lattice_interpolation",
         action = "store_true",
     )
@@ -134,7 +139,7 @@ to be simulated atoms are defined",
         type = str,
         choices = ["Au", "Ag", "Cu", "Al", "Ni", "Pd", "Pt", "deafult"]
     )
-    
+
     args = parser.parse_args()
 
     input_file_name = "input_data.toml"
