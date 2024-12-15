@@ -97,6 +97,7 @@
 <span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">random</span>
 <span class="kn">from</span> <span class="nn">alloy</span> <span class="kn">import</span> <span class="n">Interface</span>
 <span class="kn">import</span> <span class="nn">statistics</span>
+
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">def TwoBlocks(mat1, structure1, a1, mat2, structure2, a2, size, film_alloy_ratio = 0, alloy = &quot;N&quot;):</span>
 <span class="sd">    #Generate an two layers of atoms pressed up against each other</span>
@@ -160,6 +161,22 @@
             <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;interface&#39;</span><span class="p">][</span><span class="s1">&#39;film_atoms&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">film_atoms</span>
         <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">film_alloying_atoms</span> <span class="o">!=</span> <span class="s2">&quot;deafult&quot;</span><span class="p">:</span>
             <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;interface&#39;</span><span class="p">][</span><span class="s1">&#39;film_alloying_atoms&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">film_alloying_atoms</span>
+
+    <span class="c1">#modifing input to run different values on diffrent CPU:s when running parallel computaions</span>
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">sc</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">mpi4py</span> <span class="kn">import</span> <span class="n">MPI</span>
+        <span class="n">comm</span> <span class="o">=</span> <span class="n">MPI</span><span class="o">.</span><span class="n">COMM_WORLD</span>
+        <span class="n">rank</span> <span class="o">=</span> <span class="n">comm</span><span class="o">.</span><span class="n">Get_rank</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">sc_lattice_offset</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;latticeconstant&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="n">rank</span> <span class="o">*</span> <span class="n">args</span><span class="o">.</span><span class="n">sc_lattice_offset</span>
+        <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">sc_film_alloy_ratio_offset</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;interface&#39;</span><span class="p">][</span><span class="s1">&#39;film_alloy_ratio&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="n">rank</span> <span class="o">*</span> <span class="n">args</span><span class="o">.</span><span class="n">sc_film_alloy_ratio_offset</span>
+        <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">sc_substarte_alloy_ratio_offset</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;interface&#39;</span><span class="p">][</span><span class="s1">&#39;substarte_alloy_ratio&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="n">rank</span> <span class="o">*</span> <span class="n">args</span><span class="o">.</span><span class="n">sc_substarte_alloy_ratio_offset</span>
+        <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">sc_film_lattice_offset</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;interface&#39;</span><span class="p">][</span><span class="s1">&#39;film_lattice&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="n">rank</span> <span class="o">*</span> <span class="n">args</span><span class="o">.</span><span class="n">sc_film_lattice_offset</span>
+        <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">sc_substrate_lattice_offset</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;interface&#39;</span><span class="p">][</span><span class="s1">&#39;substrate_lattice&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="n">rank</span> <span class="o">*</span> <span class="n">args</span><span class="o">.</span><span class="n">sc_substrate_lattice_offset</span>
 
     <span class="c1">#linear interpolation of lattice constant</span>
     <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">lattice_interpolation</span> <span class="ow">and</span> <span class="n">args</span><span class="o">.</span><span class="n">simulation_method</span> <span class="o">==</span> <span class="s1">&#39;Interface&#39;</span><span class="p">:</span>
