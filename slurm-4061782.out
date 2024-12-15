@@ -1,0 +1,773 @@
+mpprun INFO: mpprun v1.10.1 started
+mpprun INFO: mpprun srun handler invoked on: /proj/liu-compute-2024-33/software/venv/bin/python3
+mpprun WARNING: Using srun handler that just uses srun without setting up the environment; no MPI module will be loaded, etc.
+mpprun INFO: Setting env variable: SLURM_KILL_BAD_EXIT=1 (was unset; to override, set to 0 before invoking mpprun)
+mpprun INFO: threading env variables set by user: OPENBLAS_NUM_THREADS=1, MKL_NUM_THREADS=1, NUMEXPR_NUM_THREADS=1; set by mpprun: OMP_NUM_THREADS=1
+mpprun INFO: mpprun v1.10.1 executing: /usr/bin/srun /proj/liu-compute-2024-33/software/venv/bin/python3 supercomp_main.py -film_lattice 3.50 -substrate_lattice 3.50 -slurm -simulation_method Interface -sc_film_lattice_offset .01 -sc_substrate_lattice_offset .01 -sc
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+-0.015701763343121046,0.02454233350104351,189.8680336843854,0.008840570157922462,176.54416276392527,0.03424367257246497,0.5,0.5,3.81,3.81,-0.05961200347877376,-3.4771508233719103e-05,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+-0.02031226203100977,0.024718079851788168,191.227668620553,0.0044058178207783995,175.7809043054807,0.036134173894028704,0.5,0.5,3.8,3.8,-0.06331760319799261,-0.0045449267692864,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+-0.021565270360058966,0.025672412941735057,198.61072155072588,0.00410714258167609,176.85170579394776,0.03659701573052239,0.5,0.5,3.79,3.79,-0.06193721121500725,-0.007149677664361441,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+-0.023972509088353935,0.025513487046403036,197.38121551182627,0.0015409779580491008,175.90815549871573,0.03766889302361025,0.5,0.5,3.7800000000000002,3.7800000000000002,-0.06360580982171793,-0.010190998267453464,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+-0.024573694332027975,0.026144923171468222,202.26622514052832,0.0015712288394402474,175.76874297044148,0.03768706689761633,0.5,0.5,3.77,3.77,-0.06391226428613198,-0.00989064066966043,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+-0.024445856026243613,0.027030695820159174,209.118870635351,0.0025848397939155603,176.42123051509998,0.0373468194105822,0.5,0.5,3.76,3.76,-0.06197874376209409,-0.010130055265154739,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+-0.020014530496542435,0.02876309361648258,222.52130293190103,0.008748563119940145,177.9755958931099,0.03390822128391943,0.5,0.5,3.74,3.74,-0.0514738870674432,-0.007593992380455521,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+-0.014443625172039594,0.03004677165925213,232.45228304241544,0.015603146487212534,177.51754352856227,0.029992309923900076,0.5,0.5,3.72,3.72,-0.04017560891686507,-0.004205864443722543,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+-0.023608684961300377,0.027793689829487246,215.02165784415195,0.004185004868186869,176.58297173697912,0.0360555254199382,0.5,0.5,3.75,3.75,-0.0583698626270726,-0.009556183344616938,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+-0.01835159867051781,0.029549602136030906,228.60600657576228,0.011198003465513095,177.13130627105556,0.03228791466839785,0.5,0.5,3.73,3.73,-0.04660124434853099,-0.006776581522751626,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+-0.009853740701390343,0.030670260400961862,237.2758089474703,0.020816519699571517,177.02336474854442,0.027853743629253764,0.5,0.5,3.71,3.71,-0.03515742094702821,0.00026645338809219807,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.3413469519367178,0.05222665692094524,404.0435949200694,0.39357360885766307,-1,-0.1594828339198051,0.5,0.5,3.52,3.52,0.43806785110133944,0.27447142559593385,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.23262585253962953,0.0455401692364848,352.31459902612215,0.2781660217761143,-1,-0.10210840066585965,0.5,0.5,3.56,3.56,0.29728300176944006,0.18509982133839356,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+-0.0042073056083800865,0.03152024784330319,243.85160763127948,0.027312942234923105,177.81914768075922,0.02434368855110773,0.5,0.5,3.7,3.7,-0.0249689212919926,0.0035944864247002438,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.02435071915940581,0.03545985562838408,274.32978459881195,0.059810574787789894,180.4731998004191,0.007477986467792507,0.5,0.5,3.67,3.67,0.02100217254273373,0.023852429309471148,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.004266163974278556,0.032605605015411446,252.24830846270928,0.03687176898969,178.57141333321343,0.019381008198815823,0.5,0.5,3.69,3.69,-0.014012672201513539,0.012122424793571892,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.2902704725234359,0.0492717800984488,381.1836394051177,0.3395422526218847,-1,-0.13248832851920583,0.5,0.5,3.54,3.54,0.36661145887391755,0.23790745078637884,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.015116671864093554,0.03445464058444032,266.5530911635504,0.04957131244853387,180.25798269057685,0.011932231767598124,0.5,0.5,3.68,3.68,0.010087664210787186,0.015619184702550436,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.03581114713378816,0.036413108291436215,281.70447897049496,0.07222425542522437,181.63771040662235,0.0011098377364751402,0.5,0.5,3.66,3.66,0.03625227443654914,0.03375230551572495,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.42282074386258683,0.05751168528631288,444.9304137572386,0.48033242914889973,-1,-0.20364485362618942,0.5,0.5,3.5,3.5,0.5337167731918602,0.3539053632094184,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.055830295830318254,0.03825610646280151,295.96255426175316,0.09408640229311976,181.85843523485627,-0.008907977508842941,0.5,0.5,3.64,3.64,0.06121883902960635,0.0506835182811993,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.048992254799298016,0.037088723006324556,286.93126954599717,0.08608097780562257,182.90598347866688,-0.0058795258431512225,0.5,0.5,3.65,3.65,0.05408529822261622,0.043754731269308796,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.07296937181794373,0.03829386440722476,296.25466286109645,0.11126323622516848,183.36491324611956,-0.018365715563132753,0.5,0.5,3.63,3.63,0.0778427567749606,0.0701519105764734,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.3192444184856331,0.04998108596730802,386.67107647361684,0.3692255044529411,-1,-0.1468814764197833,0.5,0.5,3.53,3.53,0.4007401729222843,0.2622482843702234,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.20717265535158866,0.045181429802376626,349.5392659080928,0.2523540851539653,-1,-0.09063113281180112,0.5,0.5,3.57,3.57,0.27070350896967055,0.16291284180789697,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.115895705289629,0.04183888414329099,323.6801693489215,0.15773458943291999,188.29595186660947,-0.04191362279848511,0.5,0.5,3.61,3.61,0.15261892108309888,0.08894291394679132,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.16100666090066032,0.04268825286917758,330.2511814268986,0.2036949137698379,191.33164049957534,-0.06442097689073885,0.5,0.5,3.59,3.59,0.1973369745963622,0.13519989295495338,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.09727267135534783,0.040784020335214756,315.519375794562,0.1380566916905626,186.4106193531542,-0.03265224969229885,0.5,0.5,3.62,3.62,0.12167769422892391,0.08168349684623638,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.13710325509158952,0.04103817926207667,317.4856377103066,0.1781414343536662,189.57919941618363,-0.05203075833481569,0.5,0.5,3.6,3.6,0.1607994800711477,0.12140347095214989,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.18767705452949004,0.04407902485970932,341.0106775903075,0.23175607938919937,-1,-0.07978633540285097,0.5,0.5,3.58,3.58,0.24273123287473092,0.1485975173201704,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.2564255602541274,0.04742135144337091,366.8680793057513,0.3038469116974983,-1,-0.11451953440379929,0.5,0.5,3.55,3.55,0.3180330998553789,0.21485288064971794,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+mpprun INFO: mpprun v1.10.1 started
+mpprun INFO: mpprun srun handler invoked on: /proj/liu-compute-2024-33/software/venv/bin/python3
+mpprun WARNING: Using srun handler that just uses srun without setting up the environment; no MPI module will be loaded, etc.
+mpprun INFO: Setting env variable: SLURM_KILL_BAD_EXIT=1 (was unset; to override, set to 0 before invoking mpprun)
+mpprun INFO: threading env variables set by user: OPENBLAS_NUM_THREADS=1, MKL_NUM_THREADS=1, NUMEXPR_NUM_THREADS=1; set by mpprun: OMP_NUM_THREADS=1
+mpprun INFO: mpprun v1.10.1 executing: /usr/bin/srun /proj/liu-compute-2024-33/software/venv/bin/python3 supercomp_main.py -film_lattice 3.82 -substrate_lattice 3.82 -slurm -simulation_method Interface -sc_film_lattice_offset .01 -sc_substrate_lattice_offset .01 -sc
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.2903749360191207,0.10528852338544722,814.5486615556466,0.39566345940456793,134.00954154435294,-0.15874405796474153,0.5,0.5,4.109999999999999,4.109999999999999,0.35577065849617184,0.35738091683787915,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.2649872552133199,0.09183183144344033,710.4430092216202,0.3568190866567602,137.3862793200435,-0.13924015417450875,0.5,0.5,4.09,4.09,0.3146063658512126,0.3206930291545651,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.3175580993685557,0.11583547081737283,896.1435176514269,0.43339357018592856,129.50255354282314,-0.17775008088885502,0.5,0.5,4.13,4.13,0.3985563651070722,0.3903373668565664,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.2527630116996912,0.08672186550721207,670.9105342650479,0.33948487720690323,138.54422919391504,-0.13054059915096863,0.5,0.5,4.08,4.08,0.29731921148566864,0.30324686402317186,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.20926456631110604,0.07351249194747592,568.7182230130238,0.28277705825858196,149.23542958085824,-0.10215759163568917,0.5,0.5,4.05,4.05,0.23298842040842918,0.2541038211215311,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.22611759258396882,0.07774390160765615,601.4538808451275,0.303861494191625,145.96789906192242,-0.11267411909089434,0.5,0.5,4.06,4.06,0.2582118292705708,0.2709979031028429,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.23563489226664192,0.08044641976525069,622.3615018974209,0.3160813120318926,144.26888693381656,-0.11883771932772436,0.5,0.5,4.07,4.07,0.2701343791226848,0.28362237156465653,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.20271536856327235,0.06656682699218215,514.9841415477835,0.2692821955554545,151.87976708881044,-0.09528744190810114,0.5,0.5,4.04,4.04,0.2178548533933968,0.24200222597826,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.1923480280542182,0.0593945644902962,459.49702259703514,0.25174259254451437,153.69908971294709,-0.08656717254139976,0.5,0.5,4.03,4.03,0.19883016146903904,0.22604677615827484,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.17512746947311503,0.05413421672305791,418.8011414568365,0.22926168619617293,161.2715934425025,-0.07548205079069652,0.5,0.5,4.02,4.02,0.17507326150286348,0.20515252627470248,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.004788260339706576,0.022835596428230964,176.66412167588047,0.027623856767937542,176.9214568909033,0.02517280657852971,0.5,0.5,3.8499999999999996,3.8499999999999996,-0.042839651839237027,0.02011789545011515,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.1554233798484992,0.04348581517370711,336.42140099853674,0.1989091950222063,168.19740153077075,-0.06022783013326767,0.5,0.5,4.0,4.0,0.13954722369291472,0.17981763159582692,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.010756894790313935,0.02264125505493324,175.16062917342578,0.03339814984524718,177.90942009768875,0.022200842809857995,0.5,0.5,3.86,3.86,-0.036314592924928855,0.025311057150460045,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.1492745111522322,0.03607341755437891,279.0765132025647,0.1853479287066111,172.20031642023594,-0.053412431458731965,0.5,0.5,3.9899999999999998,3.9899999999999998,0.12738328469105245,0.16478950693302258,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.1403097862462276,0.02982917145741043,230.76885214733565,0.17013895770363804,176.9949742236137,-0.045799710253566724,0.5,0.5,3.98,3.98,0.1064204223341615,0.15531795587661,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.048085240501362946,0.021709717671944073,167.95393176610176,0.06979495817330703,178.95791778584348,0.00393147728167244,0.5,0.5,3.9,3.9,0.0003656928747374049,0.06156631073522474,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+-0.0016547065321536577,0.023270582527155952,180.02932552984234,0.021615875995002296,177.04645592415915,0.028005748044346496,0.5,0.5,3.84,3.84,-0.049462719923543855,0.015067099829853155,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.11997969904268362,0.022002382931062825,170.21809206993944,0.14198208197374645,180.8757016357224,-0.031947005072397325,0.5,0.5,3.96,3.96,0.07435995040002327,0.13151614171851783,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.12974884931700423,0.023981857475895013,185.531996085611,0.15373070679289924,179.6367044923456,-0.03761927735777252,0.5,0.5,3.9699999999999998,3.9699999999999998,0.09270666123025444,0.13626260027818984,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.03779334970329407,0.02208686862397379,170.8717027947218,0.059880218327267865,178.26132553946306,0.009116412776785751,0.5,0.5,3.8899999999999997,3.8899999999999997,-0.009502992293011698,0.05115038506670806,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.029732598164065305,0.022272383755579717,172.30691241956126,0.05200498191964502,177.5943556194343,0.013157574987666246,0.5,0.5,3.88,3.88,-0.017596991244931963,0.04328682318924449,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.06964028769534461,0.02171030988744684,167.958513351346,0.09135059758279145,179.87324577920157,-0.00657917918118075,0.5,0.5,3.92,3.92,0.022391305530049564,0.08211765041510338,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.09387158863235605,0.02158478552798686,166.987413219032,0.1154563741603429,180.49120696664795,-0.018541775367440033,0.5,0.5,3.94,3.94,0.049364921209858206,0.10317500368536477,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.10395117193082623,0.02189617515591274,169.39643175679595,0.12584734708673898,181.4720570913418,-0.023830698439929635,0.5,0.5,3.9499999999999997,3.9499999999999997,0.059765110101741466,0.11374363386485678,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.08265847439326139,0.02168980497337358,167.79988019953947,0.10434827936663497,179.74238127784952,-0.013125912026755743,0.5,0.5,3.9299999999999997,3.9299999999999997,0.03894511549551787,0.09165498792462859,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.06043017608303796,0.021895088082436318,169.388021778037,0.08232526416547428,179.1300000079713,-0.002206078439085336,0.5,0.5,3.9099999999999997,3.9099999999999997,0.01308584240906038,0.07365157863458457,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+-0.008154307950545791,0.023463217512341254,181.51961681996758,0.015308909561795463,177.10901702314308,0.030928106533870254,0.5,0.5,3.8299999999999996,3.8299999999999996,-0.05518061447970421,0.008633310973759167,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.020695996043303404,0.022386747122699228,173.19166723065467,0.043082743166002635,177.1480646283295,0.01735347283826652,0.5,0.5,3.8699999999999997,3.8699999999999997,-0.02569752189998845,0.03407331938945804,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+-0.01242086170190896,0.024370878271549077,188.54159635569258,0.011950016569640117,176.98357084892575,0.03278046509511541,0.5,0.5,3.82,3.82,-0.056672254761039695,0.003061341140448998,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+mpprun INFO: mpprun v1.10.1 started
+mpprun INFO: mpprun srun handler invoked on: /proj/liu-compute-2024-33/software/venv/bin/python3
+mpprun WARNING: Using srun handler that just uses srun without setting up the environment; no MPI module will be loaded, etc.
+mpprun INFO: Setting env variable: SLURM_KILL_BAD_EXIT=1 (was unset; to override, set to 0 before invoking mpprun)
+mpprun INFO: threading env variables set by user: OPENBLAS_NUM_THREADS=1, MKL_NUM_THREADS=1, NUMEXPR_NUM_THREADS=1; set by mpprun: OMP_NUM_THREADS=1
+mpprun INFO: mpprun v1.10.1 executing: /usr/bin/srun /proj/liu-compute-2024-33/software/venv/bin/python3 supercomp_main.py -film_lattice 4.14 -substrate_lattice 4.14 -slurm -simulation_method Interface -sc_film_lattice_offset .01 -sc_substrate_lattice_offset .01 -sc
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.6298406786982462,0.29987164091442775,2319.9113815200844,0.929712319612674,94.36737014231082,-0.42534908301376656,0.5,0.5,4.35,4.35,0.9570526133704008,0.8233578722698063,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.7008187198023631,0.3704428453196987,2865.874780420108,1.0712615651220618,87.04935940986338,-0.4960831789402961,0.5,0.5,4.41,4.41,1.1162181522507533,0.9472097707519007,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.6634180237210654,0.33481563552665233,2590.2502857574805,0.9982336592477177,90.42651339437546,-0.4595434975277522,0.5,0.5,4.38,4.38,1.0371454787212202,0.8801751755820019,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.5634821149122886,0.2500329868496823,1934.342207816729,0.8135151017619708,100.35025739054169,-0.3675275254833753,0.5,0.5,4.3,4.3,0.8279225693402685,0.7206475833884529,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.5914778661055738,0.27031501149889303,2091.2510094643044,0.8617928776044669,97.15628355214862,-0.3915343542151726,0.5,0.5,4.319999999999999,4.319999999999999,0.8803199080297306,0.7645416780050814,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.5103028391369273,0.2124222235028899,1643.3722525058129,0.7227250626398172,105.5923287854509,-0.32255579992763644,0.5,0.5,4.26,4.26,0.7233482226891655,0.6444884398059245,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.43831449760865204,0.17244270514767895,1334.0767840276446,0.610757202756331,113.18128411767138,-0.26723927382181956,0.5,0.5,4.21,4.21,0.595636764877905,0.5495989855220652,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.5378021738450312,0.23026588540884357,1781.4170313231307,0.7680680592538747,102.98259660323012,-0.34489085137061587,0.5,0.5,4.279999999999999,4.279999999999999,0.7754171686419471,0.6824325933531593,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.582594552559272,0.25659370896871897,1985.098237525077,0.8391882615279909,98.59918982440855,-0.38026875114111536,0.5,0.5,4.31,4.31,0.853325853630203,0.7463999101800186,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.5270100404597718,0.21881507622668614,1692.8295861472718,0.745825116686458,104.4329958658103,-0.3339459928004166,0.5,0.5,4.27,4.27,0.7494693572359734,0.6642477450513178,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.48277777971827124,0.19392871353945482,1500.3000229425274,0.676706493257726,109.20179716334442,-0.29988370202170034,0.5,0.5,4.239999999999999,4.239999999999999,0.671481877740463,0.6049920195606637,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.42442390038505023,0.16065700480660924,1242.8985042908319,0.5850809051916595,114.91755031655559,-0.25442636128129087,0.5,0.5,4.199999999999999,4.199999999999999,0.5731811851482685,0.5207524426059726,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.41035265060655796,0.15549542061747218,1202.9666925645265,0.5658480712240301,116.32765663479992,-0.2448215558680118,0.5,0.5,4.1899999999999995,4.1899999999999995,0.5462320734176546,0.5092591095423992,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.37815675860968206,0.14400520479889223,1114.0743839342067,0.5221619634085743,120.20812110205499,-0.22281329548827528,0.5,0.5,4.17,4.17,0.49859411262452497,0.46919444176059993,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.3939530600745062,0.14811860586146247,1145.8970861834557,0.5420716659359687,118.88346552874525,-0.23284197141931406,0.5,0.5,4.18,4.18,0.5202144295755092,0.48754117919908757,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.3486609743751995,0.12775662166113513,988.3696896192987,0.4764175960363346,124.56599863720285,-0.19965774827902733,0.5,0.5,4.1499999999999995,4.1499999999999995,0.44833673759297693,0.4273963550014123,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.4522421950867962,0.1778093069819687,1375.5946836112473,0.6300515020687649,112.4048681211245,-0.27683457972919145,0.5,0.5,4.22,4.22,0.6197235865698997,0.5639970749572482,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.3338976584711953,0.12218492293328045,945.2650890851002,0.4560825814044758,126.60293541561428,-0.1893103341804515,0.5,0.5,4.14,4.14,0.4274346746231521,0.4072685751422267,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+mpprun INFO: mpprun v1.10.1 started
+mpprun INFO: mpprun srun handler invoked on: /proj/liu-compute-2024-33/software/venv/bin/python3
+mpprun WARNING: Using srun handler that just uses srun without setting up the environment; no MPI module will be loaded, etc.
+mpprun INFO: Setting env variable: SLURM_KILL_BAD_EXIT=1 (was unset; to override, set to 0 before invoking mpprun)
+mpprun INFO: threading env variables set by user: OPENBLAS_NUM_THREADS=1, MKL_NUM_THREADS=1, NUMEXPR_NUM_THREADS=1; set by mpprun: OMP_NUM_THREADS=1
+mpprun INFO: mpprun v1.10.1 executing: /usr/bin/srun /proj/liu-compute-2024-33/software/venv/bin/python3 supercomp_main.py -film_lattice 4.46 -substrate_lattice 4.46 -slurm -simulation_method Interface -sc_film_lattice_offset .01 -sc_substrate_lattice_offset .01 -sc
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.8727392950090029,0.5954762729101295,4606.81169695398,1.4682155679191324,71.62763708576996,-0.6949674728996765,0.5,0.5,4.58,4.58,1.5673204437458454,1.29083006997264,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+0.7548564562454768,0.4337779857457551,3355.857469935286,1.188634441991232,82.12760837289105,-0.5551279487023727,0.5,0.5,4.46,4.46,1.24914180390524,1.0497485354907374,Cu,fcc,Pt,Cu,fcc,Pd
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+mpprun INFO: mpprun v1.10.1 started
+mpprun INFO: mpprun srun handler invoked on: /proj/liu-compute-2024-33/software/venv/bin/python3
+mpprun WARNING: Using srun handler that just uses srun without setting up the environment; no MPI module will be loaded, etc.
+mpprun INFO: Setting env variable: SLURM_KILL_BAD_EXIT=1 (was unset; to override, set to 0 before invoking mpprun)
+mpprun INFO: threading env variables set by user: OPENBLAS_NUM_THREADS=1, MKL_NUM_THREADS=1, NUMEXPR_NUM_THREADS=1; set by mpprun: OMP_NUM_THREADS=1
+mpprun INFO: mpprun v1.10.1 executing: /usr/bin/srun /proj/liu-compute-2024-33/software/venv/bin/python3 supercomp_main.py -film_lattice 4.78 -substrate_lattice 4.78 -slurm -simulation_method Interface -sc_film_lattice_offset .01 -sc_substrate_lattice_offset .01 -sc
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+mpprun INFO: mpprun v1.10.1 started
+mpprun INFO: mpprun srun handler invoked on: /proj/liu-compute-2024-33/software/venv/bin/python3
+mpprun WARNING: Using srun handler that just uses srun without setting up the environment; no MPI module will be loaded, etc.
+mpprun INFO: Setting env variable: SLURM_KILL_BAD_EXIT=1 (was unset; to override, set to 0 before invoking mpprun)
+mpprun INFO: threading env variables set by user: OPENBLAS_NUM_THREADS=1, MKL_NUM_THREADS=1, NUMEXPR_NUM_THREADS=1; set by mpprun: OMP_NUM_THREADS=1
+mpprun INFO: mpprun v1.10.1 executing: /usr/bin/srun /proj/liu-compute-2024-33/software/venv/bin/python3 supercomp_main.py -film_lattice 5.10 -substrate_lattice 5.10 -slurm -simulation_method Interface -sc_film_lattice_offset .01 -sc_substrate_lattice_offset .01 -sc
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+job completed
