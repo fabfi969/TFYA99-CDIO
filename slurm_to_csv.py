@@ -23,7 +23,7 @@ def slurm_to_csv():
 
             # write the categories into the CSV-file only once
             for line in lines:
-                if line[0] == 'E':
+                if line[0] == 'E' and line[1] == 'p':
                     writer.writerow((line[:-1]).split(','))
                     break
 

@@ -14,6 +14,7 @@ from ase.build.tools import cut, stack
 from ase.io import read
 from ase.md import Andersen
 import numpy as np
+from ase.visualize import view
 from create_input_file import create_input_file
 from create_atoms_md import invalid_materials_EMT_error, create_atoms
 import toml
@@ -160,6 +161,10 @@ def run_md(args, input_data):
             modified=input_data['lennard_jones']['modified'],
         )
 
+    if args.view_atoms:
+        view(atoms)
+        print(atoms.symbols)
+
     # Set the momenta corresponding to T=300K
     MaxwellBoltzmannDistribution(
         atoms,
@@ -276,10 +281,9 @@ def run_md(args, input_data):
             print(slurm_cat + slurm_cat_extend)
             print(slurm_print + slurm_print_extend)
 
-        else:
-            cohesive_energy = calccohesiveenergy(epot_list, input_data['atoms']['materials'], atoms.calc)
-            bulk_modulus = calcbulkmodulus(volumes, energies)
-            writetofile(f, epot_list, ekin_list, etot_list, temperature_list, pressure_list, cohesive_energy, bulk_modulus)
+        writetofile(f, epot_list, ekin_list, etot_list, temperature_list, pressure_list, cohesive_energy, bulk_modulus)
+        
     else:
         print("Equilibrium not reached")
+
     print("-----End of simulation.-----")

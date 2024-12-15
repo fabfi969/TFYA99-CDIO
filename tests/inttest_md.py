@@ -43,6 +43,7 @@ class inputFileTests(unittest.TestCase):
                     slurm = False
                     lattice_interpolation = False
                     sc = False
+                    view_atoms = False
                 args = arguments()
                 run_md(args, input_data)
                 self.assertTrue(True)

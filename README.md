@@ -198,7 +198,7 @@ Note that all flags should be on the same line as 'mpprun python3 supercomp_main
 2. On a local computer run:
     ```bash
     python3 slurm_to_csv.py
-3. To visualize the result, run: 
+3. To visualize the result, run:
     ```bash
     python3 interface_energy_plot.py
 When requested, enter the csv file name.
