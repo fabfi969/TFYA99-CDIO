@@ -1,0 +1,21 @@
+AuAg 4,05 Å
+AuCu 3,85 Å (bad run)
+AuAl 4,05 Å
+AuPt 4,00 Å
+AuPd 3,97 Å
+AuNi 3,81 Å (looks ok, perhaps bad run)
+AgCu 3,86 Å
+AgAl 4,07 Å
+AgPt 3,98 Å
+AgPd 3,97 Å
+AgNi 3,80 Å
+AlCu 3,78 Å
+CuPt 3,85 Å (bad run)
+CuPd 3,69 Å (bad run)
+CuNi 3,60 Å (bad run)
+AlPt 4,00 Å
+AlPd 4,00 Å
+AlNi 3,75 Å (looks ok, perhaps bad run)
+PdPt 3,90 Å
+NiPt 3,79 Å (looks ok, perhaps bad run)
+NiPd 3,71 Å
