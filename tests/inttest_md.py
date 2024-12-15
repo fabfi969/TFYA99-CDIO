@@ -42,6 +42,7 @@ class inputFileTests(unittest.TestCase):
                     cif = ''
                     slurm = False
                     lattice_interpolation = False
+                    sc = False
                     view_atoms = False
                 args = arguments()
                 run_md(args, input_data)

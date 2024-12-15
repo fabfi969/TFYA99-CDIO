@@ -23,6 +23,7 @@ from save_data import writetofile
 from random import random
 from alloy import Interface
 import statistics
+
 """
 def TwoBlocks(mat1, structure1, a1, mat2, structure2, a2, size, film_alloy_ratio = 0, alloy = "N"):
     #Generate an two layers of atoms pressed up against each other
@@ -84,6 +85,22 @@ def run_md(args, input_data):
             input_data['interface']['film_atoms'] = args.film_atoms
         if args.film_alloying_atoms != "deafult":
             input_data['interface']['film_alloying_atoms'] = args.film_alloying_atoms
+
+    #modifing input to run different values on diffrent CPU:s when running parallel computaions
+    if args.sc:
+        from mpi4py import MPI
+        comm = MPI.COMM_WORLD
+        rank = comm.Get_rank()
+        if args.sc_lattice_offset != -1:
+            input_data['atoms']['latticeconstant'] += rank * args.sc_lattice_offset
+        if args.sc_film_alloy_ratio_offset != -1:
+            input_data['interface']['film_alloy_ratio'] += rank * args.sc_film_alloy_ratio_offset
+        if args.sc_substarte_alloy_ratio_offset != -1:
+            input_data['interface']['substarte_alloy_ratio'] += rank * args.sc_substarte_alloy_ratio_offset
+        if args.sc_film_lattice_offset != -1:
+            input_data['interface']['film_lattice'] += rank * args.sc_film_lattice_offset
+        if args.sc_substrate_lattice_offset != -1:
+            input_data['interface']['substrate_lattice'] += rank * args.sc_substrate_lattice_offset
 
     #linear interpolation of lattice constant
     if args.lattice_interpolation and args.simulation_method == 'Interface':

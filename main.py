@@ -140,6 +140,48 @@ to be simulated atoms are defined",
         choices = ["Au", "Ag", "Cu", "Al", "Ni", "Pd", "Pt", "deafult"]
     )
 
+
+    parser.add_argument(
+        "-sc",
+        action = "store_true",
+    )
+    
+    parser.add_argument(
+        "-sc_lattice_offset",
+        required = False,
+        default = "-1.0",
+        type = float,
+    )
+
+    parser.add_argument(
+        "-sc_film_lattice_offset",
+        required = False,
+        default = "-1.0",
+        type = float,
+    )
+
+    parser.add_argument(
+        "-sc_substrate_lattice_offset",
+        required = False,
+        default = "-1.0",
+        type = float,
+    )
+
+    parser.add_argument(
+        "-sc_film_alloy_ratio_offset",
+        required = False,
+        default = "-1.0",
+        type = float,
+    )
+
+    parser.add_argument(
+        "-sc_substarte_alloy_ratio_offset",
+        required = False,
+        default = "-1.0",
+        type = float,
+    )
+
+
     args = parser.parse_args()
 
     input_file_name = "input_data.toml"
