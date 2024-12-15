@@ -660,3 +660,104 @@ mpprun WARNING: Using srun handler that just uses srun without setting up the en
 mpprun INFO: Setting env variable: SLURM_KILL_BAD_EXIT=1 (was unset; to override, set to 0 before invoking mpprun)
 mpprun INFO: threading env variables set by user: OPENBLAS_NUM_THREADS=1, MKL_NUM_THREADS=1, NUMEXPR_NUM_THREADS=1; set by mpprun: OMP_NUM_THREADS=1
 mpprun INFO: mpprun v1.10.1 executing: /usr/bin/srun /proj/liu-compute-2024-33/software/venv/bin/python3 supercomp_main.py -film_lattice 5.10 -substrate_lattice 5.10 -slurm -simulation_method Interface -sc_film_lattice_offset .01 -sc_substrate_lattice_offset .01 -sc
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+1.5183854625471784,1.404420177031957,10865.08328429309,2.9228056395791358,-1,-1.4229407891073178,0.5,0.5,5.29,5.29,2.8886800411174463,2.880007176676326,Pd,fcc,Ni,Pd,fcc,Ni
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,interface_energy,substrate_alloy_ratio,film_alloy_ratio,substrate_lattice,film_lattice,Etot_substrate,Etot_film,substrate_atoms,substrate_structure,substrate_alloying_atoms,film_atoms,film_structure,film_alloying_atoms
+1.516210624383788,1.3772340182835594,10654.761698337528,2.8934446426673475,35.05316486968101,-1.408258985159271,0.5,0.5,5.26,5.26,2.853292988021023,2.8566696249648666,Pd,fcc,Ni,Pd,fcc,Ni
+Simulation data saved to file:  output_data.txt
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+job completed
