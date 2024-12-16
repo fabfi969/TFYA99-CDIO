@@ -66,7 +66,6 @@ def run_md(args, input_data):
         input_data['atoms']['latticeconstant'] = args.lattice_constant
     if args.structure != -1:
         input_data['atoms']['structure'] = input_data['structure_choices'][args.structure]
-        print(input_data['structure_choices'][args.structure])
     #command line override for parameters for inteface simulation
     if args.simulation_method == 'Interface':
         if args.substrate_lattice != -1:
@@ -131,9 +130,6 @@ def run_md(args, input_data):
         if film_alloy_ratio < 0.5:
             film_atom_lat = input_data['lattice_constant'][input_data['interface']['film_atoms']]
             interpolated_film_lattice = (1-2*film_alloy_ratio)*film_atom_lat+2*film_alloy_ratio*film_alloy_lattice
-            print(film_alloy_ratio)
-            print(film_atom_lat)
-            print(film_alloy_lattice)
         else:
             film_alloy_atom_lat = input_data['lattice_constant'][input_data['interface']['film_alloying_atoms']]
             interpolated_film_lattice = (2-2*film_alloy_ratio)*film_alloy_lattice+(2*film_alloy_ratio-1)*film_alloy_atom_lat
