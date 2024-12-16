@@ -1,0 +1,159 @@
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,pressure,lattice_constant,cohesive_energy,bulk_modulus,material, structure
+0.2507366316569036,0.01876717558743293,145.18940207718978,0.2695038072443365,-1,-0.0004929987839979273,3.81,2.7099599570706077,-1,Ag,FaceCenteredCubic
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,pressure,lattice_constant,cohesive_energy,bulk_modulus,material, structure
+0.23058428344940957,0.018951865448699257,146.6182271234548,0.24953614889810882,-1,-0.0020794538244537798,3.82,2.7297873116764717,-1,Ag,FaceCenteredCubic
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,pressure,lattice_constant,cohesive_energy,bulk_modulus,material, structure
+0.1948400002250485,0.01898900475060942,146.90554968900437,0.2138290049756579,-1,-0.002251968704242638,3.84,2.7658467702302523,-1,Ag,FaceCenteredCubic
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,pressure,lattice_constant,cohesive_energy,bulk_modulus,material, structure
+0.17651981372557554,0.019013931862292145,147.09839450062057,0.19553374558786768,-1,-0.0007334010616350905,3.85,2.7833364625513837,-1,Ag,FaceCenteredCubic
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,pressure,lattice_constant,cohesive_energy,bulk_modulus,material, structure
+0.16062613934247627,0.01997894934342036,154.56410559957055,0.18060508868589664,-1,0.0005169795925836834,3.86,2.7986488087296313,-1,Ag,FaceCenteredCubic
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,pressure,lattice_constant,cohesive_energy,bulk_modulus,material, structure
+0.14616487882238713,0.020017985227204917,154.8661007825873,0.16618286404959204,-1,-0.0008155860505245143,3.87,2.813194797048571,-1,Ag,FaceCenteredCubic
+-----End of simulation.-----
+____Starting new simulation____:
+Equilibrium not reached
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,pressure,lattice_constant,cohesive_energy,bulk_modulus,material, structure
+0.11927178040234535,0.019783617331491764,153.05294917188527,0.1390553977338371,102.60183565265665,0.0004703835587517212,3.89,2.8401819544188305,102.60183565265665,Ag,FaceCenteredCubic
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,pressure,lattice_constant,cohesive_energy,bulk_modulus,material, structure
+0.107847747269501,0.019718789997527096,152.55142235381197,0.1275665372670281,102.404263045673,-0.0009471130853926927,3.9,2.8519949777399716,102.404263045673,Ag,FaceCenteredCubic
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,pressure,lattice_constant,cohesive_energy,bulk_modulus,material, structure
+0.097736503741357,0.019332760193409456,149.56496143524168,0.11706926393476647,102.16065838709682,-0.0011104752438123252,3.91,2.8628419052888714,102.16065838709682,Ag,FaceCenteredCubic
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,pressure,lattice_constant,cohesive_energy,bulk_modulus,material, structure
+0.08705983159333629,0.018476240994001768,142.93863080545265,0.10553607258733805,101.91897055105541,-0.0006975957384101739,3.92,2.8738209657965275,101.91897055105541,Ag,FaceCenteredCubic
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,pressure,lattice_constant,cohesive_energy,bulk_modulus,material, structure
+0.07741434297456067,0.018923092489548588,146.39562949731683,0.09633743546410925,101.60423416779594,-0.00032092157626271013,3.93,2.8832341647022153,101.60423416779594,Ag,FaceCenteredCubic
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,pressure,lattice_constant,cohesive_energy,bulk_modulus,material, structure
+0.06824649981293918,0.01948874021329834,150.77167715642992,0.08773524002623752,101.24034211965673,0.002021217455020206,3.94,2.8919347178967985,101.24034211965673,Ag,FaceCenteredCubic
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,pressure,lattice_constant,cohesive_energy,bulk_modulus,material, structure
+0.059371876681504065,0.01912356682749845,147.94656874883913,0.07849544350900252,100.9005997160184,-0.0023850462306245716,3.95,2.9005543842939017,100.9005997160184,Ag,FaceCenteredCubic
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,pressure,lattice_constant,cohesive_energy,bulk_modulus,material, structure
+0.05226085638425617,0.019325938594552085,149.51218717228997,0.07158679497880825,100.48808506196193,0.00042370557202335124,3.96,2.9076354042892003,100.48808506196193,Ag,FaceCenteredCubic
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,pressure,lattice_constant,cohesive_energy,bulk_modulus,material, structure
+0.045449908182891255,0.019881357237418337,153.80909910155623,0.06533126542030959,100.06833235434448,-0.00012267755218875635,3.97,2.913961198896438,100.06833235434448,Ag,FaceCenteredCubic
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,pressure,lattice_constant,cohesive_energy,bulk_modulus,material, structure
+0.040365790205629394,0.01994355212781953,154.29026042002613,0.06030934233344892,99.64156972521214,-0.0012830950824914563,3.98,2.9193241010827413,99.64156972521214,Ag,FaceCenteredCubic
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,pressure,lattice_constant,cohesive_energy,bulk_modulus,material, structure
+0.035314054089975705,0.01951268105847566,150.95689186709978,0.054826735148451364,99.2573102062012,0.0007300917804671882,3.99,2.924547016982864,99.2573102062012,Ag,FaceCenteredCubic
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,pressure,lattice_constant,cohesive_energy,bulk_modulus,material, structure
+0.030931377734572326,0.019170537396814034,148.309949420714,0.05010191513138636,98.89422916101478,-0.0009283716705780976,4.0,2.9290919931783503,98.89422916101478,Ag,FaceCenteredCubic
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,pressure,lattice_constant,cohesive_energy,bulk_modulus,material, structure
+0.026855662467370502,0.01920247347956091,148.5570180718866,0.04605813594693141,98.56931902241705,-0.00011237569337151571,4.01,2.9329229616476997,98.56931902241705,Ag,FaceCenteredCubic
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,pressure,lattice_constant,cohesive_energy,bulk_modulus,material, structure
+0.024201665370789476,0.01949764868557003,150.84059619843077,0.0436993140563595,98.2490613613212,-0.00046274154154339814,4.02,2.9355918879344856,98.2490613613212,Ag,FaceCenteredCubic
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,pressure,lattice_constant,cohesive_energy,bulk_modulus,material, structure
+0.021799578991378497,0.020130386418135287,155.7356755157652,0.041929965409513784,97.97295824689608,0.0013678818550447306,4.03,2.9376052693821,97.97295824689608,Ag,FaceCenteredCubic
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,pressure,lattice_constant,cohesive_energy,bulk_modulus,material, structure
+0.020289379706998532,0.01988471972559784,153.83511248039417,0.04017409943259637,97.75396832601346,-7.385598107888567e-05,4.04,2.9393380745302173,97.75396832601346,Ag,FaceCenteredCubic
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,pressure,lattice_constant,cohesive_energy,bulk_modulus,material, structure
+0.019906411461548566,0.019448914330012515,150.4635702623197,0.03935532579156108,97.56969533172744,-0.0019523198581529121,4.05,2.940330914273587,97.56969533172744,Ag,FaceCenteredCubic
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,pressure,lattice_constant,cohesive_energy,bulk_modulus,material, structure
+0.018937223727108585,0.019216334414147666,148.6642510860131,0.03815355814125625,97.4473630106158,7.989843196317238e-05,4.06,2.9411629094959175,97.4473630106158,Ag,FaceCenteredCubic
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,pressure,lattice_constant,cohesive_energy,bulk_modulus,material, structure
+0.019468286321044206,0.019323497638997083,149.49330309056563,0.03879178396004129,97.31706965235067,0.0012315540001756485,4.07,2.9407717978687806,97.31706965235067,Ag,FaceCenteredCubic
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,pressure,lattice_constant,cohesive_energy,bulk_modulus,material, structure
+0.019792855676894986,0.01891268390231614,146.31510504387913,0.03870553957921113,97.26973246566736,-0.0013360111052526154,4.08,2.9405857712495247,97.26973246566736,Ag,FaceCenteredCubic
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,pressure,lattice_constant,cohesive_energy,bulk_modulus,material, structure
+0.021329025319000033,0.020070362973440677,155.27131325703195,0.041399388292440706,97.1558391082613,-0.0012225799903438802,4.09,2.938644137701474,97.1558391082613,Ag,FaceCenteredCubic
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,pressure,lattice_constant,cohesive_energy,bulk_modulus,material, structure
+0.022805288771123318,0.019673803087894376,152.2033879636372,0.042479091859017694,97.14598283744401,-0.0003660206505248742,4.1,2.9372505874795007,97.14598283744401,Ag,FaceCenteredCubic
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,pressure,lattice_constant,cohesive_energy,bulk_modulus,material, structure
+0.02516381855728741,0.019176244969263075,148.35410518764482,0.04434006352655048,97.14706079918734,0.0011243878897586636,4.11,2.9352777448459384,97.14706079918734,Ag,FaceCenteredCubic
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,pressure,lattice_constant,cohesive_energy,bulk_modulus,material, structure
+0.027461395483158832,0.01982200665366343,153.34994232923523,0.047283402136822264,97.14816446184501,-0.001247020365363973,4.12,2.9323911526747333,97.14816446184501,Ag,FaceCenteredCubic
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,pressure,lattice_constant,cohesive_energy,bulk_modulus,material, structure
+0.03009669880785658,0.019824392417984758,153.36839943236708,0.04992109122584133,97.21957346225354,0.0020261370794424265,4.13,2.9296054654348023,97.21957346225354,Ag,FaceCenteredCubic
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,pressure,lattice_constant,cohesive_energy,bulk_modulus,material, structure
+0.03357630783362847,0.019365920907046755,149.82150425720346,0.05294222874067522,97.30043114623253,0.0009631303784365429,4.14,2.9261933741492685,97.30043114623253,Ag,FaceCenteredCubic
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,pressure,lattice_constant,cohesive_energy,bulk_modulus,material, structure
+0.039231777289046206,0.019200246232535377,148.53978731372544,0.05843202352158158,97.31605061358891,-0.0001857377295244202,4.15,2.9213620007810364,97.31605061358891,Ag,FaceCenteredCubic
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,pressure,lattice_constant,cohesive_energy,bulk_modulus,material, structure
+0.04334009794444852,0.018945280212879924,146.5672814472292,0.062285378157328444,97.50550939595954,8.096875621105816e-05,4.16,2.917168893968179,97.50550939595954,Ag,FaceCenteredCubic
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,pressure,lattice_constant,cohesive_energy,bulk_modulus,material, structure
+0.04815358311870927,0.01963028420961893,151.86671077497633,0.0677838673283282,97.66198794769053,-0.0008444158786651093,4.17,2.91192976714332,97.66198794769053,Ag,FaceCenteredCubic
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,pressure,lattice_constant,cohesive_energy,bulk_modulus,material, structure
+0.05314127050457079,0.02083168787088485,161.1611876353809,0.07397295837545564,97.84725464788833,-0.000651137615854321,4.18,2.9061754186242967,97.84725464788833,Ag,FaceCenteredCubic
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,pressure,lattice_constant,cohesive_energy,bulk_modulus,material, structure
+0.05842004709628556,0.019818165557467907,153.32022627221053,0.07823821265375347,98.27678299211459,0.0004831068281139509,4.19,2.9010613276382666,98.27678299211459,Ag,FaceCenteredCubic
+-----End of simulation.-----
+____Starting new simulation____:
+Epot,Ekin,T,Etot,bulk_modulus,pressure,lattice_constant,cohesive_energy,bulk_modulus,material, structure
+0.06635141423074256,0.019481901452202487,150.71877012042813,0.08583331568294505,98.5612565772702,0.0007529388873912982,4.2,2.8941827001641625,98.5612565772702,Ag,FaceCenteredCubic
+-----End of simulation.-----
+job completed
