@@ -3,7 +3,7 @@
 #SBATCH -J CDIO-job
 #SBATCH -A liu-compute-2024-33
 #SBATCH --reservation devel
-#SBATCH -t 02:30:00
+#SBATCH -t 04:00:00
 #SBATCH -N 1
 #SBATCH -n 32
 #SBATCH --exclusive
