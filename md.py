@@ -100,9 +100,14 @@ def run_md(args, input_data):
             input_data['interface']['film_lattice'] += rank * args.sc_film_lattice_offset
         if args.sc_substrate_lattice_offset != -1:
             input_data['interface']['substrate_lattice'] += rank * args.sc_substrate_lattice_offset
-    
-    if args.simulation_method == 'Interface' and (input_data['interface']['film_alloy_ratio'] > 1 or input_data['interface']['substrate_alloy_ratio']):
-        print("Alloy ratio greater than 1. Stopping simulations on this core.")
+
+    if args.simulation_method == 'Interface' and input_data['interface']['substrate_alloy_ratio'] > 1:
+        print("Substrate alloy ratio " + str(input_data['interface']['substrate_alloy_ratio']) + " greater than 1. Stopping simulations on this core.")
+        print("-----End of simulation.-----")
+        return
+
+    if args.simulation_method == 'Interface' and input_data['interface']['film_alloy_ratio'] > 1:
+        print("Film alloy ratio " + str(input_data['interface']['film_alloy_ratio']) + " grater than 1. Stopping simulation on this core.")
         print("-----End of simulation.-----")
         return
 
