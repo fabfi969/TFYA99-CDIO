@@ -38,7 +38,7 @@ def create_input_file(file_name):
             'substrate_structure': 'fcc',
             'substrate_lattice': 3.93,
             'substrate_alloy_ratio': 0,
-            'substrate_alloying_atoms': "Pt",
+            'substrate_alloying_atoms': "Au",
             'film_atoms': 'Au',
             'film_structure': 'fcc',
             'film_lattice': 4.05,
