@@ -196,12 +196,15 @@ Note that all flags should be on the same line as 'mpprun python3 supercomp_main
 ## Results from Supercomputer
 1. Push up the slurm-file to data/slurms
 2. On a local computer run:
-    ```bash
-    python3 slurm_to_csv.py
+    
+        python3 slurm_to_csv.py
 3. To visualize the result, run:
-    ```bash
-    python3 interface_energy_plot.py
-When requested, enter the csv file name.
+    
+        python3 interface_energy_plot.py
+    When requested, enter the csv file name.
+    
+    Note that minor modifications need to be done to the script to changed what is plotted or to change the legend.
+
 ## Edit README
 1. open README
 3. use 'Ctrl+k v' to see the compiled file in VSCode
