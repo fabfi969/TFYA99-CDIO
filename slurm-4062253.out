@@ -1,0 +1,2181 @@
+mpprun INFO: mpprun v1.10.1 started
+mpprun INFO: mpprun srun handler invoked on: /proj/liu-compute-2024-33/software/venv/bin/python3
+mpprun WARNING: Using srun handler that just uses srun without setting up the environment; no MPI module will be loaded, etc.
+mpprun INFO: Setting env variable: SLURM_KILL_BAD_EXIT=1 (was unset; to override, set to 0 before invoking mpprun)
+mpprun INFO: threading env variables set by user: OPENBLAS_NUM_THREADS=1, MKL_NUM_THREADS=1, NUMEXPR_NUM_THREADS=1; set by mpprun: OMP_NUM_THREADS=1
+mpprun INFO: mpprun v1.10.1 executing: /usr/bin/srun /proj/liu-compute-2024-33/software/venv/bin/python3 supercomp_main.py -slurm -simulation_method Interface -lattice_interpolation -film_alloy_ratio 0 -sc_film_alloy_ratio_offset .01 -sc
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+____Starting new simulation____:
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+ASE CLEANUP (node 29): <class 'KeyError'> occurred.  Calling MPI_Abort!
+ASE CLEANUP (node 5): <class 'KeyError'> occurred.  Calling MPI_Abort!
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+ASE CLEANUP (node 15): <class 'KeyError'> occurred.  Calling MPI_Abort!
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+ASE CLEANUP (node 6): <class 'KeyError'> occurred.  Calling MPI_Abort!
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 0): <class 'KeyError'> occurred.  Calling MPI_Abort!
+ASE CLEANUP (node 10): <class 'KeyError'> occurred.  Calling MPI_Abort!
+ASE CLEANUP (node 12): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 16): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 8): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 4): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 2): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 20): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 18): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 14): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 22): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 30): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 24): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 21): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 13): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 26): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 28): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 25): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 27): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 9): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 3): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 19): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 31): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 7): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 11): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 17): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 23): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 1): <class 'KeyError'> occurred.  Calling MPI_Abort!
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 0 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 42.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 6 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 42.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 10 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 42.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 12 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 42.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 5 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 42.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 15 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 42.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 29 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 42.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+slurmstepd: error: *** STEP 4062253.0 ON n1184 CANCELLED AT 2024-12-17T18:59:48 ***
+srun: Job step aborted: Waiting up to 302 seconds for job step to finish.
+srun: error: n1184: tasks 0,5-6,10,12,15,29: Exited with exit code 42
+srun: Terminating StepId=4062253.0
+srun: error: n1184: tasks 1-4,7-9,11,13-14,16-28,30-31: Killed
+mpprun INFO: mpprun v1.10.1 started
+mpprun INFO: mpprun srun handler invoked on: /proj/liu-compute-2024-33/software/venv/bin/python3
+mpprun WARNING: Using srun handler that just uses srun without setting up the environment; no MPI module will be loaded, etc.
+mpprun INFO: Setting env variable: SLURM_KILL_BAD_EXIT=1 (was unset; to override, set to 0 before invoking mpprun)
+mpprun INFO: threading env variables set by user: OPENBLAS_NUM_THREADS=1, MKL_NUM_THREADS=1, NUMEXPR_NUM_THREADS=1; set by mpprun: OMP_NUM_THREADS=1
+mpprun INFO: mpprun v1.10.1 executing: /usr/bin/srun /proj/liu-compute-2024-33/software/venv/bin/python3 supercomp_main.py -slurm -simulation_method Interface -lattice_interpolation -film_alloy_ratio .32 -sc_film_alloy_ratio_offset .01 -sc
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+ASE CLEANUP (node 19): <class 'KeyError'> occurred.  Calling MPI_Abort!
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 9): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 14): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 29): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 24): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 15): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 11): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 31): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 17): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 3): <class 'KeyError'> occurred.  Calling MPI_Abort!
+ASE CLEANUP (node 21): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+ASE CLEANUP (node 7): <class 'KeyError'> occurred.  Calling MPI_Abort!
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 12): <class 'KeyError'> occurred.  Calling MPI_Abort!
+ASE CLEANUP (node 8): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+____Starting new simulation____:
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+Traceback (most recent call last):
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+ASE CLEANUP (node 27): <class 'KeyError'> occurred.  Calling MPI_Abort!
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+____Starting new simulation____:
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+ASE CLEANUP (node 1): <class 'KeyError'> occurred.  Calling MPI_Abort!
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+KeyError: 'PtPt'
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+KeyError: 'PtPt'
+ASE CLEANUP (node 5): <class 'KeyError'> occurred.  Calling MPI_Abort!
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+ASE CLEANUP (node 18): <class 'KeyError'> occurred.  Calling MPI_Abort!
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+ASE CLEANUP (node 6): <class 'KeyError'> occurred.  Calling MPI_Abort!
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 0): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 25): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+KeyError: 'PtPt'
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+
+During handling of the above exception, another exception occurred:
+
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+ASE CLEANUP (node 30): <class 'KeyError'> occurred.  Calling MPI_Abort!
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 20): <class 'KeyError'> occurred.  Calling MPI_Abort!
+ASE CLEANUP (node 23): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+ASE CLEANUP (node 13): <class 'KeyError'> occurred.  Calling MPI_Abort!
+ASE CLEANUP (node 28): <class 'KeyError'> occurred.  Calling MPI_Abort!
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+ASE CLEANUP (node 4): <class 'KeyError'> occurred.  Calling MPI_Abort!
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+ASE CLEANUP (node 22): <class 'KeyError'> occurred.  Calling MPI_Abort!
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 16): <class 'KeyError'> occurred.  Calling MPI_Abort!
+ASE CLEANUP (node 26): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 2): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 10): <class 'KeyError'> occurred.  Calling MPI_Abort!
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 19 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 42.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 9 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 42.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+slurmstepd: error: *** STEP 4062253.1 ON n1184 CANCELLED AT 2024-12-17T18:59:54 ***
+srun: Job step aborted: Waiting up to 302 seconds for job step to finish.
+slurmstepd: error: --task-epilog failed status=9
+srun: error: n1184: tasks 0-8,10-18,20-31: Killed
+srun: Terminating StepId=4062253.1
+srun: error: n1184: tasks 9,19: Exited with exit code 42
+mpprun INFO: mpprun v1.10.1 started
+mpprun INFO: mpprun srun handler invoked on: /proj/liu-compute-2024-33/software/venv/bin/python3
+mpprun WARNING: Using srun handler that just uses srun without setting up the environment; no MPI module will be loaded, etc.
+mpprun INFO: Setting env variable: SLURM_KILL_BAD_EXIT=1 (was unset; to override, set to 0 before invoking mpprun)
+mpprun INFO: threading env variables set by user: OPENBLAS_NUM_THREADS=1, MKL_NUM_THREADS=1, NUMEXPR_NUM_THREADS=1; set by mpprun: OMP_NUM_THREADS=1
+mpprun INFO: mpprun v1.10.1 executing: /usr/bin/srun /proj/liu-compute-2024-33/software/venv/bin/python3 supercomp_main.py -slurm -simulation_method Interface -lattice_interpolation -film_alloy_ratio .64 -sc_film_alloy_ratio_offset .01 -sc
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 9): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 7): <class 'KeyError'> occurred.  Calling MPI_Abort!
+ASE CLEANUP (node 31): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 21): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 1): <class 'KeyError'> occurred.  Calling MPI_Abort!
+ASE CLEANUP (node 13): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+ASE CLEANUP (node 19): <class 'KeyError'> occurred.  Calling MPI_Abort!
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 24): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 17): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+ASE CLEANUP (node 29): <class 'KeyError'> occurred.  Calling MPI_Abort!
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 28): <class 'KeyError'> occurred.  Calling MPI_Abort!
+ASE CLEANUP (node 14): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 27): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 3): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+ASE CLEANUP (node 4): <class 'KeyError'> occurred.  Calling MPI_Abort!
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 15): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+ASE CLEANUP (node 8): <class 'KeyError'> occurred.  Calling MPI_Abort!
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 16): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+ASE CLEANUP (node 11): <class 'KeyError'> occurred.  Calling MPI_Abort!
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 6): <class 'KeyError'> occurred.  Calling MPI_Abort!
+ASE CLEANUP (node 30): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+ASE CLEANUP (node 10): <class 'KeyError'> occurred.  Calling MPI_Abort!
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+ASE CLEANUP (node 25): <class 'KeyError'> occurred.  Calling MPI_Abort!
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+____Starting new simulation____:
+ASE CLEANUP (node 23): <class 'KeyError'> occurred.  Calling MPI_Abort!
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 5): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 12): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 18): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+____Starting new simulation____:
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 22): <class 'KeyError'> occurred.  Calling MPI_Abort!
+ASE CLEANUP (node 20): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 26): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 2): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 0): <class 'KeyError'> occurred.  Calling MPI_Abort!
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 9 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 42.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+slurmstepd: error: *** STEP 4062253.2 ON n1184 CANCELLED AT 2024-12-17T18:59:59 ***
+srun: Job step aborted: Waiting up to 302 seconds for job step to finish.
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 31 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 42.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+slurmstepd: error: --task-epilog failed status=9
+srun: error: n1184: tasks 0-8,10-30: Killed
+srun: Terminating StepId=4062253.2
+srun: error: n1184: tasks 9,31: Exited with exit code 42
+mpprun INFO: mpprun v1.10.1 started
+mpprun INFO: mpprun srun handler invoked on: /proj/liu-compute-2024-33/software/venv/bin/python3
+mpprun WARNING: Using srun handler that just uses srun without setting up the environment; no MPI module will be loaded, etc.
+mpprun INFO: Setting env variable: SLURM_KILL_BAD_EXIT=1 (was unset; to override, set to 0 before invoking mpprun)
+mpprun INFO: threading env variables set by user: OPENBLAS_NUM_THREADS=1, MKL_NUM_THREADS=1, NUMEXPR_NUM_THREADS=1; set by mpprun: OMP_NUM_THREADS=1
+mpprun INFO: mpprun v1.10.1 executing: /usr/bin/srun /proj/liu-compute-2024-33/software/venv/bin/python3 supercomp_main.py -slurm -simulation_method Interface -lattice_interpolation -film_alloy_ratio .96 -sc_film_alloy_ratio_offset .01 -sc
+____Starting new simulation____:
+Film alloy ratio 1.07 grater than 1. Stopping simulation on this core.
+-----End of simulation.-----
+____Starting new simulation____:
+Film alloy ratio 1.05 grater than 1. Stopping simulation on this core.
+-----End of simulation.-----
+____Starting new simulation____:
+Film alloy ratio 1.1199999999999999 grater than 1. Stopping simulation on this core.
+-----End of simulation.-----
+____Starting new simulation____:
+Film alloy ratio 1.19 grater than 1. Stopping simulation on this core.
+-----End of simulation.-----
+____Starting new simulation____:
+Film alloy ratio 1.08 grater than 1. Stopping simulation on this core.
+-----End of simulation.-----
+____Starting new simulation____:
+Film alloy ratio 1.27 grater than 1. Stopping simulation on this core.
+-----End of simulation.-----
+____Starting new simulation____:
+Film alloy ratio 1.17 grater than 1. Stopping simulation on this core.
+-----End of simulation.-----
+____Starting new simulation____:
+Film alloy ratio 1.03 grater than 1. Stopping simulation on this core.
+-----End of simulation.-----
+____Starting new simulation____:
+Film alloy ratio 1.02 grater than 1. Stopping simulation on this core.
+-----End of simulation.-----
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+____Starting new simulation____:
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+ASE CLEANUP (node 2): <class 'KeyError'> occurred.  Calling MPI_Abort!
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 3): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Film alloy ratio 1.1099999999999999 grater than 1. Stopping simulation on this core.
+-----End of simulation.-----
+____Starting new simulation____:
+Film alloy ratio 1.1 grater than 1. Stopping simulation on this core.
+-----End of simulation.-----
+____Starting new simulation____:
+Film alloy ratio 1.16 grater than 1. Stopping simulation on this core.
+-----End of simulation.-----
+____Starting new simulation____:
+Film alloy ratio 1.2 grater than 1. Stopping simulation on this core.
+-----End of simulation.-----
+____Starting new simulation____:
+Film alloy ratio 1.06 grater than 1. Stopping simulation on this core.
+-----End of simulation.-----
+____Starting new simulation____:
+Film alloy ratio 1.24 grater than 1. Stopping simulation on this core.
+-----End of simulation.-----
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+____Starting new simulation____:
+Film alloy ratio 1.01 grater than 1. Stopping simulation on this core.
+-----End of simulation.-----
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 1): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Film alloy ratio 1.15 grater than 1. Stopping simulation on this core.
+-----End of simulation.-----
+____Starting new simulation____:
+Film alloy ratio 1.22 grater than 1. Stopping simulation on this core.
+-----End of simulation.-----
+____Starting new simulation____:
+Film alloy ratio 1.13 grater than 1. Stopping simulation on this core.
+-----End of simulation.-----
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+____Starting new simulation____:
+Film alloy ratio 1.04 grater than 1. Stopping simulation on this core.
+-----End of simulation.-----
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+____Starting new simulation____:
+Film alloy ratio 1.14 grater than 1. Stopping simulation on this core.
+-----End of simulation.-----
+ASE CLEANUP (node 0): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Film alloy ratio 1.23 grater than 1. Stopping simulation on this core.
+-----End of simulation.-----
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 117, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_atoms']+input_data['interface']['substrate_alloying_atoms']]
+KeyError: 'PtPt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 119, in run_md
+    substrate_alloy_lattice = input_data['lattice_constant'][input_data['interface']['substrate_alloying_atoms']+input_data['interface']['substrate_atoms']]
+KeyError: 'PtPt'
+ASE CLEANUP (node 4): <class 'KeyError'> occurred.  Calling MPI_Abort!
+____Starting new simulation____:
+Film alloy ratio 1.26 grater than 1. Stopping simulation on this core.
+-----End of simulation.-----
+____Starting new simulation____:
+Film alloy ratio 1.25 grater than 1. Stopping simulation on this core.
+-----End of simulation.-----
+____Starting new simulation____:
+Film alloy ratio 1.0899999999999999 grater than 1. Stopping simulation on this core.
+-----End of simulation.-----
+____Starting new simulation____:
+Film alloy ratio 1.18 grater than 1. Stopping simulation on this core.
+-----End of simulation.-----
+____Starting new simulation____:
+Film alloy ratio 1.21 grater than 1. Stopping simulation on this core.
+-----End of simulation.-----
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 2 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 42.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 3 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 42.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+slurmstepd: error: *** STEP 4062253.3 ON n1184 CANCELLED AT 2024-12-17T19:00:05 ***
+srun: Job step aborted: Waiting up to 302 seconds for job step to finish.
+srun: error: n1184: tasks 0-1,4-31: Killed
+srun: Terminating StepId=4062253.3
+srun: error: n1184: tasks 2-3: Exited with exit code 42
+job completed

@@ -1,0 +1,1446 @@
+mpprun INFO: mpprun v1.10.1 started
+mpprun INFO: mpprun srun handler invoked on: /usr/bin/python3
+mpprun WARNING: ******************************************************************************
+mpprun WARNING:   MPPRUN HAS BEEN INVOKED ON A BINARY EXECUTABLE FOR WHICH RPATH IS NOT SET,
+mpprun WARNING:   THE DYNAMIC LIBRARIES USED WILL DEPEND ON THE CURRENT RUNTIME ENVIRONMENT
+mpprun WARNING:   WHICH MAY YIELD INCONSISTENT AND UNEXPECTED RESULTS.
+mpprun WARNING: ******************************************************************************
+mpprun WARNING:   A likely reason for this warning is that the binary program
+mpprun WARNING:   executed with mpprun has not been built according to the instructions
+mpprun WARNING:   for the hpc system. If this is unintentional, please seek help
+mpprun WARNING:   on building software via the relevant web pages, or contact support.
+mpprun WARNING: Using srun handler that just uses srun without setting up the environment; no MPI module will be loaded, etc.
+mpprun INFO: Setting env variable: SLURM_KILL_BAD_EXIT=1 (was unset; to override, set to 0 before invoking mpprun)
+mpprun INFO: threading env variables set by user: OPENBLAS_NUM_THREADS=1, MKL_NUM_THREADS=1, NUMEXPR_NUM_THREADS=1; set by mpprun: OMP_NUM_THREADS=1
+mpprun INFO: mpprun v1.10.1 executing: /usr/bin/srun /usr/bin/python3 supercomp_main.py -slurm -simulation_method Interface -lattice_interpolation -film_alloy_ratio 0 -sc_film_alloy_ratio_offset .01 -sc
+____Starting new simulation____:
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+____Starting new simulation____:
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+____Starting new simulation____:
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+____Starting new simulation____:
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    main()
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+ModuleNotFoundError: No module named 'mpi4py'
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    from mpi4py import MPI
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+ModuleNotFoundError: No module named 'mpi4py'
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+srun: error: n1184: tasks 0-31: Exited with exit code 1
+srun: Terminating StepId=4062442.0
+srun: error: n1187: tasks 32-63: Exited with exit code 1
+mpprun INFO: mpprun v1.10.1 started
+mpprun INFO: mpprun srun handler invoked on: /usr/bin/python3
+mpprun WARNING: ******************************************************************************
+mpprun WARNING:   MPPRUN HAS BEEN INVOKED ON A BINARY EXECUTABLE FOR WHICH RPATH IS NOT SET,
+mpprun WARNING:   THE DYNAMIC LIBRARIES USED WILL DEPEND ON THE CURRENT RUNTIME ENVIRONMENT
+mpprun WARNING:   WHICH MAY YIELD INCONSISTENT AND UNEXPECTED RESULTS.
+mpprun WARNING: ******************************************************************************
+mpprun WARNING:   A likely reason for this warning is that the binary program
+mpprun WARNING:   executed with mpprun has not been built according to the instructions
+mpprun WARNING:   for the hpc system. If this is unintentional, please seek help
+mpprun WARNING:   on building software via the relevant web pages, or contact support.
+mpprun WARNING: Using srun handler that just uses srun without setting up the environment; no MPI module will be loaded, etc.
+mpprun INFO: Setting env variable: SLURM_KILL_BAD_EXIT=1 (was unset; to override, set to 0 before invoking mpprun)
+mpprun INFO: threading env variables set by user: OPENBLAS_NUM_THREADS=1, MKL_NUM_THREADS=1, NUMEXPR_NUM_THREADS=1; set by mpprun: OMP_NUM_THREADS=1
+mpprun INFO: mpprun v1.10.1 executing: /usr/bin/srun /usr/bin/python3 supercomp_main.py -slurm -simulation_method Interface -lattice_interpolation -film_alloy_ratio .64 -sc_film_alloy_ratio_offset .01 -sc
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+____Starting new simulation____:
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+____Starting new simulation____:
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+____Starting new simulation____:
+Traceback (most recent call last):
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+____Starting new simulation____:
+Traceback (most recent call last):
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 77, in <module>
+    main()
+  File "/home/x_bejoa/TFYA99-CDIO/supercomp_main.py", line 26, in main
+    run_program()
+  File "/home/x_bejoa/TFYA99-CDIO/main.py", line 194, in run_program
+    run_md(args, input_data)
+  File "/home/x_bejoa/TFYA99-CDIO/md.py", line 90, in run_md
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+srun: error: n1187: tasks 32-63: Exited with exit code 1
+srun: Terminating StepId=4062442.1
+slurmstepd: error: *** STEP 4062442.1 ON n1184 CANCELLED AT 2024-12-18T14:22:29 ***
+srun: error: n1184: tasks 0-31: Exited with exit code 1
+job completed
