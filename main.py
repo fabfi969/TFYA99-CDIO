@@ -140,7 +140,6 @@ to be simulated atoms are defined",
         choices = ["Au", "Ag", "Cu", "Al", "Ni", "Pd", "Pt", "deafult"]
     )
 
-
     parser.add_argument(
         "-sc",
         action = "store_true",
@@ -180,7 +179,6 @@ to be simulated atoms are defined",
         default = "-1.0",
         type = float,
     )
-
 
     args = parser.parse_args()
 

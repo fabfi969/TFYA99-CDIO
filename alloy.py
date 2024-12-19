@@ -7,8 +7,6 @@ from ase.build import bulk
 from ase.build.tools import stack
 from create_input_file import create_input_file
 import toml
-#from md import calcenergy
-
 
 def twoblocks(mat1,
               structure1,
@@ -50,7 +48,6 @@ def pseudo_random_alloys(mat1,
         place = round(count)
         bulk1.symbols[place]=mat2
         count += step
-    #view(bulk1)
 
 def random_alloys(mat1,
                   structure1,
@@ -67,7 +64,6 @@ def random_alloys(mat1,
             bulk1.symbols[count]=mat2
         count += 1
     return bulk1
-    #view(bulk1)
 
 class Interface:
     """A class that generates objects that are interfaces between to objects"""
@@ -120,12 +116,3 @@ class Interface:
         eint = (etot3 - etot2 - etot1)/2
         eint_per_å = eint/((self.size * self.latticesubstrate)*(self.size * self.latticesubstrate))
         return eint, eint_per_å, etot1, etot2
-
-
-if __name__ == "__main__":
-    BeepBoop = Interface()
-    view(BeepBoop.get_atoms())
-    print(BeepBoop.get_interface_energy())
-    #twoBlocks("Cu","fcc",2.54,"Au","fcc",3.4,4)
-    #random_alloys("Cu","sc",2.54,"Au",0.5,9)
-    #pseudo_random_alloys("Cu","sc",2.54,"Au",0.17,9)
