@@ -51,7 +51,11 @@
 <li class="toctree-l2"><a class="reference internal" href="create_input_file.html">create_input_file module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="interface_energy_plot.html">interface_energy_plot module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="main.html">main module</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">md module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">md module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#md.random"><code class="docutils literal notranslate"><span class="pre">random()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#md.run_md"><code class="docutils literal notranslate"><span class="pre">run_md()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="pres.html">pres module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="save_data.html">save_data module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="slurm_to_csv.html">slurm_to_csv module</a></li>
@@ -89,8 +93,20 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="md-module">
-<h1>md module<a class="headerlink" href="#md-module" title="Link to this heading"></a></h1>
+  <section id="module-md">
+<span id="md-module"></span><h1>md module<a class="headerlink" href="#module-md" title="Link to this heading"></a></h1>
+<p>Demonstrates molecular dynamics with constant energy. Is called by main</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="md.random">
+<span class="sig-prename descclassname"><span class="pre">md.</span></span><span class="sig-name descname"><span class="pre">random</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">x</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">interval</span> <span class="pre">[0,</span> <span class="pre">1).</span></span></span><a class="headerlink" href="#md.random" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="md.run_md">
+<span class="sig-prename descclassname"><span class="pre">md.</span></span><span class="sig-name descname"><span class="pre">run_md</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/md.html#run_md"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#md.run_md" title="Link to this definition"></a></dt>
+<dd><p>runs the molecular dynamics simulation</p>
+</dd></dl>
+
 </section>
 
 

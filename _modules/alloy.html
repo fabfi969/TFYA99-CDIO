@@ -81,6 +81,8 @@
 <span class="kn">from</span> <span class="nn">ase.build.tools</span> <span class="kn">import</span> <span class="n">stack</span>
 <span class="kn">from</span> <span class="nn">create_input_file</span> <span class="kn">import</span> <span class="n">create_input_file</span>
 <span class="kn">import</span> <span class="nn">toml</span>
+<span class="c1">#from md import calcenergy</span>
+
 
 <div class="viewcode-block" id="twoblocks">
 <a class="viewcode-back" href="../_reference/alloy.html#alloy.twoblocks">[docs]</a>
@@ -131,6 +133,7 @@
         <span class="n">bulk1</span><span class="o">.</span><span class="n">symbols</span><span class="p">[</span><span class="n">place</span><span class="p">]</span><span class="o">=</span><span class="n">mat2</span>
         <span class="n">count</span> <span class="o">+=</span> <span class="n">step</span></div>
 
+    <span class="c1">#view(bulk1)</span>
 
 <div class="viewcode-block" id="random_alloys">
 <a class="viewcode-back" href="../_reference/alloy.html#alloy.random_alloys">[docs]</a>
@@ -150,6 +153,7 @@
         <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
     <span class="k">return</span> <span class="n">bulk1</span></div>
 
+    <span class="c1">#view(bulk1)</span>
 
 <div class="viewcode-block" id="Interface">
 <a class="viewcode-back" href="../_reference/alloy.html#alloy.Interface">[docs]</a>
@@ -211,6 +215,15 @@
         <span class="k">return</span> <span class="n">eint</span><span class="p">,</span> <span class="n">eint_per_å</span><span class="p">,</span> <span class="n">etot1</span><span class="p">,</span> <span class="n">etot2</span></div>
 </div>
 
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">BeepBoop</span> <span class="o">=</span> <span class="n">Interface</span><span class="p">()</span>
+    <span class="n">view</span><span class="p">(</span><span class="n">BeepBoop</span><span class="o">.</span><span class="n">get_atoms</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">BeepBoop</span><span class="o">.</span><span class="n">get_interface_energy</span><span class="p">())</span>
+    <span class="c1">#twoBlocks(&quot;Cu&quot;,&quot;fcc&quot;,2.54,&quot;Au&quot;,&quot;fcc&quot;,3.4,4)</span>
+    <span class="c1">#random_alloys(&quot;Cu&quot;,&quot;sc&quot;,2.54,&quot;Au&quot;,0.5,9)</span>
+    <span class="c1">#pseudo_random_alloys(&quot;Cu&quot;,&quot;sc&quot;,2.54,&quot;Au&quot;,0.17,9)</span>
 </pre></div>
 
            </div>
