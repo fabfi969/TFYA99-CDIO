@@ -86,6 +86,33 @@ class SystemTest(unittest.TestCase):
             run_program()
             self.assertTrue(True)
 
+    def test_program_running_interface(self):
+        with unittest.mock.patch('sys.argv', ["run_program.py", "-simulation_method", "Interface", \
+            "-slurm"]):
+            run_program()
+            self.assertTrue(True)
+
+    def test_program_running_interface_with_interpolation_1(self):
+        with unittest.mock.patch('sys.argv', ["run_program.py", "-simulation_method", "Interface", \
+            "-lattice_interpolation", "-substrate_atoms", "Au", "-substrate_alloying_atoms", "Ag", \
+            "-film_atoms", "Au", "-film_alloying_atoms", "Ag"]):
+            run_program()
+            self.assertTrue(True)
+
+    def test_program_running_interface_with_interpolation_2(self):
+        with unittest.mock.patch('sys.argv', ["run_program.py", "-simulation_method", "Interface", \
+            "-lattice_interpolation", "-substrate_atoms", "Ag", "-substrate_alloying_atoms", "Au", \
+            "-film_atoms", "Ag", "-film_alloying_atoms", "Au"]):
+            run_program()
+            self.assertTrue(True)
+
+    def test_program_running_interface_with_interpolation_same_atoms(self):
+        with unittest.mock.patch('sys.argv', ["run_program.py", "-simulation_method", "Interface", \
+            "-lattice_interpolation", "-substrate_atoms", "Au", "-substrate_alloying_atoms", "Au", \
+            "-film_atoms", "Au", "-film_alloying_atoms", "Au"]):
+            run_program()
+            self.assertTrue(True)
+
 if __name__ == "__main__":
     system_tests = unittest.TestLoader().loadTestsFromTestCase(SystemTest)
     input_file_tests = unittest.TestLoader().loadTestsFromTestCase(inputFileTests)
