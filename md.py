@@ -103,8 +103,8 @@ def run_md(args, input_data):
                 interpolated_sub_lattice = (2-2*sub_alloy_ratio)*substrate_alloy_lattice+(2*sub_alloy_ratio-1)*sub_alloy_atom_lat
             input_data['interface']['substrate_lattice'] = interpolated_sub_lattice
         else:
-            input_data['interface']['substrate_lattice'] = input_data['lattice_constant'][input_data['interface']['substrate_atoms']
-        
+            input_data['interface']['substrate_lattice'] = input_data['lattice_constant'][input_data['interface']['substrate_atoms']]
+
         if input_data['interface']['film_alloying_atoms'] != input_data['interface']['film_atoms']:
             try:
                 film_alloy_lattice = input_data['lattice_constant'][input_data['interface']['film_atoms']+input_data['interface']['film_alloying_atoms']]
@@ -120,7 +120,7 @@ def run_md(args, input_data):
                 interpolated_film_lattice = (2-2*film_alloy_ratio)*film_alloy_lattice+(2*film_alloy_ratio-1)*film_alloy_atom_lat
             input_data['interface']['film_lattice'] = interpolated_film_lattice
         else:
-            input_data['interface']['film_lattice'] = input_data['lattice_constant'][input_data['interface']['film_atoms']
+            input_data['interface']['film_lattice'] = input_data['lattice_constant'][input_data['interface']['film_atoms']]
 
     # Set up a crystal
     if args.cif == '':
